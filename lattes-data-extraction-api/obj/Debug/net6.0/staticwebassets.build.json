@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "avTLqn0tCD8AiPytGUDqzGvDr8vTRkfph59OHCdkLdE=",
+  "Source": "lattes-data-extraction-api",
+  "BasePath": "_content/lattes-data-extraction-api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
