@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\lattes-data-extraction-api\lattes-data-extraction-api.csproj" />
+  </ItemGroup>
+
 </Project>
