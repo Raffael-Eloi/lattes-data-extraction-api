@@ -336,9 +336,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\raffa\\Source\\Repos\\lattes-data-extraction-api\\LattesDataExtraction.API\\LattesDataExtraction.API.csproj",
+      "projectUniqueName": "C:\\Users\\raffa\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.API\\LattesDataExtraction.API.csproj",
       "projectName": "LattesDataExtraction.API",
-      "projectPath": "C:\\Users\\raffa\\Source\\Repos\\lattes-data-extraction-api\\LattesDataExtraction.API\\LattesDataExtraction.API.csproj",
+      "projectPath": "C:\\Users\\raffa\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.API\\LattesDataExtraction.API.csproj",
       "packagesPath": "C:\\Users\\raffa\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\raffa\\Source\\Repos\\lattes-data-extraction-api\\LattesDataExtraction.API\\obj\\",
       "projectStyle": "PackageReference",
@@ -357,8 +357,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\raffa\\Source\\Repos\\lattes-data-extraction-api\\lattes-data-extraction-api\\lattes-data-extraction-api.csproj": {
-              "projectPath": "C:\\Users\\raffa\\Source\\Repos\\lattes-data-extraction-api\\lattes-data-extraction-api\\lattes-data-extraction-api.csproj"
+            "C:\\Users\\raffa\\source\\repos\\lattes-data-extraction-api\\lattes-data-extraction-api\\lattes-data-extraction-api.csproj": {
+              "projectPath": "C:\\Users\\raffa\\source\\repos\\lattes-data-extraction-api\\lattes-data-extraction-api\\lattes-data-extraction-api.csproj"
             }
           }
         }

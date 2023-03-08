@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "duWC+o8iUrupC9LAz124ZuvIPfGkmcm1ZSLjzpagIn8sIBPcNVEGcFbyC1icWQUvuWaShsqF4eLqn+Uu7TB8qg==",
+  "dgSpecHash": "DclEbKCYWkzZd+HguElUEvXwQQLK0ny2nNwoLkOzcf3N42z5O+rh1zT2wHlPLCjAgGZuZVxSQGXsipYJKOMXwg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\raffa\\Source\\Repos\\lattes-data-extraction-api\\LattesDataExtraction.API.Tests\\LattesDataExtraction.API.Tests.csproj",
+  "projectFilePath": "C:\\Users\\raffa\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.API.Tests\\LattesDataExtraction.API.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\raffa\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\raffa\\.nuget\\packages\\microsoft.codecoverage\\17.3.2\\microsoft.codecoverage.17.3.2.nupkg.sha512",

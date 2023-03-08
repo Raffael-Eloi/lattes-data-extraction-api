@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LattesDataExtraction.API
-build_property.ProjectDir = C:\Users\raffa\Source\Repos\lattes-data-extraction-api\LattesDataExtraction.API\
+build_property.ProjectDir = C:\Users\raffa\source\repos\lattes-data-extraction-api\LattesDataExtraction.API\

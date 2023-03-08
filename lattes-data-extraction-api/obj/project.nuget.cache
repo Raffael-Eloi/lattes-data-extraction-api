@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "j70UN2qEWwRiPyIio9yAn47d0KqPFhaxhOTy0H5NpJemXW2v6iwCJjkBr2NdrxfG/GHGmy3AMGTFDIjOGGwjcg==",
+  "dgSpecHash": "wK+pvuM5InrGjC8TYDROi8e3HdTG/+SQP2FMXJ7+Q4ZFEcA60ajEsKzdzo/Q6e6qixz1g6cuYYWvNevrSUMZCg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\raffa\\Source\\Repos\\lattes-data-extraction-api\\lattes-data-extraction-api\\lattes-data-extraction-api.csproj",
+  "projectFilePath": "C:\\Users\\raffa\\source\\repos\\lattes-data-extraction-api\\lattes-data-extraction-api\\lattes-data-extraction-api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\raffa\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\raffa\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

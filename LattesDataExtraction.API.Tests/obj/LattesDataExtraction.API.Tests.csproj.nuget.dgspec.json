@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\raffa\\Source\\Repos\\lattes-data-extraction-api\\LattesDataExtraction.API.Tests\\LattesDataExtraction.API.Tests.csproj": {}
+    "C:\\Users\\raffa\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.API.Tests\\LattesDataExtraction.API.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\raffa\\Source\\Repos\\lattes-data-extraction-api\\LattesDataExtraction.API.Tests\\LattesDataExtraction.API.Tests.csproj": {
+    "C:\\Users\\raffa\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.API.Tests\\LattesDataExtraction.API.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\raffa\\Source\\Repos\\lattes-data-extraction-api\\LattesDataExtraction.API.Tests\\LattesDataExtraction.API.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\raffa\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.API.Tests\\LattesDataExtraction.API.Tests.csproj",
         "projectName": "LattesDataExtraction.API.Tests",
-        "projectPath": "C:\\Users\\raffa\\Source\\Repos\\lattes-data-extraction-api\\LattesDataExtraction.API.Tests\\LattesDataExtraction.API.Tests.csproj",
+        "projectPath": "C:\\Users\\raffa\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.API.Tests\\LattesDataExtraction.API.Tests.csproj",
         "packagesPath": "C:\\Users\\raffa\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\raffa\\Source\\Repos\\lattes-data-extraction-api\\LattesDataExtraction.API.Tests\\obj\\",
         "projectStyle": "PackageReference",
