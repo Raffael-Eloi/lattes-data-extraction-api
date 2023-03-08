@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\raffa\\Source\\Repos\\lattes-data-extraction-api\\lattes-data-extraction-api\\lattes-data-extraction-api.csproj": {}
+    "C:\\Users\\raffa\\Source\\Repos\\lattes-data-extraction-api\\LattesDataExtraction.API.Tests\\LattesDataExtraction.API.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\raffa\\Source\\Repos\\lattes-data-extraction-api\\lattes-data-extraction-api\\lattes-data-extraction-api.csproj": {
+    "C:\\Users\\raffa\\Source\\Repos\\lattes-data-extraction-api\\LattesDataExtraction.API.Tests\\LattesDataExtraction.API.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\raffa\\Source\\Repos\\lattes-data-extraction-api\\lattes-data-extraction-api\\lattes-data-extraction-api.csproj",
-        "projectName": "lattes-data-extraction-api",
-        "projectPath": "C:\\Users\\raffa\\Source\\Repos\\lattes-data-extraction-api\\lattes-data-extraction-api\\lattes-data-extraction-api.csproj",
+        "projectUniqueName": "C:\\Users\\raffa\\Source\\Repos\\lattes-data-extraction-api\\LattesDataExtraction.API.Tests\\LattesDataExtraction.API.Tests.csproj",
+        "projectName": "LattesDataExtraction.API.Tests",
+        "projectPath": "C:\\Users\\raffa\\Source\\Repos\\lattes-data-extraction-api\\LattesDataExtraction.API.Tests\\LattesDataExtraction.API.Tests.csproj",
         "packagesPath": "C:\\Users\\raffa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\raffa\\Source\\Repos\\lattes-data-extraction-api\\lattes-data-extraction-api\\obj\\",
+        "outputPath": "C:\\Users\\raffa\\Source\\Repos\\lattes-data-extraction-api\\LattesDataExtraction.API.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\raffa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,13 +40,25 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+            "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[1.17.2, )"
+              "version": "[17.3.2, )"
             },
-            "Swashbuckle.AspNetCore": {
+            "NUnit": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[3.13.3, )"
+            },
+            "NUnit.Analyzers": {
+              "target": "Package",
+              "version": "[3.5.0, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.1.2, )"
             }
           },
           "imports": [
@@ -61,9 +73,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
