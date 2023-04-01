@@ -18,6 +18,8 @@ namespace LattesDataExtraction.Domain.Services
 
             GetGeneralDataInformationIfExists();
 
+            GetProfessionalDescriptionInformationIfExists();
+
             return _academicResearch;
         }
 
@@ -125,6 +127,26 @@ namespace LattesDataExtraction.Domain.Services
                     }
                 }
 
+            }
+        }
+        
+        private void GetProfessionalDescriptionInformationIfExists()
+        {
+            XmlNodeList professionalDescriptionInformation = _academicResearcherDocument.GetElementsByTagName("RESUMO-CV");
+
+            if (professionalDescriptionInformation.Count < 0) return;
+
+            foreach (XmlNode element in professionalDescriptionInformation)
+            {
+                if (element.Attributes != null && element.Attributes.Count > 0)
+                {
+                    XmlAttribute? professionalDescription = element.Attributes["TEXTO-RESUMO-CV-RH"];
+
+                    if (professionalDescription != null)
+                    {
+                        _academicResearch!.ProfessionalDescription = professionalDescription.Value;
+                    }
+                }
             }
         }
     }
