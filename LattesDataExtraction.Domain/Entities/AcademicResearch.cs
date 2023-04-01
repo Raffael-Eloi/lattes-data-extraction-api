@@ -23,5 +23,7 @@
         public string NationalityCountry { get; set; } = string.Empty;
 
         public string OrcidId { get; set; } = string.Empty;
+
+        public ProfessionalAddress? ProfessionalAddress { get; set; }
     }
 }
