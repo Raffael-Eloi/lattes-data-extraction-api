@@ -1,5 +1,6 @@
 ﻿using LattesDataExtraction.Domain.Contracts;
 using LattesDataExtraction.Domain.Enums;
+using LattesDataExtraction.Domain.Factories;
 using LattesDataExtraction.Domain.Services.DataExtraction;
 
 namespace LattesDataExtraction.Domain.Tests.Factories
