@@ -22,8 +22,7 @@ namespace LattesDataExtraction.Domain.Services
                 academicResearch.IdentifierNumber = identifierNumber;
             }
 
-            //return academicResearch;
-            return null;
+            return academicResearch;
         }
     }
 }
