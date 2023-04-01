@@ -102,5 +102,43 @@ namespace LattesDataExtraction.Domain.Tests.Factories
 
             #endregion
         }
+
+        [Test]
+        public void Throw_Exception_When_Data_Information_Type_Does_Not_Exist()
+        {
+            #region Arrange
+
+            var unknownType = DataInformationType.Unknowwn;
+
+            #endregion
+
+            #region Act
+
+            Exception? threwException = null;
+
+            try
+            {
+                IGetDataInformationService getDataInformationType = getDataInformationFactory.Create(unknownType);
+            }
+            catch (ArgumentException ex)
+            {
+                threwException = ex;
+            }
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(threwException, Is.Not.Null);
+            
+            Assert.Multiple(() =>
+            {
+                Assert.That(threwException.GetType(), Is.EqualTo(typeof(ArgumentException)));
+
+                Assert.That(threwException.Message, Is.EqualTo("The Data Information Type was not implemented"));
+            });
+
+            #endregion
+        }
     }
 }

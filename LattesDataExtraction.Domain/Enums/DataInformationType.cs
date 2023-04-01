@@ -2,12 +2,14 @@
 {
     public enum DataInformationType
     {
-        CurriculumVitae = 0,
+        Unknowwn = 0,
 
-        GeneralData = 1,
+        CurriculumVitae = 1,
 
-        ProfessionalDescription = 2,
+        GeneralData = 2,
 
-        ProfessionalAddress = 3,
+        ProfessionalDescription = 3,
+
+        ProfessionalAddress = 4,
     }
 }
