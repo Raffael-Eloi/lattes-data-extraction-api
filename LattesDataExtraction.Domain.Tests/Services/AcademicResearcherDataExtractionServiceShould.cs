@@ -4,14 +4,14 @@ using LattesDataExtraction.Domain.Services;
 
 namespace LattesDataExtraction.Domain.Tests.Services
 {
-    public class AcademicResearcherFileReadServiceShould
+    public class AcademicResearcherDataExtractionServiceShould
     {
-        private IAcademicResearcherFileReadService academicResearcherFileReadService;
+        private IAcademicResearcherDataExtractionService academicResearcherFileReadService;
 
         [SetUp]
         public void Setup() 
         {
-            academicResearcherFileReadService = new AcademicResearcherFileReadService();
+            academicResearcherFileReadService = new AcademicResearcherDataExtractionService();
         }
 
         [Test]

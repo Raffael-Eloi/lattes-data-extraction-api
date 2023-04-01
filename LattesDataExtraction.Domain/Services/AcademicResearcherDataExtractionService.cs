@@ -4,7 +4,7 @@ using System.Xml;
 
 namespace LattesDataExtraction.Domain.Services
 {
-    internal class AcademicResearcherFileReadService : IAcademicResearcherFileReadService
+    internal class AcademicResearcherDataExtractionService : IAcademicResearcherDataExtractionService
     {
         private XmlDocument? _academicResearcherDocument;
 
