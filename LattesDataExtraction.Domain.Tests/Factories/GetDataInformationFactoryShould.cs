@@ -135,7 +135,7 @@ namespace LattesDataExtraction.Domain.Tests.Factories
             {
                 Assert.That(threwException.GetType(), Is.EqualTo(typeof(ArgumentException)));
 
-                Assert.That(threwException.Message, Is.EqualTo("The Data Information Type was not implemented"));
+                Assert.That(threwException.Message, Is.EqualTo("The Data Information Type was not implemented."));
             });
 
             #endregion

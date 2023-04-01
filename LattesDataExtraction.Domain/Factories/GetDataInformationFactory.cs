@@ -6,6 +6,8 @@ namespace LattesDataExtraction.Domain.Factories
 {
     internal class GetDataInformationFactory : IGetDataInformationFactory
     {
+        private const string DataInformationTypeNotImplementedMessage = "The Data Information Type was not implemented.";
+
         public IGetDataInformationService Create(DataInformationType type)
         {
             switch (type)
@@ -23,7 +25,7 @@ namespace LattesDataExtraction.Domain.Factories
                     return new GetProfessionalAddressInformationService();
 
                 default:
-                    return null;
+                    throw new ArgumentException(DataInformationTypeNotImplementedMessage);
             }
         }
     }
