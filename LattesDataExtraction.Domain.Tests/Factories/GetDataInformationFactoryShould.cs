@@ -58,5 +58,27 @@ namespace LattesDataExtraction.Domain.Tests.Factories
 
             #endregion
         }
+
+        [Test]
+        public void Return_Professional_Description_Service_When_Type_Is_Professional_Description()
+        {
+            #region Arrange
+
+            var professionalDescriptionType = DataInformationType.ProfessionalDescription;
+
+            #endregion
+
+            #region Act
+
+            IGetDataInformationService getDataInformationType = getDataInformationFactory.Create(professionalDescriptionType);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(getDataInformationType.GetType(), Is.EqualTo(typeof(GetProfessionalDescriptionInformationService)));
+
+            #endregion
+        }
     }
 }

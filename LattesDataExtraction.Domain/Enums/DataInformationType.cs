@@ -5,5 +5,7 @@
         CurriculumVitae = 0,
 
         GeneralData = 1,
+
+        ProfessionalDescription = 2,
     }
 }

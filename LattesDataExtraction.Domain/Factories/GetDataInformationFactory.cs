@@ -15,6 +15,9 @@ namespace LattesDataExtraction.Domain.Factories
 
                 case DataInformationType.GeneralData:
                     return new GetGeneralDataInformationService();
+                
+                case DataInformationType.ProfessionalDescription:
+                    return new GetProfessionalDescriptionInformationService();
 
                 default:
                     return null;
