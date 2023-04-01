@@ -6,6 +6,8 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
 {
     internal class GetCurriculumVitaeInformationService : IGetDataInformationService
     {
+        private const string LattesPrefix = "http://lattes.cnpq.br/";
+
         public void GetInformation(AcademicResearcher academicResearcher, XmlDocument academicResearcherDocument)
         {
             XmlNodeList information = academicResearcherDocument.GetElementsByTagName("CURRICULO-VITAE");
@@ -21,6 +23,7 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
                     if (identifierNumber is not null)
                     {
                         academicResearcher.IdentifierNumber = identifierNumber.Value;
+                        academicResearcher.LattesId = LattesPrefix + identifierNumber.Value;
                     }
                 }
             }

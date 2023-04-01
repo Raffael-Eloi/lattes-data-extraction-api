@@ -11,6 +11,8 @@
 
         public string IdentifierNumber { get; set; } = string.Empty;
 
+        public string LattesId { get; set; } = string.Empty;
+
         public string FullName { get; set; } = string.Empty;
 
         public string ProfessionalDescription { get; set; } = string.Empty;
@@ -32,5 +34,7 @@
         public string OrcidId { get; set; } = string.Empty;
 
         public ProfessionalAddress ProfessionalAddress { get; set; }
+
+        public IEnumerable<AcademicBackground> AcademicBackgrounds { get; set; }
     }
 }
