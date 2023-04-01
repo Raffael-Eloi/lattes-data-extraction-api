@@ -2,6 +2,8 @@
 {
     public enum DataInformationType
     {
-        CurriculumVitae = 0,        
+        CurriculumVitae = 0,
+
+        GeneralData = 1,
     }
 }

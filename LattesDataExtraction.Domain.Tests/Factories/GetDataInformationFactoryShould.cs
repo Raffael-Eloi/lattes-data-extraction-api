@@ -36,5 +36,27 @@ namespace LattesDataExtraction.Domain.Tests.Factories
 
             #endregion
         }
+
+        [Test]
+        public void Return_General_Data_Service_When_Type_Is_General_Data()
+        {
+            #region Arrange
+
+            var generalDataType = DataInformationType.GeneralData;
+
+            #endregion
+
+            #region Act
+
+            IGetDataInformationService getDataInformationType = getDataInformationFactory.Create(generalDataType);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(getDataInformationType.GetType(), Is.EqualTo(typeof(GetGeneralDataInformationService)));
+
+            #endregion
+        }
     }
 }
