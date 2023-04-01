@@ -6,13 +6,24 @@ namespace LattesDataExtraction.Domain.Services
 {
     internal class AcademicResearcherDataExtractionService : IAcademicResearcherDataExtractionService
     {
+        private readonly IGetDataInformationService _getCurriculumVitaeInformationService;
+
+        private readonly IGetDataInformationService _getGeneralDataInformationService;
+
         private XmlDocument? _academicResearcherDocument;
 
         private AcademicResearcher? _academicResearch;
 
+        public AcademicResearcherDataExtractionService(
+         )
+        {
+        }
+
         public AcademicResearcher? GetAcademicInformation(string academicResearcherFile)
         {
             LoadXmlFile(academicResearcherFile);
+
+            InitializeAcademicResearcher();
 
             GetCurriculumInformationIfExists();
 
@@ -32,102 +43,19 @@ namespace LattesDataExtraction.Domain.Services
             _academicResearcherDocument.Load(academicResearcherFile);
         }
 
-        private void GetCurriculumInformationIfExists()
+        private void InitializeAcademicResearcher()
         {
             _academicResearch = new();
+        }
 
-            XmlNodeList curriculumVitaeInformation = _academicResearcherDocument.GetElementsByTagName("CURRICULO-VITAE");
-            
-            if (curriculumVitaeInformation.Count < 0) return;
-
-            foreach (XmlNode element in curriculumVitaeInformation)
-            {
-                if (element.Attributes is not null && element.Attributes.Count > 0)
-                {
-                    XmlAttribute? identifierNumber = element.Attributes["NUMERO-IDENTIFICADOR"];
-
-                    if (identifierNumber is not null)
-                    {
-                        _academicResearch.IdentifierNumber = identifierNumber.Value;
-                    }
-                }
-            }
+        private void GetCurriculumInformationIfExists()
+        {
+            _getCurriculumVitaeInformationService.GetInformation(_academicResearch!, _academicResearcherDocument);
         }
 
         private void GetGeneralDataInformationIfExists()
         {
-            XmlNodeList generalDataInformation = _academicResearcherDocument.GetElementsByTagName("DADOS-GERAIS");
-
-            if (generalDataInformation.Count < 0) return;
-
-            foreach (XmlNode element in generalDataInformation)
-            {
-                if (element.Attributes is not null && element.Attributes.Count > 0)
-                {
-                    XmlAttribute? fullName = element.Attributes["NOME-COMPLETO"];
-
-                    if (fullName is not null)
-                    {
-                        _academicResearch!.FullName = fullName.Value;
-                    }
-
-                    XmlAttribute? citationName = element.Attributes["NOME-EM-CITACOES-BIBLIOGRAFICAS"];
-
-                    if (citationName is not null)
-                    {
-                        _academicResearch!.CitationName = citationName.Value;
-                    }
-                    
-                    XmlAttribute? nationality = element.Attributes["NACIONALIDADE"];
-
-                    if (nationality is not null)
-                    {
-                        _academicResearch!.Nationality = nationality.Value;
-                    }
-
-                    XmlAttribute? countryOfBirth = element.Attributes["PAIS-DE-NASCIMENTO"];
-
-                    if (countryOfBirth is not null)
-                    {
-                        _academicResearch!.CountryOfBirth = countryOfBirth.Value;
-                    }
-
-                    XmlAttribute? stateOfBirth = element.Attributes["UF-NASCIMENTO"];
-
-                    if (stateOfBirth is not null)
-                    {
-                        _academicResearch!.StateOfBirth = stateOfBirth.Value;
-                    }
-                    
-                    XmlAttribute? cityOfBirth = element.Attributes["CIDADE-NASCIMENTO"];
-
-                    if (cityOfBirth is not null)
-                    {
-                        _academicResearch!.CityOfBirth = cityOfBirth.Value;
-                    }
-
-                    XmlAttribute? countryCode = element.Attributes["SIGLA-PAIS-NACIONALIDADE"];
-
-                    if (countryCode is not null)
-                    {
-                        _academicResearch!.CountryCode = countryCode.Value;
-                    }
-
-                    XmlAttribute? nationalityCountry = element.Attributes["PAIS-DE-NACIONALIDADE"];
-
-                    if (nationalityCountry is not null)
-                    {
-                        _academicResearch!.NationalityCountry = nationalityCountry.Value;
-                    }
-
-                    XmlAttribute? orcidId = element.Attributes["ORCID-ID"];
-
-                    if (orcidId is not null)
-                    {
-                        _academicResearch!.OrcidId = orcidId.Value;
-                    }
-                }
-            }
+            _getGeneralDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument);
         }
         
         private void GetProfessionalDescriptionInformationIfExists()
