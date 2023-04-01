@@ -1,8 +1,8 @@
 ﻿namespace LattesDataExtraction.Domain.Entities
 {
-    public class AcademicResearch
+    public class AcademicResearcher
     {
-        public AcademicResearch()
+        public AcademicResearcher()
         {
             ProfessionalAddress = new ProfessionalAddress();
         }

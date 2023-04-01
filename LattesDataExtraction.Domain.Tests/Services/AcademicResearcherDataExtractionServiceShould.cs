@@ -25,7 +25,7 @@ namespace LattesDataExtraction.Domain.Tests.Services
 
             #region Act
 
-            AcademicResearch? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
 
             #endregion
 
@@ -50,7 +50,7 @@ namespace LattesDataExtraction.Domain.Tests.Services
 
             #region Act
 
-            AcademicResearch? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
 
             #endregion
 
@@ -95,7 +95,7 @@ namespace LattesDataExtraction.Domain.Tests.Services
 
             #region Act
 
-            AcademicResearch? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
 
             #endregion
 
@@ -124,7 +124,7 @@ namespace LattesDataExtraction.Domain.Tests.Services
 
             #region Act
 
-            AcademicResearch? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
 
             #endregion
 

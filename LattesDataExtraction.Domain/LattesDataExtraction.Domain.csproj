@@ -11,4 +11,8 @@
 		<InternalsVisibleTo Include="LattesDataExtraction.Domain.Tests" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Services\DataExtraction\" />
+	</ItemGroup>
+
 </Project>

@@ -8,9 +8,9 @@ namespace LattesDataExtraction.Domain.Services
     {
         private XmlDocument? _academicResearcherDocument;
 
-        private AcademicResearch? _academicResearch;
+        private AcademicResearcher? _academicResearch;
 
-        public AcademicResearch? GetAcademicInformation(string academicResearcherFile)
+        public AcademicResearcher? GetAcademicInformation(string academicResearcherFile)
         {
             LoadXmlFile(academicResearcherFile);
 
