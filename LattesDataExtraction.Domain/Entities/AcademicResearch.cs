@@ -2,6 +2,13 @@
 {
     public class AcademicResearch
     {
+        public AcademicResearch()
+        {
+            ProfessionalAddress = new ProfessionalAddress();
+        }
+
+        public Guid Id { get; set; }
+
         public string IdentifierNumber { get; set; } = string.Empty;
 
         public string FullName { get; set; } = string.Empty;
@@ -24,6 +31,6 @@
 
         public string OrcidId { get; set; } = string.Empty;
 
-        public ProfessionalAddress? ProfessionalAddress { get; set; }
+        public ProfessionalAddress ProfessionalAddress { get; set; }
     }
 }

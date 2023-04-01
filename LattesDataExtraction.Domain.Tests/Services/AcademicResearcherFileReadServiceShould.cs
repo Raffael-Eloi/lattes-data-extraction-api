@@ -146,8 +146,6 @@ namespace LattesDataExtraction.Domain.Tests.Services
 
             Assert.That(academicResearcher, Is.Not.Null);
 
-            Assert.That(academicResearcher.ProfessionalAddress, Is.Not.Null);
-
             Assert.Multiple(() =>
             {
                 Assert.That(academicResearcher.ProfessionalAddress.CompanyCode, Is.EqualTo(expectedCompanyCode));
