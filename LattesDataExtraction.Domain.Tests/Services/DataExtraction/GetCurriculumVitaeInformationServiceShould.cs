@@ -1,4 +1,6 @@
-﻿using LattesDataExtraction.Domain.Entities;
+﻿using LattesDataExtraction.Domain.Contracts;
+using LattesDataExtraction.Domain.Entities;
+using LattesDataExtraction.Domain.Services.DataExtraction;
 using System.Xml;
 
 namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction

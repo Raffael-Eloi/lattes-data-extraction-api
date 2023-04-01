@@ -1,7 +1,7 @@
 ﻿using LattesDataExtraction.Domain.Entities;
 using System.Xml;
 
-namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
+namespace LattesDataExtraction.Domain.Contracts
 {
     internal interface IGetDataInformationService
     {
