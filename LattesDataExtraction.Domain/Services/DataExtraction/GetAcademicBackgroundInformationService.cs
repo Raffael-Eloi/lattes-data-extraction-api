@@ -23,6 +23,8 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
 
             GetGraduationInformationIfExist();
 
+            GetSpecializationInformationIfExist();
+
             _academicResearcher.AcademicBackgrounds = academicBackgroundsInformation;
         }
 
@@ -107,6 +109,75 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
                     XmlAttribute? endYear = element.Attributes["ANO-DE-CONCLUSAO"];
 
                     if (endYear is not null)
+                    {
+                        academicBackground.EndYear = new DateOnly(int.Parse(endYear.Value), 1, 1);
+                    }
+
+                    academicBackgroundsInformation!.Add(academicBackground);
+                }
+            }
+        }
+
+        private void GetSpecializationInformationIfExist()
+        {
+            XmlNodeList academicBackgroundInformation = _academicResearcherDocument!.GetElementsByTagName("ESPECIALIZACAO");
+
+            if (academicBackgroundInformation.Count < 0) return;
+
+            foreach (XmlNode element in academicBackgroundInformation)
+            {
+                if (element.Attributes is not null && element.Attributes.Count > 0)
+                {
+                    AcademicBackground academicBackground = new()
+                    {
+                        AcademicBackgroundType = AcademicBackgroundType.Specialization
+                    };
+
+                    XmlAttribute? instituitionName = element.Attributes["NOME-INSTITUICAO"];
+
+                    if (instituitionName is not null)
+                    {
+                        academicBackground.InstituitionName = instituitionName.Value;
+                    }
+
+                    XmlAttribute? instituitionCode = element.Attributes["CODIGO-INSTITUICAO"];
+
+                    if (instituitionCode is not null)
+                    {
+                        academicBackground.InstituitionCode = instituitionCode.Value;
+                    }
+
+                    XmlAttribute? courseName = element.Attributes["NOME-CURSO"];
+
+                    if (courseName is not null)
+                    {
+                        academicBackground.CourseName = courseName.Value;
+                    }
+
+                    XmlAttribute? courseCode = element.Attributes["CODIGO-CURSO"];
+
+                    if (courseCode is not null)
+                    {
+                        academicBackground.CourseCode = courseCode.Value;
+                    }
+
+                    XmlAttribute? courseStatus = element.Attributes["STATUS-DO-CURSO"];
+
+                    if (courseStatus is not null)
+                    {
+                        academicBackground.CourseStatus = courseStatus.Value;
+                    }
+
+                    XmlAttribute? startYear = element.Attributes["ANO-DE-INICIO"];
+
+                    if (startYear is not null && !string.IsNullOrEmpty(startYear.Value))
+                    {
+                        academicBackground.StartYear = new DateOnly(int.Parse(startYear.Value), 1, 1);
+                    }
+
+                    XmlAttribute? endYear = element.Attributes["ANO-DE-CONCLUSAO"];
+
+                    if (endYear is not null && !string.IsNullOrEmpty(endYear.Value))
                     {
                         academicBackground.EndYear = new DateOnly(int.Parse(endYear.Value), 1, 1);
                     }

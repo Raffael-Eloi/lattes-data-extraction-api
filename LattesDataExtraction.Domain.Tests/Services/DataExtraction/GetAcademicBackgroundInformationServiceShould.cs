@@ -49,9 +49,15 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             string espectedComputerScienceCourseName = "Ciências da Computação";
 
 
-            var psychologyVerification = academicResearcher.AcademicBackgrounds.FirstOrDefault(x => x.CourseCode == espectedPsychologyCourseCode && x.CourseName == espectedPsychologyCourseName);
+            var psychologyVerification = academicResearcher.AcademicBackgrounds
+                .FirstOrDefault(x => x.CourseCode == espectedPsychologyCourseCode && 
+                    x.CourseName == espectedPsychologyCourseName && 
+                    x.AcademicBackgroundType == Enums.AcademicBackgroundType.Graduation);
 
-            var computerScienceVerification = academicResearcher.AcademicBackgrounds.FirstOrDefault(x => x.CourseCode == espectedComputerScienceCourseCode && x.CourseName == espectedComputerScienceCourseName);
+            var computerScienceVerification = academicResearcher.AcademicBackgrounds
+                .FirstOrDefault(x => x.CourseCode == espectedComputerScienceCourseCode 
+                    && x.CourseName == espectedComputerScienceCourseName &&
+                    x.AcademicBackgroundType == Enums.AcademicBackgroundType.Graduation);
 
             Assert.That(academicResearcher, Is.Not.Null);
 
@@ -90,9 +96,15 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             string espectedPsychologyCourseName = "Psicologia positiva, ciência do bem-estar e autorrealização";
 
 
-            var techCourseVerification = academicResearcher.AcademicBackgrounds.FirstOrDefault(x => x.CourseCode == espectedTechCourseCode && x.CourseName == espectedTechCourseName);
+            var techCourseVerification = academicResearcher.AcademicBackgrounds
+                .FirstOrDefault(x => x.CourseCode == espectedTechCourseCode 
+                && x.CourseName == espectedTechCourseName &&
+                x.AcademicBackgroundType == Enums.AcademicBackgroundType.Specialization);
 
-            var psychologyVerification = academicResearcher.AcademicBackgrounds.FirstOrDefault(x => x.CourseCode == espectedPsychologyCourseCode && x.CourseName == espectedPsychologyCourseName);
+            var psychologyVerification = academicResearcher.AcademicBackgrounds
+                .FirstOrDefault(x => x.CourseCode == espectedPsychologyCourseCode && 
+                x.CourseName == espectedPsychologyCourseName &&
+                x.AcademicBackgroundType == Enums.AcademicBackgroundType.Specialization);
 
             Assert.That(academicResearcher, Is.Not.Null);
 
