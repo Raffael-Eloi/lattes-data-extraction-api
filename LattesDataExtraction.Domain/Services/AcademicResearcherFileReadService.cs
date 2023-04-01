@@ -14,7 +14,9 @@ namespace LattesDataExtraction.Domain.Services
         {
             LoadXmlFile(academicResearcherFile);
 
-            GetCurriculumInformationIfExist();
+            GetCurriculumInformationIfExists();
+
+            GetGeneralDataInformationIfExists();
 
             return _academicResearch;
         }
@@ -26,7 +28,7 @@ namespace LattesDataExtraction.Domain.Services
             _academicResearcherDocument.Load(academicResearcherFile);
         }
 
-        private void GetCurriculumInformationIfExist()
+        private void GetCurriculumInformationIfExists()
         {
             _academicResearch = new();
 
@@ -43,6 +45,83 @@ namespace LattesDataExtraction.Domain.Services
                     if (identifierNumber != null)
                     {
                         _academicResearch.IdentifierNumber = identifierNumber.Value;
+                    }
+                }
+
+            }
+        }
+
+        private void GetGeneralDataInformationIfExists()
+        {
+            XmlNodeList generalDataInformation = _academicResearcherDocument.GetElementsByTagName("DADOS-GERAIS");
+
+            if (generalDataInformation.Count < 0) return;
+
+            foreach (XmlNode element in generalDataInformation)
+            {
+                if (element.Attributes != null && element.Attributes.Count > 0)
+                {
+                    XmlAttribute? fullName = element.Attributes["NOME-COMPLETO"];
+
+                    if (fullName != null)
+                    {
+                        _academicResearch!.FullName = fullName.Value;
+                    }
+
+                    XmlAttribute? citationName = element.Attributes["NOME-EM-CITACOES-BIBLIOGRAFICAS"];
+
+                    if (citationName != null)
+                    {
+                        _academicResearch!.CitationName = citationName.Value;
+                    }
+                    
+                    XmlAttribute? nationality = element.Attributes["NACIONALIDADE"];
+
+                    if (nationality != null)
+                    {
+                        _academicResearch!.Nationality = nationality.Value;
+                    }
+
+                    XmlAttribute? countryOfBirth = element.Attributes["PAIS-DE-NASCIMENTO"];
+
+                    if (countryOfBirth != null)
+                    {
+                        _academicResearch!.CountryOfBirth = countryOfBirth.Value;
+                    }
+
+                    XmlAttribute? stateOfBirth = element.Attributes["UF-NASCIMENTO"];
+
+                    if (stateOfBirth != null)
+                    {
+                        _academicResearch!.StateOfBirth = stateOfBirth.Value;
+                    }
+                    
+                    XmlAttribute? cityOfBirth = element.Attributes["CIDADE-NASCIMENTO"];
+
+                    if (cityOfBirth != null)
+                    {
+                        _academicResearch!.CityOfBirth = cityOfBirth.Value;
+                    }
+
+                    XmlAttribute? countryCode = element.Attributes["SIGLA-PAIS-NACIONALIDADE"];
+
+                    if (countryCode != null)
+                    {
+                        _academicResearch!.CountryCode = countryCode.Value;
+                    }
+
+                    XmlAttribute? nationalityCountry = element.Attributes["PAIS-DE-NACIONALIDADE"];
+
+                    if (nationalityCountry != null)
+                    {
+                        _academicResearch!.NationalityCountry = nationalityCountry.Value;
+                    }
+
+                    XmlAttribute? orcidId = element.Attributes["ORCID-ID"];
+
+                    if (orcidId != null)
+                    {
+                        _academicResearch!.OrcidId = orcidId.Value;
                     }
                 }
 
