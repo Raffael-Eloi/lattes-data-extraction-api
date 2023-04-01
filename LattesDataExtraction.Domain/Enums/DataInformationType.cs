@@ -7,5 +7,7 @@
         GeneralData = 1,
 
         ProfessionalDescription = 2,
+
+        ProfessionalAddress = 3,
     }
 }

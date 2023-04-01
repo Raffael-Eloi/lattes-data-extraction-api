@@ -19,6 +19,9 @@ namespace LattesDataExtraction.Domain.Factories
                 case DataInformationType.ProfessionalDescription:
                     return new GetProfessionalDescriptionInformationService();
 
+                case DataInformationType.ProfessionalAddress:
+                    return new GetProfessionalAddressInformationService();
+
                 default:
                     return null;
             }

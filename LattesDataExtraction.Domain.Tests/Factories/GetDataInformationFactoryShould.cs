@@ -80,5 +80,27 @@ namespace LattesDataExtraction.Domain.Tests.Factories
 
             #endregion
         }
+
+        [Test]
+        public void Return_Professional_Address_Service_When_Type_Is_Professional_Address()
+        {
+            #region Arrange
+
+            var professionalAddressType = DataInformationType.ProfessionalAddress;
+
+            #endregion
+
+            #region Act
+
+            IGetDataInformationService getDataInformationType = getDataInformationFactory.Create(professionalAddressType);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(getDataInformationType.GetType(), Is.EqualTo(typeof(GetProfessionalAddressInformationService)));
+
+            #endregion
+        }
     }
 }
