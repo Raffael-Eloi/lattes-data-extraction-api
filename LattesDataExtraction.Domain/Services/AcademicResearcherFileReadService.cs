@@ -6,23 +6,47 @@ namespace LattesDataExtraction.Domain.Services
 {
     internal class AcademicResearcherFileReadService : IAcademicResearcherFileReadService
     {
+        private XmlDocument? _academicResearcherDocument;
+
+        private AcademicResearch? _academicResearch;
+
         public AcademicResearch? GetAcademicInformation(string academicResearcherFile)
         {
-            XmlDocument document = new XmlDocument();
+            LoadXmlFile(academicResearcherFile);
 
-            document.Load(academicResearcherFile);
+            GetCurriculumInformationIfExist();
 
-            var academicResearch = new AcademicResearch();
+            return _academicResearch;
+        }
 
-            XmlNodeList curriculumVitaeInformation = document.GetElementsByTagName("CURRICULO-VITAE");
+        private void LoadXmlFile(string academicResearcherFile)
+        {
+            _academicResearcherDocument = new();
 
-            for (int i = 0; i < curriculumVitaeInformation.Count; i++)
+            _academicResearcherDocument.Load(academicResearcherFile);
+        }
+
+        private void GetCurriculumInformationIfExist()
+        {
+            _academicResearch = new();
+
+            XmlNodeList curriculumVitaeInformation = _academicResearcherDocument.GetElementsByTagName("CURRICULO-VITAE");
+            
+            if (curriculumVitaeInformation.Count < 0) return;
+
+            foreach (XmlNode element in curriculumVitaeInformation)
             {
-                string identifierNumber = curriculumVitaeInformation[i].Attributes["NUMERO-IDENTIFICADOR"].Value;
-                academicResearch.IdentifierNumber = identifierNumber;
-            }
+                if (element.Attributes != null && element.Attributes.Count > 0)
+                {
+                    XmlAttribute? identifierNumber = element.Attributes["NUMERO-IDENTIFICADOR"];
 
-            return academicResearch;
+                    if (identifierNumber != null)
+                    {
+                        _academicResearch.IdentifierNumber = identifierNumber.Value;
+                    }
+                }
+
+            }
         }
     }
 }
