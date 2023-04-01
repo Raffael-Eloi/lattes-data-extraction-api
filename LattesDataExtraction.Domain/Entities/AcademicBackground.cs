@@ -10,6 +10,10 @@ namespace LattesDataExtraction.Domain.Entities
 
         public string CourseCode { get; set; } = string.Empty;
 
+        public string CourseStatus { get; set; } = string.Empty;
+
+        public string AreaCourseCode { get; set; } = string.Empty;
+
         public string InstituitionName { get; set; } = string.Empty;
 
         public string InstituitionCode { get; set; } = string.Empty;
