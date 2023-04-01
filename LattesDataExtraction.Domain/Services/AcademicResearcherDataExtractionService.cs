@@ -127,7 +127,6 @@ namespace LattesDataExtraction.Domain.Services
                         _academicResearch!.OrcidId = orcidId.Value;
                     }
                 }
-
             }
         }
         
