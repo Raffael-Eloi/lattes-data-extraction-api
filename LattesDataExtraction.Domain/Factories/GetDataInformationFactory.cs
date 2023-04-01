@@ -13,6 +13,9 @@ namespace LattesDataExtraction.Domain.Factories
                 case DataInformationType.CurriculumVitae:
                     return new GetCurriculumVitaeInformationService();
 
+                case DataInformationType.GeneralData:
+                    return new GetGeneralDataInformationService();
+
                 default:
                     return null;
             }
