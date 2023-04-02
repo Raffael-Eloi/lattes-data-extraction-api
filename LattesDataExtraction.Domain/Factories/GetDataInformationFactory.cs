@@ -30,6 +30,9 @@ namespace LattesDataExtraction.Domain.Factories
                 case DataInformationType.PublishedArticles:
                     return new GetPublishedArticlesInformationService();
 
+                case DataInformationType.BooksOrganizedOrPublished:
+                    return new GetBooksOrganizedOrPublishedInformationService();
+
                 default:
                     throw new ArgumentException(DataInformationTypeNotImplementedMessage);
             }
