@@ -43,21 +43,53 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             #region Assert
 
             string expectedPsychologyCourseCode = "90000008";
+            string expectedPsychologyAreaCourseCode = "90000008";
             string expectedPsychologyCourseName = "Psicologia";
+            string expectedPsychologyFinalPaperTitle = "LUTO NO VIRTUAL: verificação da relação entre as fases do luto e a extinção operante a partir da vivência compartilhada em uma rede social virtual";
+            string expectedPsychologyCourseStatus = "CONCLUIDO";
+            string expectedPsychologyInstituitionName = "Centro Universitário Luterano de Palmas";
+            string expectedPsychologyInstituitionCode = "000100000991";
+            int expectedPsychologyStartYear = 2006;
+            int expectedPsychologyEndYear = 2012;
 
             string expectedComputerScienceCourseCode = "90000001";
+            string expectedComputerScienceAreaCourseCode = "90000001";
             string expectedComputerScienceCourseName = "Ciências da Computação";
+            string expectedComputerScienceFinalPaperTitle = "Revista Multimídia sobre a Ilha de Santa Catarina";
+            string expectedComputerScienceCourseStatus = "CONCLUIDO";
+            string expectedComputerScienceInstituitionName = "Universidade Federal de Santa Catarina";
+            string expectedComputerScienceInstituitionCode = "004300000009";
+            int expectedComputerScienceStartYear = 1991;
+            int expectedComputerScienceEndYear = 1995;
 
 
             var psychologyVerification = academicResearcher.AcademicBackgrounds
-                .FirstOrDefault(x => x.CourseCode == expectedPsychologyCourseCode && 
-                    x.CourseName == expectedPsychologyCourseName && 
-                    x.AcademicBackgroundType == Enums.AcademicBackgroundType.Graduation);
+                .FirstOrDefault(
+                    x => 
+                        x.CourseCode == expectedPsychologyCourseCode &&
+                        x.AreaCourseCode == expectedPsychologyAreaCourseCode &&
+                        x.CourseName == expectedPsychologyCourseName &&
+                        x.InstituitionCode == expectedPsychologyInstituitionCode &&
+                        x.InstituitionName == expectedPsychologyInstituitionName &&
+                        x.FinalPaperTitle == expectedPsychologyFinalPaperTitle &&
+                        x.CourseStatus == expectedPsychologyCourseStatus &&
+                        x.StartYear.Year == expectedPsychologyStartYear && 
+                        x.EndYear.Year == expectedPsychologyEndYear && 
+                        x.AcademicBackgroundType == Enums.AcademicBackgroundType.Graduation);
 
             var computerScienceVerification = academicResearcher.AcademicBackgrounds
-                .FirstOrDefault(x => x.CourseCode == expectedComputerScienceCourseCode 
-                    && x.CourseName == expectedComputerScienceCourseName &&
-                    x.AcademicBackgroundType == Enums.AcademicBackgroundType.Graduation);
+                .FirstOrDefault(
+                    x => 
+                        x.CourseCode == expectedComputerScienceCourseCode &&
+                        x.AreaCourseCode == expectedComputerScienceAreaCourseCode &&
+                        x.CourseName == expectedComputerScienceCourseName &&
+                        x.InstituitionCode == expectedComputerScienceInstituitionCode &&
+                        x.InstituitionName == expectedComputerScienceInstituitionName &&
+                        x.FinalPaperTitle == expectedComputerScienceFinalPaperTitle &&
+                        x.CourseStatus == expectedComputerScienceCourseStatus &&
+                        x.StartYear.Year == expectedComputerScienceStartYear &&
+                        x.EndYear.Year == expectedComputerScienceEndYear &&
+                        x.AcademicBackgroundType == Enums.AcademicBackgroundType.Graduation);
 
             Assert.That(academicResearcher, Is.Not.Null);
 
