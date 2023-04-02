@@ -1,5 +1,6 @@
 ﻿using LattesDataExtraction.Domain.Contracts;
 using LattesDataExtraction.Domain.Entities;
+using LattesDataExtraction.Domain.Services.DataExtraction;
 using System.Xml;
 
 namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
@@ -23,7 +24,7 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
         }
 
         [Test]
-        public void Get_Published_Articles_Information_From_Xml_Document()
+        public void Get_Information_From_Xml_Document()
         {
             #region Arrange
 
@@ -76,14 +77,31 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
                         x.Series == expectedSeries &&
                         x.Volume == expectedVolume &&
                         x.TitleOfJornalOrMagazine == expectedTitleOfJornalOrMagazine &&
-                        x.InitialPage == expectedInitialPage &&
-                        x.Authors.Contains(expectedFirstAuthor) &&
-                        x.Authors.Contains(expectedSecondAuthor)
+                        x.InitialPage == expectedInitialPage
                 );
+            
+            
+            Assert.That(scientificArticleVerification, Is.Not.Null);
 
+            var isFirstAuthorInListOfAuthors = scientificArticleVerification.Authors
+                .FirstOrDefault(
+                    author => 
+                        author.FullName == expectedFirstAuthor.FullName &&
+                        author.CitationName == expectedFirstAuthor.CitationName &&
+                        author.CNPQId == expectedFirstAuthor.CNPQId
+                 );
+
+            var isSecondAuthorInListOfAuthors = scientificArticleVerification.Authors
+                .FirstOrDefault(
+                    author =>
+                        author.FullName == expectedSecondAuthor.FullName &&
+                        author.CitationName == expectedSecondAuthor.CitationName &&
+                        author.CNPQId == expectedSecondAuthor.CNPQId
+                 );
             Assert.Multiple(() =>
             {
-                Assert.That(scientificArticleVerification, Is.Not.Null);
+                Assert.That(isFirstAuthorInListOfAuthors, Is.Not.Null);
+                Assert.That(isSecondAuthorInListOfAuthors, Is.Not.Null);
             });
 
             #endregion
