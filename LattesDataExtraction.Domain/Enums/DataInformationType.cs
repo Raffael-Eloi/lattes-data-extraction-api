@@ -11,5 +11,7 @@
         ProfessionalDescription = 3,
 
         ProfessionalAddress = 4,
+
+        AcademicBackground = 5,
     }
 }
