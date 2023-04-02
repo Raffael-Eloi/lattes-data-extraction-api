@@ -13,5 +13,7 @@
         ProfessionalAddress = 4,
 
         AcademicBackground = 5,
+
+        PublishedArticles = 6,
     }
 }
