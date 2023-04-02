@@ -41,5 +41,33 @@ namespace LattesDataExtraction.Domain.Tests.Services
 
             #endregion
         }
+
+        [Test]
+        public void Extract_General_Data_Information_From_File()
+        {
+            #region Arrange
+
+            var academicResearcherFile = @"C:\useful\researcher.xml";
+
+            #endregion
+
+            #region Act
+
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(academicResearcher, Is.Not.Null);
+            Assert.That(academicResearcher.FullName, Is.Not.Null);
+            Assert.That(academicResearcher.CitationName, Is.Not.Null);
+            Assert.That(academicResearcher.CountryOfBirth, Is.Not.Null);
+            Assert.That(academicResearcher.StateOfBirth, Is.Not.Null);
+            Assert.That(academicResearcher.CityOfBirth, Is.Not.Null);
+            Assert.That(academicResearcher.OrcidId, Is.Not.Null);
+
+            #endregion
+        }
     }
 }

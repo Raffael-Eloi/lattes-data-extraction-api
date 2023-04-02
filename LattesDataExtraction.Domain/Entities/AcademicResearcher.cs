@@ -19,8 +19,6 @@
 
         public string CitationName { get; set; } = string.Empty;
 
-        public string Nationality { get; set; } = string.Empty;
-
         public string CountryOfBirth { get; set; } = string.Empty;
 
         public string StateOfBirth { get; set; } = string.Empty;

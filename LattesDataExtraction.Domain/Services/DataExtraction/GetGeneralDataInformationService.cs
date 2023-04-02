@@ -30,13 +30,6 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
                         academicResearcher.CitationName = citationName.Value;
                     }
 
-                    XmlAttribute? nationality = element.Attributes["NACIONALIDADE"];
-
-                    if (nationality is not null)
-                    {
-                        academicResearcher.Nationality = nationality.Value;
-                    }
-
                     XmlAttribute? countryOfBirth = element.Attributes["PAIS-DE-NASCIMENTO"];
 
                     if (countryOfBirth is not null)

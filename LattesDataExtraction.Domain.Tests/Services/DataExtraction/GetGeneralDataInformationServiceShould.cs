@@ -44,7 +44,6 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
 
             string expectedFullName = "Fabiano Fagundes";
             string expectedCitationName = "FAGUNDES, Fabiano;FAGUNDES, FABIANO";
-            string expectedNationality = "B";
             string expectedCountryOfBirth = "Brasil";
             string expectedStateOfBirth = "SC";
             string expectedCityOfBirth = "Florianópolis";
@@ -58,7 +57,6 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             {
                 Assert.That(academicResearcher.FullName, Is.EqualTo(expectedFullName));
                 Assert.That(academicResearcher.CitationName, Is.EqualTo(expectedCitationName));
-                Assert.That(academicResearcher.Nationality, Is.EqualTo(expectedNationality));
                 Assert.That(academicResearcher.CountryOfBirth, Is.EqualTo(expectedCountryOfBirth));
                 Assert.That(academicResearcher.StateOfBirth, Is.EqualTo(expectedStateOfBirth));
                 Assert.That(academicResearcher.CityOfBirth, Is.EqualTo(expectedCityOfBirth));
