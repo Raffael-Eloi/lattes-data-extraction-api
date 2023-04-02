@@ -160,7 +160,34 @@ namespace LattesDataExtraction.Domain.Tests.Services
 
             Assert.That(academicResearcher.AcademicBackground, Is.Not.Null);
 
-            Assert.That(academicResearcher.AcademicBackground.ToList, Has.Count.EqualTo(8));
+            Assert.That(academicResearcher.AcademicBackground.ToList(), Has.Count.EqualTo(8));
+
+            #endregion
+        }
+
+        [Test]
+        public void Extract_Published_Articles_Information_From_File()
+        {
+            #region Arrange
+
+            var academicResearcherFile = @"C:\useful\researcher.xml";
+
+            #endregion
+
+            #region Act
+
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(academicResearcher, Is.Not.Null);
+
+            Assert.That(academicResearcher.PublishedArticles, Is.Not.Null);
+
+            Assert.That(academicResearcher.PublishedArticles.ToList(), Has.Count.EqualTo(3));
+            Assert.That(academicResearcher.PublishedArticles.First().Authors.ToList(), Has.Count.GreaterThan(1));
 
             #endregion
         }
