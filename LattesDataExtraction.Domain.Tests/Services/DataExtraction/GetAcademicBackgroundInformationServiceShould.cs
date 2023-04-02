@@ -129,14 +129,18 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
 
 
             var techCourseVerification = academicResearcher.AcademicBackgrounds
-                .FirstOrDefault(x => x.CourseCode == expectedTechCourseCode 
-                && x.CourseName == expectedTechCourseName &&
-                x.AcademicBackgroundType == Enums.AcademicBackgroundType.Specialization);
+                .FirstOrDefault(
+                    x =>
+                        x.CourseCode == expectedTechCourseCode &&
+                        x.CourseName == expectedTechCourseName &&
+                        x.AcademicBackgroundType == Enums.AcademicBackgroundType.Specialization);
 
             var psychologyVerification = academicResearcher.AcademicBackgrounds
-                .FirstOrDefault(x => x.CourseCode == expectedPsychologyCourseCode && 
-                x.CourseName == expectedPsychologyCourseName &&
-                x.AcademicBackgroundType == Enums.AcademicBackgroundType.Specialization);
+                .FirstOrDefault(
+                    x => 
+                        x.CourseCode == expectedPsychologyCourseCode && 
+                        x.CourseName == expectedPsychologyCourseName &&
+                        x.AcademicBackgroundType == Enums.AcademicBackgroundType.Specialization);
 
             Assert.That(academicResearcher, Is.Not.Null);
 
@@ -181,19 +185,21 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             string expectedKeyWord4 = "HTML+TIME";
 
             var mastersVerification = academicResearcher.AcademicBackgrounds
-                .FirstOrDefault(x => x.CourseCode == expectedComputerScienceCourseCode
-                && x.CourseName == expectedComputerScienceCourseName &&
-                x.CourseCodeCapes == expectedCourseCodeCapes &&
-                x.IdOasis == expectedIdOasis &&
-                x.AdvisorName == expectedAdvisorName && 
-                x.AdvisorCode == expectedAdvisorCode &&
-                x.MasterThesis == expectedMasterThesis &&
-                x.KeyWords.Contains(expectedKeyWord1) &&
-                x.KeyWords.Contains(expectedKeyWord2) &&
-                x.KeyWords.Contains(expectedKeyWord3) &&
-                x.KeyWords.Contains(expectedKeyWord4) &&
-                x.KeyWords.Count() == 4 &&
-                x.AcademicBackgroundType == Enums.AcademicBackgroundType.Master);
+                .FirstOrDefault(
+                    x => 
+                        x.CourseCode == expectedComputerScienceCourseCode && 
+                        x.CourseName == expectedComputerScienceCourseName &&
+                        x.CourseCodeCapes == expectedCourseCodeCapes &&
+                        x.IdOasis == expectedIdOasis &&
+                        x.AdvisorName == expectedAdvisorName && 
+                        x.AdvisorCode == expectedAdvisorCode &&
+                        x.MasterThesis == expectedMasterThesis &&
+                        x.KeyWords.Contains(expectedKeyWord1) &&
+                        x.KeyWords.Contains(expectedKeyWord2) &&
+                        x.KeyWords.Contains(expectedKeyWord3) &&
+                        x.KeyWords.Contains(expectedKeyWord4) &&
+                        x.KeyWords.Count() == 4 &&
+                        x.AcademicBackgroundType == Enums.AcademicBackgroundType.Master);
 
             Assert.Multiple(() =>
             {
