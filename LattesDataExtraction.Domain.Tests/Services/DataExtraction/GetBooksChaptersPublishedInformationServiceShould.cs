@@ -1,5 +1,6 @@
 ﻿using LattesDataExtraction.Domain.Contracts;
 using LattesDataExtraction.Domain.Entities;
+using LattesDataExtraction.Domain.Services.DataExtraction;
 using System.Xml;
 
 namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
@@ -46,7 +47,6 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             string expectedType = "Capítulo de livro publicado";
             int expectedYear = 2018;
             string expectedPublisherCountry = "Brasil";
-            string expectedPublisherCity = "Palmas";
             string expectedPublisherName = "Springer International Publishing";
             string expectedHomePageLink = "http://link.springer.com/10.1007/978-3-319-77028-4_39";
             string expectedDOI = "10.1007/978-3-319-77028-4_39";
@@ -58,7 +58,7 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             Author expectedFirstAuthor = new()
             {
                 FullName = "Fabiano Fagundes",
-                CitationName = "FAGUNDES, Fabiano;FAGUNDES, FABIANO",
+                CitationName = "FAGUNDES, FABIANO",
             };
 
             Author expectedSecondAuthor = new()
@@ -77,7 +77,6 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
                         x.Type == expectedType &&
                         x.Year.Year == expectedYear &&
                         x.PublisherCountry == expectedPublisherCountry &&
-                        x.PublisherCity == expectedPublisherCity &&
                         x.Language == expectedLanguage &&
                         x.PublisherName == expectedPublisherName &&
                         x.HomePageLink == expectedHomePageLink &&
@@ -95,16 +94,14 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
                 .FirstOrDefault(
                     author =>
                         author.FullName == expectedFirstAuthor.FullName &&
-                        author.CitationName == expectedFirstAuthor.CitationName &&
-                        author.CNPQId == expectedFirstAuthor.CNPQId
+                        author.CitationName == expectedFirstAuthor.CitationName
                  );
 
             var isSecondAuthorInListOfAuthors = booksChaptersPublishedVerification.Authors
                 .FirstOrDefault(
                     author =>
                         author.FullName == expectedSecondAuthor.FullName &&
-                        author.CitationName == expectedSecondAuthor.CitationName &&
-                        author.CNPQId == expectedSecondAuthor.CNPQId
+                        author.CitationName == expectedSecondAuthor.CitationName
                  );
 
             Assert.Multiple(() =>

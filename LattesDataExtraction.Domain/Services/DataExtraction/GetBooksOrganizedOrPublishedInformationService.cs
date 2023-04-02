@@ -48,7 +48,6 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
                         GetBookDetails(bookElement);
 
                         GetAuthors(bookElement);
-                        
                     }
 
                     _book.Authors = _authors;
