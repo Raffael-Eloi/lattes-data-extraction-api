@@ -37,6 +37,7 @@ namespace LattesDataExtraction.Domain.Tests.Services
             #region Assert
 
             Assert.That(academicResearcher, Is.Not.Null);
+
             Assert.That(academicResearcher.IdentifierNumber, Is.Not.Null);
 
             #endregion
@@ -60,12 +61,39 @@ namespace LattesDataExtraction.Domain.Tests.Services
             #region Assert
 
             Assert.That(academicResearcher, Is.Not.Null);
-            Assert.That(academicResearcher.FullName, Is.Not.Null);
-            Assert.That(academicResearcher.CitationName, Is.Not.Null);
-            Assert.That(academicResearcher.CountryOfBirth, Is.Not.Null);
-            Assert.That(academicResearcher.StateOfBirth, Is.Not.Null);
-            Assert.That(academicResearcher.CityOfBirth, Is.Not.Null);
-            Assert.That(academicResearcher.OrcidId, Is.Not.Null);
+            
+            Assert.Multiple(() =>
+            {
+                Assert.That(academicResearcher.FullName, Is.Not.Null);
+                Assert.That(academicResearcher.CitationName, Is.Not.Null);
+                Assert.That(academicResearcher.CountryOfBirth, Is.Not.Null);
+                Assert.That(academicResearcher.StateOfBirth, Is.Not.Null);
+                Assert.That(academicResearcher.CityOfBirth, Is.Not.Null);
+                Assert.That(academicResearcher.OrcidId, Is.Not.Null);
+            });
+
+            #endregion
+        }
+
+        [Test]
+        public void Extract_Professional_Description_Information_From_File()
+        {
+            #region Arrange
+
+            var academicResearcherFile = @"C:\useful\researcher.xml";
+
+            #endregion
+
+            #region Act
+
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(academicResearcher, Is.Not.Null);
+            Assert.That(academicResearcher.ProfessionalDescription, Is.Not.Null);
 
             #endregion
         }
