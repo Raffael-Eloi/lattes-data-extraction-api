@@ -229,7 +229,7 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             #region Assert
 
             string expectedDoctorateCourseCode = "60017880";
-            string expectedDoctorateCourseName = "Ensino de Ciências e Matemáticao";
+            string expectedDoctorateCourseName = "Ensino de Ciências e Matemática";
             string expectedCourseCodeCapes = "42019010005P7";
             string expectedDoctorateThesis = "ChatGPT e inteligência artificial na educação: explorando a personalização do aprendizado e novas teorias de ensino e aprendizagem";
             string expectedAdvisorName = "Agostinho Serrano de Andrade Neto";

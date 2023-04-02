@@ -27,6 +27,8 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
 
             GetMasterInformationIfExist();
 
+            GetDoctorateInformationIfExist();
+
             _academicResearcher.AcademicBackgrounds = academicBackgroundsInformation;
         }
 
@@ -284,7 +286,7 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
                     {
                         academicBackground.AdvisorName = advisorName.Value;
                     }
-                    
+
                     if (advisorNameMaster is not null)
                     {
                         academicBackground.AdvisorName = advisorNameMaster.Value;
@@ -310,7 +312,7 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
                     {
                         academicBackground.EndYear = new DateOnly(int.Parse(endYear.Value), 1, 1);
                     }
-                    
+
                     XmlAttribute? idOasis = element.Attributes["ID-OASIS"];
 
                     if (idOasis is not null)
@@ -326,7 +328,7 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
 
                         for (int i = 0; i < keyWordsNodeAttributes.Count; i++)
                         {
-                            XmlAttribute? keyWordValue = keyWordsNodeAttributes[$"PALAVRA-CHAVE-{i+1}"];
+                            XmlAttribute? keyWordValue = keyWordsNodeAttributes[$"PALAVRA-CHAVE-{i + 1}"];
                             if (keyWordValue is not null && !string.IsNullOrEmpty(keyWordValue.Value))
                             {
                                 keyWordsMapped.Add(keyWordValue.Value);
@@ -335,6 +337,117 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
                     }
 
                     academicBackground.KeyWords = keyWordsMapped;
+
+                    academicBackgroundsInformation!.Add(academicBackground);
+                }
+            }
+        }
+
+        private void GetDoctorateInformationIfExist()
+        {
+            XmlNodeList academicBackgroundInformation = _academicResearcherDocument!.GetElementsByTagName("DOUTORADO");
+
+            if (academicBackgroundInformation.Count < 0) return;
+
+            foreach (XmlNode element in academicBackgroundInformation)
+            {
+                if (element.Attributes is not null && element.Attributes.Count > 0)
+                {
+                    AcademicBackground academicBackground = new()
+                    {
+                        AcademicBackgroundType = AcademicBackgroundType.Doctorate
+                    };
+
+                    XmlAttribute? instituitionName = element.Attributes["NOME-INSTITUICAO"];
+
+                    if (instituitionName is not null)
+                    {
+                        academicBackground.InstituitionName = instituitionName.Value;
+                    }
+
+                    XmlAttribute? instituitionCode = element.Attributes["CODIGO-INSTITUICAO"];
+
+                    if (instituitionCode is not null)
+                    {
+                        academicBackground.InstituitionCode = instituitionCode.Value;
+                    }
+
+                    XmlAttribute? courseName = element.Attributes["NOME-CURSO"];
+
+                    if (courseName is not null)
+                    {
+                        academicBackground.CourseName = courseName.Value;
+                    }
+
+                    XmlAttribute? courseCode = element.Attributes["CODIGO-CURSO"];
+
+                    if (courseCode is not null)
+                    {
+                        academicBackground.CourseCode = courseCode.Value;
+                    }
+
+                    XmlAttribute? courseCodeCapes = element.Attributes["CODIGO-CURSO-CAPES"];
+
+                    if (courseCodeCapes is not null)
+                    {
+                        academicBackground.CourseCodeCapes = courseCodeCapes.Value;
+                    }
+
+                    XmlAttribute? areaCourseCode = element.Attributes["CODIGO-AREA-CURSO"];
+
+                    if (areaCourseCode is not null)
+                    {
+                        academicBackground.AreaCourseCode = areaCourseCode.Value;
+                    }
+
+                    XmlAttribute? courseStatus = element.Attributes["STATUS-DO-CURSO"];
+
+                    if (courseStatus is not null)
+                    {
+                        academicBackground.CourseStatus = courseStatus.Value;
+                    }
+
+                    XmlAttribute? doctorateThesis = element.Attributes["TITULO-DA-DISSERTACAO-TESE"];
+
+                    if (doctorateThesis is not null)
+                    {
+                        academicBackground.DoctorateThesis = doctorateThesis.Value;
+                    }
+
+                    XmlAttribute? advisorName = element.Attributes["NOME-DO-ORIENTADOR"];
+
+                    XmlAttribute? advisorNameMaster = element.Attributes["NOME-COMPLETO-DO-ORIENTADOR"];
+
+                    if (advisorName is not null)
+                    {
+                        academicBackground.AdvisorName = advisorName.Value;
+                    }
+
+                    if (advisorNameMaster is not null)
+                    {
+                        academicBackground.AdvisorName = advisorNameMaster.Value;
+                    }
+
+                    XmlAttribute? advisorCode = element.Attributes["NUMERO-ID-ORIENTADOR"];
+
+                    if (advisorCode is not null)
+                    {
+                        academicBackground.AdvisorCode = advisorCode.Value;
+                    }
+
+                    XmlAttribute? startYear = element.Attributes["ANO-DE-INICIO"];
+
+                    if (startYear is not null && !string.IsNullOrEmpty(startYear.Value))
+                    {
+                        academicBackground.StartYear = new DateOnly(int.Parse(startYear.Value), 1, 1);
+                    }
+
+                    XmlAttribute? endYear = element.Attributes["ANO-DE-CONCLUSAO"];
+
+                    if (endYear is not null && !string.IsNullOrEmpty(endYear.Value))
+                    {
+                        academicBackground.EndYear = new DateOnly(int.Parse(endYear.Value), 1, 1);
+                    }
 
                     academicBackgroundsInformation!.Add(academicBackground);
                 }
