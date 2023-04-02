@@ -247,16 +247,16 @@ namespace LattesDataExtraction.Domain.Tests.Services
 
             Assert.That(academicResearcher, Is.Not.Null);
 
-            Assert.That(academicResearcher.BooksPublishedOrOrganized, Is.Not.Null);
+            Assert.That(academicResearcher.BooksChaptersPublished, Is.Not.Null);
 
             Assert.Multiple(() =>
             {
-                Assert.That(academicResearcher.BooksPublishedOrOrganized.ToList(), Has.Count.EqualTo(3));
-                Assert.That(academicResearcher.BooksPublishedOrOrganized.First().Authors, Is.Not.Null);
+                Assert.That(academicResearcher.BooksChaptersPublished.ToList(), Has.Count.EqualTo(3));
+                Assert.That(academicResearcher.BooksChaptersPublished.First().Authors, Is.Not.Null);
 
             });
 
-            Assert.That(academicResearcher.BooksPublishedOrOrganized.First().Authors!.ToList(), Has.Count.GreaterThan(1));
+            Assert.That(academicResearcher.BooksChaptersPublished.First().Authors!.ToList(), Has.Count.GreaterThan(1));
 
             #endregion
         }
