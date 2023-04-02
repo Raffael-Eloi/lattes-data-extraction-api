@@ -33,5 +33,7 @@
         public IEnumerable<ScientificArticle>? PublishedArticles { get; set; }
 
         public IEnumerable<Book>? BooksPublishedOrOrganized { get; set; }
+
+        public IEnumerable<BookChapter>? BooksChaptersPublished { get; set; }
     }
 }

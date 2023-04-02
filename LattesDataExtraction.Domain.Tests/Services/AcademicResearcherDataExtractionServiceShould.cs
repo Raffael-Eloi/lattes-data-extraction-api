@@ -5,7 +5,7 @@ using LattesDataExtraction.Domain.Services;
 
 namespace LattesDataExtraction.Domain.Tests.Services
 {
-    public class AcademicResearcherDataExtractionServiceShould
+    internal class AcademicResearcherDataExtractionServiceShould
     {
         private IAcademicResearcherDataExtractionService academicResearcherFileReadService;
 
@@ -219,6 +219,39 @@ namespace LattesDataExtraction.Domain.Tests.Services
             Assert.Multiple(() =>
             {
                 Assert.That(academicResearcher.BooksPublishedOrOrganized.ToList(), Has.Count.EqualTo(7));
+                Assert.That(academicResearcher.BooksPublishedOrOrganized.First().Authors, Is.Not.Null);
+
+            });
+
+            Assert.That(academicResearcher.BooksPublishedOrOrganized.First().Authors!.ToList(), Has.Count.GreaterThan(1));
+
+            #endregion
+        }
+
+        [Test]
+        public void Extract_Books_Chapters_Published_Information_From_File()
+        {
+            #region Arrange
+
+            var academicResearcherFile = @"C:\useful\researcher.xml";
+
+            #endregion
+
+            #region Act
+
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(academicResearcher, Is.Not.Null);
+
+            Assert.That(academicResearcher.BooksPublishedOrOrganized, Is.Not.Null);
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(academicResearcher.BooksPublishedOrOrganized.ToList(), Has.Count.EqualTo(3));
                 Assert.That(academicResearcher.BooksPublishedOrOrganized.First().Authors, Is.Not.Null);
 
             });
