@@ -12,13 +12,13 @@
 
         public string Language { get; set; } = string.Empty;
 
-        public string PublishCountry { get; set; } = string.Empty;
+        public string PublisherCountry { get; set; } = string.Empty;
 
         public int NumberOfVolumes { get; set; }
 
         public int NumberOfPages { get; set; }
 
-        public string PublishCity { get; set; } = string.Empty;
+        public string PublisherCity { get; set; } = string.Empty;
 
         public IEnumerable<Author>? Authors { get; set; }
     }

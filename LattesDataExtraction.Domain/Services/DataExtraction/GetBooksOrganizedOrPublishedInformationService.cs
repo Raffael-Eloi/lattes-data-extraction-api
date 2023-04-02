@@ -94,7 +94,7 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
 
                     if (book.Name == "PAIS-DE-PUBLICACAO")
                     {
-                        _book!.PublishCountry = book.Value;
+                        _book!.PublisherCountry = book.Value;
                     }
                     
                     if (book.Name == "IDIOMA")
@@ -129,7 +129,7 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
 
                     if (book.Name == "CIDADE-DA-EDITORA")
                     {
-                        _book!.PublishCity = book.Value;
+                        _book!.PublisherCity = book.Value;
                     }
                 }
             }

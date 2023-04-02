@@ -1,13 +1,12 @@
 ﻿using LattesDataExtraction.Domain.Contracts;
 using LattesDataExtraction.Domain.Entities;
-using LattesDataExtraction.Domain.Services.DataExtraction;
 using System.Xml;
 
 namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
 {
-    internal class GetBooksOrganizedOrPublishedInformationServiceShould
+    internal class GetBooksChaptersPublishedInformationServiceShould
     {
-        private IGetDataInformationService getBooksOrganizedOrPublishedInformationService;
+        private IGetDataInformationService getBooksChaptersPublishedInformationService;
 
         private string academicResearcherFilePath;
 
@@ -20,7 +19,7 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
 
             academicResearcherDocument = new XmlDocument();
 
-            getBooksOrganizedOrPublishedInformationService = new GetBooksOrganizedOrPublishedInformationService();
+            getBooksChaptersPublishedInformationService = new GetBooksChaptersPublishedInformationService();
         }
 
         [Test]
@@ -36,57 +35,63 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
 
             #region Act
 
-            getBooksOrganizedOrPublishedInformationService.GetInformation(academicResearcher, academicResearcherDocument);
+            getBooksChaptersPublishedInformationService.GetInformation(academicResearcher, academicResearcherDocument);
 
             #endregion
 
             #region Assert
 
-            string expectedTitle = "Anais do II Encontro de Estudantes de Informática do Estado do Tocantins";
-            string expectedOrigin = "ANAIS";
-            string expectedType = "LIVRO_ORGANIZADO_OU_EDICAO";
-            int expectedYear = 2000;
+            string expectedBookTitle = "Advances in Intelligent Systems and Computing";
+            string expectedChapterTitle = "Mining ENADE Data from the Ulbra Network Institution";
+            string expectedType = "Capítulo de livro publicado";
+            int expectedYear = 2018;
             string expectedPublisherCountry = "Brasil";
             string expectedPublisherCity = "Palmas";
+            string expectedPublisherName = "Springer International Publishing";
+            string expectedHomePageLink = "http://link.springer.com/10.1007/978-3-319-77028-4_39";
+            string expectedDOI = "10.1007/978-3-319-77028-4_39";
+            string expectedISBN = "9783319770277";
             string expectedLanguage = "Português";
-            int expectedNumbersOfVolumes = 1;
-            int expectedNumbersOfPages = 146;
+            int expectedInitialPage = 287;
+            int expectedFinalPage = 294;
 
             Author expectedFirstAuthor = new()
             {
                 FullName = "Fabiano Fagundes",
                 CitationName = "FAGUNDES, Fabiano;FAGUNDES, FABIANO",
-                CNPQId = "7309417394410594",
             };
 
             Author expectedSecondAuthor = new()
             {
-                FullName = "Parcilene Fernandes de Brito",
-                CitationName = "BRITO, Parcilene Fernandes de",
-                CNPQId = "2507709383353551",
+                FullName = "Ladeira, Marcelo",
+                CitationName = "Ladeira, Marcelo",
             };
 
-            Assert.That(academicResearcher.BooksPublishedOrOrganized, Is.Not.Null);
+            Assert.That(academicResearcher.BooksChaptersPublished, Is.Not.Null);
 
-            var booksOrganizedOrPublishedVerification = academicResearcher.BooksPublishedOrOrganized
+            var booksChaptersPublishedVerification = academicResearcher.BooksChaptersPublished
                 .FirstOrDefault(
                     x =>
-                        x.Title == expectedTitle &&
+                        x.BookTitle == expectedBookTitle &&
+                        x.ChapterTitle == expectedChapterTitle &&
                         x.Type == expectedType &&
-                        x.Origin == expectedOrigin &&
                         x.Year.Year == expectedYear &&
                         x.PublisherCountry == expectedPublisherCountry &&
                         x.PublisherCity == expectedPublisherCity &&
                         x.Language == expectedLanguage &&
-                        x.NumberOfVolumes == expectedNumbersOfVolumes &&
-                        x.NumberOfPages == expectedNumbersOfPages
+                        x.PublisherName == expectedPublisherName &&
+                        x.HomePageLink == expectedHomePageLink &&
+                        x.DOI == expectedDOI &&
+                        x.ISBN == expectedISBN &&
+                        x.InitialPage == expectedInitialPage &&
+                        x.FinalPage == expectedFinalPage
                 );
 
-            Assert.That(booksOrganizedOrPublishedVerification, Is.Not.Null);
+            Assert.That(booksChaptersPublishedVerification, Is.Not.Null);
 
-            Assert.That(booksOrganizedOrPublishedVerification.Authors, Is.Not.Null);
+            Assert.That(booksChaptersPublishedVerification.Authors, Is.Not.Null);
 
-            var isFirstAuthorInListOfAuthors = booksOrganizedOrPublishedVerification.Authors
+            var isFirstAuthorInListOfAuthors = booksChaptersPublishedVerification.Authors
                 .FirstOrDefault(
                     author =>
                         author.FullName == expectedFirstAuthor.FullName &&
@@ -94,7 +99,7 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
                         author.CNPQId == expectedFirstAuthor.CNPQId
                  );
 
-            var isSecondAuthorInListOfAuthors = booksOrganizedOrPublishedVerification.Authors
+            var isSecondAuthorInListOfAuthors = booksChaptersPublishedVerification.Authors
                 .FirstOrDefault(
                     author =>
                         author.FullName == expectedSecondAuthor.FullName &&

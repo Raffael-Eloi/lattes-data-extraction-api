@@ -18,15 +18,15 @@
 
         public string DOI { get; set; } = string.Empty;
 
-        public string PublishCountry { get; set; } = string.Empty;
+        public string PublisherCountry { get; set; } = string.Empty;
 
         public string ISBN { get; set; } = string.Empty;
 
         public int InitialPage { get; set; }
 
-        public int finalPage { get; set; }
+        public int FinalPage { get; set; }
 
-        public string PublishCity { get; set; } = string.Empty;
+        public string PublisherCity { get; set; } = string.Empty;
 
         public string PublisherName { get; set; } = string.Empty;
 
