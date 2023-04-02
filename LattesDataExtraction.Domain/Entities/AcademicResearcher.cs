@@ -31,5 +31,7 @@
         public IEnumerable<AcademicBackground>? AcademicBackground { get; set; }
 
         public IEnumerable<ScientificArticle>? PublishedArticles { get; set; }
+
+        public IEnumerable<Book> BooksPublishedOrOrganized { get; set; }
     }
 }

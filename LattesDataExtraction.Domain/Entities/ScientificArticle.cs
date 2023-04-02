@@ -20,6 +20,6 @@
 
         public int InitialPage { get; set; }
 
-        public IEnumerable<Author> Authors { get; set; }
+        public IEnumerable<Author>? Authors { get; set; }
     }
 }
