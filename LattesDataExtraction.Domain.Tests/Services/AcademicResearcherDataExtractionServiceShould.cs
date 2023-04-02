@@ -138,5 +138,31 @@ namespace LattesDataExtraction.Domain.Tests.Services
 
             #endregion
         }
+
+        [Test]
+        public void Extract_Academic_Background_Information_From_File()
+        {
+            #region Arrange
+
+            var academicResearcherFile = @"C:\useful\researcher.xml";
+
+            #endregion
+
+            #region Act
+
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(academicResearcher, Is.Not.Null);
+
+            Assert.That(academicResearcher.AcademicBackground, Is.Not.Null);
+
+            Assert.That(academicResearcher.AcademicBackground.ToList, Has.Count.EqualTo(8));
+
+            #endregion
+        }
     }
 }
