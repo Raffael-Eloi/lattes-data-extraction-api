@@ -208,5 +208,50 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
 
             #endregion
         }
+
+        [Test]
+        public void Get_Doctorate_Information_From_Xml_Document()
+        {
+            #region Arrange
+
+            academicResearcherDocument.Load(academicResearcherFilePath);
+
+            AcademicResearcher academicResearcher = new();
+
+            #endregion
+
+            #region Act
+
+            getAcademicBackgroundInformationService.GetInformation(academicResearcher, academicResearcherDocument);
+
+            #endregion
+
+            #region Assert
+
+            string expectedDoctorateCourseCode = "60017880";
+            string expectedDoctorateCourseName = "Ensino de Ciências e Matemáticao";
+            string expectedCourseCodeCapes = "42019010005P7";
+            string expectedDoctorateThesis = "ChatGPT e inteligência artificial na educação: explorando a personalização do aprendizado e novas teorias de ensino e aprendizagem";
+            string expectedAdvisorName = "Agostinho Serrano de Andrade Neto";
+            string expectedAdvisorCode = "1253401330501170";
+
+            var mastersVerification = academicResearcher.AcademicBackgrounds
+                .FirstOrDefault(
+                    x =>
+                        x.CourseCode == expectedDoctorateCourseCode &&
+                        x.CourseName == expectedDoctorateCourseName &&
+                        x.CourseCodeCapes == expectedCourseCodeCapes &&
+                        x.AdvisorName == expectedAdvisorName &&
+                        x.AdvisorCode == expectedAdvisorCode &&
+                        x.DoctorateThesis == expectedDoctorateThesis &&
+                        x.AcademicBackgroundType == Enums.AcademicBackgroundType.Doctorate);
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(mastersVerification, Is.Not.Null);
+            });
+
+            #endregion
+        }
     }
 }

@@ -32,6 +32,8 @@ namespace LattesDataExtraction.Domain.Entities
 
         public string MasterThesis { get; set;} = string.Empty;
 
+        public string DoctorateThesis { get; set;} = string.Empty;
+
         public string IdOasis { get; set;} = string.Empty;
 
         public IEnumerable<string> KeyWords { get; set; }
