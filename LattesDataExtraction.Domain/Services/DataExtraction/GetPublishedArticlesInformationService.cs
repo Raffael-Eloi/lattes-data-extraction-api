@@ -48,9 +48,9 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
                     GetAuthor(articleElement);
 
                     _scientificArticle.Authors = _authors;
-
-                    _scientificArticles.Add(_scientificArticle!);
                 }
+
+                _scientificArticles.Add(_scientificArticle!);
             }
 
             academicResearcher.PublishedArticles = _scientificArticles;
