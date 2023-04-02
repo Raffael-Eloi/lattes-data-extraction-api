@@ -148,6 +148,28 @@ namespace LattesDataExtraction.Domain.Tests.Factories
         }
 
         [Test]
+        public void Return_Books_Organized_Or_Published_Service_When_Type_Is_Books_Organized_Or_Published()
+        {
+            #region Arrange
+
+            var booksOrganizedOrPublishedType = DataInformationType.BooksOrganizedOrPublished;
+
+            #endregion
+
+            #region Act
+
+            IGetDataInformationService getDataInformationType = getDataInformationFactory.Create(booksOrganizedOrPublishedType);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(getDataInformationType.GetType(), Is.EqualTo(typeof(GetBooksOrganizedOrPublishedInformationService)));
+
+            #endregion
+        }
+
+        [Test]
         public void Throw_Exception_When_Data_Information_Type_Does_Not_Exist()
         {
             #region Arrange

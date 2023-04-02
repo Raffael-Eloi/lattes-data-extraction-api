@@ -15,5 +15,7 @@
         AcademicBackground = 5,
 
         PublishedArticles = 6,
+
+        BooksOrganizedOrPublished = 7,
     }
 }
