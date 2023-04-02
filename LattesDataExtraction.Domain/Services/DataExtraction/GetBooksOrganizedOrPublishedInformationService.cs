@@ -29,28 +29,30 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
 
             foreach (XmlNode element in booksOrganizedOrPublishedInformation)
             {
-                _book = new();
+                if (element is null || element.ChildNodes is null || element.ChildNodes.Count == 0) continue;
 
-                _authors = new();
-
-                XmlNode? booksPublishedOrOrganized = element.FirstChild;
-
-                if (booksPublishedOrOrganized is null || booksPublishedOrOrganized.ChildNodes is null || booksPublishedOrOrganized.ChildNodes.Count == 0) continue;
-
-                foreach (XmlNode bookElement in booksPublishedOrOrganized.ChildNodes)
+                foreach (XmlNode allBookElements in element.ChildNodes)
                 {
-                    _author = new();
+                    _book = new();
 
-                    if (bookElement is null) continue;
+                    _authors = new();
 
-                    GetBookBasicData(bookElement);
+                    foreach (XmlNode bookElement in allBookElements.ChildNodes)
+                    {
+                        _author = new();
 
-                    GetBookDetails(bookElement);
+                        if (bookElement is null) continue;
 
-                    GetAuthors(bookElement);
+                        GetBookBasicData(bookElement);
+
+                        GetBookDetails(bookElement);
+
+                        GetAuthors(bookElement);
+                        
+                    }
 
                     _book.Authors = _authors;
-                    
+
                     _books.Add(_book!);
                 }
             }
