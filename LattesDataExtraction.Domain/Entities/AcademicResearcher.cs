@@ -2,11 +2,6 @@
 {
     public class AcademicResearcher
     {
-        public AcademicResearcher()
-        {
-            ProfessionalAddress = new ProfessionalAddress();
-        }
-
         public Guid Id { get; set; }
 
         public string IdentifierNumber { get; set; } = string.Empty;
@@ -31,10 +26,10 @@
 
         public string OrcidId { get; set; } = string.Empty;
 
-        public ProfessionalAddress ProfessionalAddress { get; set; }
+        public ProfessionalAddress? ProfessionalAddress { get; set; }
 
-        public IEnumerable<AcademicBackground> AcademicBackground { get; set; }
+        public IEnumerable<AcademicBackground>? AcademicBackground { get; set; }
 
-        public IEnumerable<ScientificArticle> PublishedArticles { get; set; }
+        public IEnumerable<ScientificArticle>? PublishedArticles { get; set; }
     }
 }

@@ -97,5 +97,46 @@ namespace LattesDataExtraction.Domain.Tests.Services
 
             #endregion
         }
+
+        [Test]
+        public void Extract_Professional_Address_Information_From_File()
+        {
+            #region Arrange
+
+            var academicResearcherFile = @"C:\useful\researcher.xml";
+
+            #endregion
+
+            #region Act
+
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(academicResearcher, Is.Not.Null);
+
+            Assert.That(academicResearcher.ProfessionalAddress, Is.Not.Null);
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(academicResearcher.ProfessionalAddress.CompanyCode, Is.Not.Null);
+                Assert.That(academicResearcher.ProfessionalAddress.CompanyName, Is.Not.Null);
+                Assert.That(academicResearcher.ProfessionalAddress.AddressComplement, Is.Not.Null);
+                Assert.That(academicResearcher.ProfessionalAddress.Country, Is.Not.Null);
+                Assert.That(academicResearcher.ProfessionalAddress.State, Is.Not.Null);
+                Assert.That(academicResearcher.ProfessionalAddress.ZipCode, Is.Not.Null);
+                Assert.That(academicResearcher.ProfessionalAddress.City, Is.Not.Null);
+                Assert.That(academicResearcher.ProfessionalAddress.District, Is.Not.Null);
+                Assert.That(academicResearcher.ProfessionalAddress.DDD, Is.Not.Null);
+                Assert.That(academicResearcher.ProfessionalAddress.PhoneNumber, Is.Not.Null);
+                Assert.That(academicResearcher.ProfessionalAddress.Fax, Is.Not.Null);
+                Assert.That(academicResearcher.ProfessionalAddress.POBox, Is.Not.Null);
+                Assert.That(academicResearcher.ProfessionalAddress.HomePage, Is.Not.Null);
+            });
+
+            #endregion
+        }
     }
 }

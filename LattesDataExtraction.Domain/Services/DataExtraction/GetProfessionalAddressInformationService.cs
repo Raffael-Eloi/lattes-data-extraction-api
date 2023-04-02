@@ -12,6 +12,8 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
 
             if (professionalAddressInformation.Count < 0) return;
 
+            academicResearcher.ProfessionalAddress = new ProfessionalAddress();
+
             foreach (XmlNode element in professionalAddressInformation)
             {
                 if (element.Attributes is not null && element.Attributes.Count > 0)
