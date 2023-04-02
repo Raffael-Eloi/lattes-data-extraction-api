@@ -42,21 +42,21 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
 
             #region Assert
 
-            string espectedPsychologyCourseCode = "90000008";
-            string espectedPsychologyCourseName = "Psicologia";
+            string expectedPsychologyCourseCode = "90000008";
+            string expectedPsychologyCourseName = "Psicologia";
 
-            string espectedComputerScienceCourseCode = "90000001";
-            string espectedComputerScienceCourseName = "Ciências da Computação";
+            string expectedComputerScienceCourseCode = "90000001";
+            string expectedComputerScienceCourseName = "Ciências da Computação";
 
 
             var psychologyVerification = academicResearcher.AcademicBackgrounds
-                .FirstOrDefault(x => x.CourseCode == espectedPsychologyCourseCode && 
-                    x.CourseName == espectedPsychologyCourseName && 
+                .FirstOrDefault(x => x.CourseCode == expectedPsychologyCourseCode && 
+                    x.CourseName == expectedPsychologyCourseName && 
                     x.AcademicBackgroundType == Enums.AcademicBackgroundType.Graduation);
 
             var computerScienceVerification = academicResearcher.AcademicBackgrounds
-                .FirstOrDefault(x => x.CourseCode == espectedComputerScienceCourseCode 
-                    && x.CourseName == espectedComputerScienceCourseName &&
+                .FirstOrDefault(x => x.CourseCode == expectedComputerScienceCourseCode 
+                    && x.CourseName == expectedComputerScienceCourseName &&
                     x.AcademicBackgroundType == Enums.AcademicBackgroundType.Graduation);
 
             Assert.That(academicResearcher, Is.Not.Null);
@@ -89,21 +89,21 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
 
             #region Assert
 
-            string espectedTechCourseCode = "90000016";
-            string espectedTechCourseName = "Tecnologias Digitais Aplicadas à Educação";
+            string expectedTechCourseCode = "90000016";
+            string expectedTechCourseName = "Tecnologias Digitais Aplicadas à Educação";
 
-            string espectedPsychologyCourseCode = "90000014";
-            string espectedPsychologyCourseName = "Psicologia positiva, ciência do bem-estar e autorrealização";
+            string expectedPsychologyCourseCode = "90000014";
+            string expectedPsychologyCourseName = "Psicologia positiva, ciência do bem-estar e autorrealização";
 
 
             var techCourseVerification = academicResearcher.AcademicBackgrounds
-                .FirstOrDefault(x => x.CourseCode == espectedTechCourseCode 
-                && x.CourseName == espectedTechCourseName &&
+                .FirstOrDefault(x => x.CourseCode == expectedTechCourseCode 
+                && x.CourseName == expectedTechCourseName &&
                 x.AcademicBackgroundType == Enums.AcademicBackgroundType.Specialization);
 
             var psychologyVerification = academicResearcher.AcademicBackgrounds
-                .FirstOrDefault(x => x.CourseCode == espectedPsychologyCourseCode && 
-                x.CourseName == espectedPsychologyCourseName &&
+                .FirstOrDefault(x => x.CourseCode == expectedPsychologyCourseCode && 
+                x.CourseName == expectedPsychologyCourseName &&
                 x.AcademicBackgroundType == Enums.AcademicBackgroundType.Specialization);
 
             Assert.That(academicResearcher, Is.Not.Null);
@@ -112,6 +112,53 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             {
                 Assert.That(techCourseVerification, Is.Not.Null);
                 Assert.That(psychologyVerification, Is.Not.Null);
+            });
+
+            #endregion
+        }
+
+        [Test]
+        public void Get_Masters_Information_From_Xml_Document()
+        {
+            #region Arrange
+
+            academicResearcherDocument.Load(academicResearcherFilePath);
+
+            AcademicResearcher academicResearcher = new();
+
+            #endregion
+
+            #region Act
+
+            getAcademicBackgroundInformationService.GetInformation(academicResearcher, academicResearcherDocument);
+
+            #endregion
+
+            #region Assert
+
+            string expectedComputerScienceCourseCode = "41000250";
+            string expectedComputerScienceCourseName = "Ciências da Computação";
+            string expectedCourseCodeCapes = "41001010025P2";
+            string expectedIdOasis = "UFSC_2bbad15662a708439d143030725d9bf5";
+            string expectedMasterThesis = "Especificação de uma meta-linguagem para sincronização multimídia";
+            string expectedAdvisorName = "José Mazzucco Júnior";
+            string expectedAdvisorCode = "1360318693097013";
+
+            var mastersVerification = academicResearcher.AcademicBackgrounds
+                .FirstOrDefault(x => x.CourseCode == expectedComputerScienceCourseCode
+                && x.CourseName == expectedComputerScienceCourseName &&
+                x.CourseCodeCapes == expectedCourseCodeCapes &&
+                x.IdOasis == expectedIdOasis &&
+                x.AdvisorName == expectedAdvisorName && 
+                x.AdvisorCode == expectedAdvisorCode &&
+                x.MasterThesis == expectedMasterThesis &&
+                x.AcademicBackgroundType == Enums.AcademicBackgroundType.Master);
+
+            Assert.That(academicResearcher, Is.Not.Null);
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(mastersVerification, Is.Not.Null);
             });
 
             #endregion

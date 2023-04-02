@@ -10,6 +10,8 @@ namespace LattesDataExtraction.Domain.Entities
 
         public string CourseCode { get; set; } = string.Empty;
 
+        public string CourseCodeCapes { get; set; } = string.Empty;
+
         public string CourseStatus { get; set; } = string.Empty;
 
         public string AreaCourseCode { get; set; } = string.Empty;
@@ -25,5 +27,11 @@ namespace LattesDataExtraction.Domain.Entities
         public string FinalPaperTitle { get; set; } = string.Empty;
 
         public string AdvisorName { get; set; } = string.Empty;
+
+        public string AdvisorCode { get; set; } = string.Empty;
+
+        public string MasterThesis { get; set;} = string.Empty;
+
+        public string IdOasis { get; set;} = string.Empty;
     }
 }
