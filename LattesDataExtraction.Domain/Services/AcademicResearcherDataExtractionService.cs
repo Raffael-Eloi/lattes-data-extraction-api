@@ -32,6 +32,8 @@ namespace LattesDataExtraction.Domain.Services
             
             GetProfessionalAddressInformationIfExists();
 
+            GetAcademicBackgroundInformationIfExists();
+
             return _academicResearch;
         }
 
@@ -71,6 +73,13 @@ namespace LattesDataExtraction.Domain.Services
         private void GetProfessionalAddressInformationIfExists()
         {
             IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.ProfessionalAddress);
+
+            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument);
+        }
+        
+        private void GetAcademicBackgroundInformationIfExists()
+        {
+            IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.AcademicBackground);
 
             getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument);
         }
