@@ -20,7 +20,7 @@ namespace LattesDataExtraction.Domain.Tests.Services
         }
 
         [Test]
-        public void Extract_Information_From_File()
+        public void Extract_Curriculum_Vitae_Information_From_File()
         {
             #region Arrange
 
@@ -37,6 +37,7 @@ namespace LattesDataExtraction.Domain.Tests.Services
             #region Assert
 
             Assert.That(academicResearcher, Is.Not.Null);
+            Assert.That(academicResearcher.IdentifierNumber, Is.Not.Null);
 
             #endregion
         }
