@@ -1,5 +1,6 @@
 ﻿using LattesDataExtraction.Domain.Contracts;
 using LattesDataExtraction.Domain.Entities;
+using LattesDataExtraction.Domain.Services.DataExtraction;
 using System.Xml;
 
 namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
@@ -43,6 +44,7 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
 
             string expectedTitle = "Anais do II Encontro de Estudantes de Informática do Estado do Tocantins";
             string expectedOrigin = "ANAIS";
+            string expectedType = "LIVRO_ORGANIZADO_OU_EDICAO";
             int expectedYear = 2000;
             string expectedPublishCountry = "Brasil";
             string expectedPublishCity = "Palmas";
@@ -70,6 +72,7 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
                 .FirstOrDefault(
                     x =>
                         x.Title == expectedTitle &&
+                        x.Type == expectedType &&
                         x.Origin == expectedOrigin &&
                         x.Year.Year == expectedYear &&
                         x.PublishCountry == expectedPublishCountry &&

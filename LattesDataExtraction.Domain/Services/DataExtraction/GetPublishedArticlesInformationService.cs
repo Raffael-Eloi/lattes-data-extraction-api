@@ -43,9 +43,9 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
 
                     GetArticleBasicData(articleElement);
 
-                    GetArticleDetail(articleElement);
+                    GetArticleDetails(articleElement);
 
-                    GetAuthor(articleElement);
+                    GetAuthors(articleElement);
 
                     _scientificArticle.Authors = _authors;
                 }
@@ -91,7 +91,7 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
             }
         }
 
-        private void GetArticleDetail(XmlNode articleElement)
+        private void GetArticleDetails(XmlNode articleElement)
         {
             if (articleElement.Name is not null && articleElement.Name == "DETALHAMENTO-DO-ARTIGO")
             {
@@ -130,7 +130,8 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
                 }
             }
         }
-        private void GetAuthor(XmlNode articleElement) 
+
+        private void GetAuthors(XmlNode articleElement) 
         {
             if (articleElement.Name is not null && articleElement.Name == "AUTORES")
             {
