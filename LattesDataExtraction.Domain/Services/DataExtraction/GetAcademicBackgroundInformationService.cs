@@ -117,14 +117,14 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
 
                     XmlAttribute? startYear = element.Attributes["ANO-DE-INICIO"];
 
-                    if (startYear is not null)
+                    if (startYear is not null && !string.IsNullOrEmpty(startYear.Value))
                     {
                         academicBackground.StartYear = new DateOnly(int.Parse(startYear.Value), 1, 1);
                     }
 
                     XmlAttribute? endYear = element.Attributes["ANO-DE-CONCLUSAO"];
 
-                    if (endYear is not null)
+                    if (endYear is not null && !string.IsNullOrEmpty(endYear.Value))
                     {
                         academicBackground.EndYear = new DateOnly(int.Parse(endYear.Value), 1, 1);
                     }
@@ -206,6 +206,8 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
         private void GetMasterInformationIfExist()
         {
             XmlNodeList academicBackgroundInformation = _academicResearcherDocument!.GetElementsByTagName("MESTRADO");
+
+            List<string> keyWordsMapped = new();
 
             if (academicBackgroundInformation.Count < 0) return;
 
@@ -297,14 +299,14 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
 
                     XmlAttribute? startYear = element.Attributes["ANO-DE-INICIO"];
 
-                    if (startYear is not null)
+                    if (startYear is not null && !string.IsNullOrEmpty(startYear.Value))
                     {
                         academicBackground.StartYear = new DateOnly(int.Parse(startYear.Value), 1, 1);
                     }
 
                     XmlAttribute? endYear = element.Attributes["ANO-DE-CONCLUSAO"];
 
-                    if (endYear is not null)
+                    if (endYear is not null && !string.IsNullOrEmpty(endYear.Value))
                     {
                         academicBackground.EndYear = new DateOnly(int.Parse(endYear.Value), 1, 1);
                     }
@@ -316,10 +318,27 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
                         academicBackground.IdOasis = idOasis.Value;
                     }
 
+                    XmlNode? keyWordsNode = element.FirstChild;
+
+                    if (keyWordsNode is not null && keyWordsNode.Name == "PALAVRAS-CHAVE" && keyWordsNode.Attributes is not null)
+                    {
+                        XmlAttributeCollection keyWordsNodeAttributes = keyWordsNode.Attributes;
+
+                        for (int i = 0; i < keyWordsNodeAttributes.Count; i++)
+                        {
+                            XmlAttribute? keyWordValue = keyWordsNodeAttributes[$"PALAVRA-CHAVE-{i+1}"];
+                            if (keyWordValue is not null && !string.IsNullOrEmpty(keyWordValue.Value))
+                            {
+                                keyWordsMapped.Add(keyWordValue.Value);
+                            }
+                        }
+                    }
+
+                    academicBackground.KeyWords = keyWordsMapped;
+
                     academicBackgroundsInformation!.Add(academicBackground);
                 }
             }
-
         }
     }
 }

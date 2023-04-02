@@ -143,6 +143,10 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             string expectedMasterThesis = "Especificação de uma meta-linguagem para sincronização multimídia";
             string expectedAdvisorName = "José Mazzucco Júnior";
             string expectedAdvisorCode = "1360318693097013";
+            string expectedKeyWord1 = "Sincronização Multimídia";
+            string expectedKeyWord2 = "eXtensible Markup Language";
+            string expectedKeyWord3 = "SMIL";
+            string expectedKeyWord4 = "HTML+TIME";
 
             var mastersVerification = academicResearcher.AcademicBackgrounds
                 .FirstOrDefault(x => x.CourseCode == expectedComputerScienceCourseCode
@@ -152,9 +156,12 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
                 x.AdvisorName == expectedAdvisorName && 
                 x.AdvisorCode == expectedAdvisorCode &&
                 x.MasterThesis == expectedMasterThesis &&
+                x.KeyWords.Contains(expectedKeyWord1) &&
+                x.KeyWords.Contains(expectedKeyWord2) &&
+                x.KeyWords.Contains(expectedKeyWord3) &&
+                x.KeyWords.Contains(expectedKeyWord4) &&
+                x.KeyWords.Count() == 4 &&
                 x.AcademicBackgroundType == Enums.AcademicBackgroundType.Master);
-
-            Assert.That(academicResearcher, Is.Not.Null);
 
             Assert.Multiple(() =>
             {
