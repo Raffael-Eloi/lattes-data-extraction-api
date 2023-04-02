@@ -24,6 +24,9 @@ namespace LattesDataExtraction.Domain.Factories
                 case DataInformationType.ProfessionalAddress:
                     return new GetProfessionalAddressInformationService();
 
+                case DataInformationType.AcademicBackground:
+                    return new GetAcademicBackgroundInformationService();
+
                 default:
                     throw new ArgumentException(DataInformationTypeNotImplementedMessage);
             }
