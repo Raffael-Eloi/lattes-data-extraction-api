@@ -18,7 +18,7 @@
 
         public int NumberOfPages { get; set; }
 
-        public string PublisherCity { get; set; } = string.Empty;
+        public string PublishCity { get; set; } = string.Empty;
 
         public IEnumerable<Author>? Authors { get; set; }
     }

@@ -66,6 +66,8 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
                 CNPQId = "8179501249569570",
             };
 
+            Assert.That(academicResearcher.PublishedArticles, Is.Not.Null);
+
             var scientificArticleVerification = academicResearcher.PublishedArticles
                 .FirstOrDefault(
                     x =>
@@ -83,6 +85,8 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             
             Assert.That(scientificArticleVerification, Is.Not.Null);
 
+            Assert.That(scientificArticleVerification.Authors, Is.Not.Null);
+
             var isFirstAuthorInListOfAuthors = scientificArticleVerification.Authors
                 .FirstOrDefault(
                     author => 
@@ -98,6 +102,7 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
                         author.CitationName == expectedSecondAuthor.CitationName &&
                         author.CNPQId == expectedSecondAuthor.CNPQId
                  );
+
             Assert.Multiple(() =>
             {
                 Assert.That(isFirstAuthorInListOfAuthors, Is.Not.Null);
