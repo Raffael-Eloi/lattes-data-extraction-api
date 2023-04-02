@@ -35,6 +35,8 @@
 
         public ProfessionalAddress ProfessionalAddress { get; set; }
 
-        public IEnumerable<AcademicBackground> AcademicBackgrounds { get; set; }
+        public IEnumerable<AcademicBackground> AcademicBackground { get; set; }
+
+        public IEnumerable<ScientificArticle> PublishedArticles { get; set; }
     }
 }

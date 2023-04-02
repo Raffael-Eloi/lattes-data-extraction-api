@@ -29,7 +29,7 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
 
             GetDoctorateInformationIfExist();
 
-            _academicResearcher.AcademicBackgrounds = academicBackgroundsInformation;
+            _academicResearcher.AcademicBackground = academicBackgroundsInformation;
         }
 
         private void GetGraduationInformationIfExist()

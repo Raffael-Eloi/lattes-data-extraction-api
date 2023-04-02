@@ -63,7 +63,7 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             int expectedComputerScienceEndYear = 1995;
 
 
-            var psychologyVerification = academicResearcher.AcademicBackgrounds
+            var psychologyVerification = academicResearcher.AcademicBackground
                 .FirstOrDefault(
                     x => 
                         x.CourseCode == expectedPsychologyCourseCode &&
@@ -77,7 +77,7 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
                         x.EndYear.Year == expectedPsychologyEndYear && 
                         x.AcademicBackgroundType == Enums.AcademicBackgroundType.Graduation);
 
-            var computerScienceVerification = academicResearcher.AcademicBackgrounds
+            var computerScienceVerification = academicResearcher.AcademicBackground
                 .FirstOrDefault(
                     x => 
                         x.CourseCode == expectedComputerScienceCourseCode &&
@@ -128,14 +128,14 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             string expectedPsychologyCourseName = "Psicologia positiva, ciência do bem-estar e autorrealização";
 
 
-            var techCourseVerification = academicResearcher.AcademicBackgrounds
+            var techCourseVerification = academicResearcher.AcademicBackground
                 .FirstOrDefault(
                     x =>
                         x.CourseCode == expectedTechCourseCode &&
                         x.CourseName == expectedTechCourseName &&
                         x.AcademicBackgroundType == Enums.AcademicBackgroundType.Specialization);
 
-            var psychologyVerification = academicResearcher.AcademicBackgrounds
+            var psychologyVerification = academicResearcher.AcademicBackground
                 .FirstOrDefault(
                     x => 
                         x.CourseCode == expectedPsychologyCourseCode && 
@@ -184,7 +184,7 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             string expectedKeyWord3 = "SMIL";
             string expectedKeyWord4 = "HTML+TIME";
 
-            var mastersVerification = academicResearcher.AcademicBackgrounds
+            var mastersVerification = academicResearcher.AcademicBackground
                 .FirstOrDefault(
                     x => 
                         x.CourseCode == expectedComputerScienceCourseCode && 
@@ -235,7 +235,7 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             string expectedAdvisorName = "Agostinho Serrano de Andrade Neto";
             string expectedAdvisorCode = "1253401330501170";
 
-            var mastersVerification = academicResearcher.AcademicBackgrounds
+            var mastersVerification = academicResearcher.AcademicBackground
                 .FirstOrDefault(
                     x =>
                         x.CourseCode == expectedDoctorateCourseCode &&
