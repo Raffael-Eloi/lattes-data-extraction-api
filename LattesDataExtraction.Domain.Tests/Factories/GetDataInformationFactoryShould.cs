@@ -236,6 +236,28 @@ namespace LattesDataExtraction.Domain.Tests.Factories
         }
 
         [Test]
+        public void Return_Technical_Production_Service_When_Type_Is_Technical_Production()
+        {
+            #region Arrange
+
+            var technicalProductionType = DataInformationType.TechnicalProduction;
+
+            #endregion
+
+            #region Act
+
+            IGetDataInformationService getDataInformationType = getDataInformationFactory.Create(technicalProductionType);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(getDataInformationType.GetType(), Is.EqualTo(typeof(GetTechnicalProductionsInformationService)));
+
+            #endregion
+        }
+
+        [Test]
         public void Throw_Exception_When_Data_Information_Type_Does_Not_Exist()
         {
             #region Arrange

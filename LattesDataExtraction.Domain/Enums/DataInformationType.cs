@@ -23,5 +23,7 @@
         WorkAtEvents = 9,
 
         OthersBibliographicProduction = 10,
+
+        TechnicalProduction = 11,
     }
 }
