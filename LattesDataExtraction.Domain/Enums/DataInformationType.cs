@@ -19,5 +19,7 @@
         BooksOrganizedOrPublished = 7,
 
         BooksChaptersPublished = 8,
+
+        WorkAtEvents = 9,
     }
 }

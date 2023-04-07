@@ -6,7 +6,7 @@ namespace LattesDataExtraction.Domain.Factories
 {
     internal class GetDataInformationFactory : IGetDataInformationFactory
     {
-        private const string DataInformationTypeNotImplementedMessage = "The Data Information Type was not implemented.";
+        private const string DataInformationTypeNotImplementedMessage = "The Data Information Type {0} was not implemented.";
 
         public IGetDataInformationService Create(DataInformationType type)
         {
@@ -36,8 +36,11 @@ namespace LattesDataExtraction.Domain.Factories
                 case DataInformationType.BooksChaptersPublished:
                     return new GetBooksChaptersPublishedInformationService();
 
+                case DataInformationType.WorkAtEvents:
+                    return new GetWorkAtEventsInformationService();
+
                 default:
-                    throw new ArgumentException(DataInformationTypeNotImplementedMessage);
+                    throw new ArgumentException(message: string.Format(DataInformationTypeNotImplementedMessage, type));
             }
         }
     }

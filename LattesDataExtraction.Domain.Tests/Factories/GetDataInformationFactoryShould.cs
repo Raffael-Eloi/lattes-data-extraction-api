@@ -192,6 +192,28 @@ namespace LattesDataExtraction.Domain.Tests.Factories
         }
 
         [Test]
+        public void Return_Work_At_Events_Service_When_Type_Is_Work_At_Events()
+        {
+            #region Arrange
+
+            var workAtEventsType = DataInformationType.WorkAtEvents;
+
+            #endregion
+
+            #region Act
+
+            IGetDataInformationService getDataInformationType = getDataInformationFactory.Create(workAtEventsType);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(getDataInformationType.GetType(), Is.EqualTo(typeof(GetWorkAtEventsInformationService)));
+
+            #endregion
+        }
+
+        [Test]
         public void Throw_Exception_When_Data_Information_Type_Does_Not_Exist()
         {
             #region Arrange
@@ -223,7 +245,7 @@ namespace LattesDataExtraction.Domain.Tests.Factories
             {
                 Assert.That(threwException.GetType(), Is.EqualTo(typeof(ArgumentException)));
 
-                Assert.That(threwException.Message, Is.EqualTo("The Data Information Type was not implemented."));
+                Assert.That(threwException.Message, Is.EqualTo($"The Data Information Type {unknownType} was not implemented."));
             });
 
             #endregion
