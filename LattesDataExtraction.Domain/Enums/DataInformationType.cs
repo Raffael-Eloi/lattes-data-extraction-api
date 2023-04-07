@@ -21,5 +21,7 @@
         BooksChaptersPublished = 8,
 
         WorkAtEvents = 9,
+
+        OthersBibliographicProduction = 10,
     }
 }

@@ -214,6 +214,28 @@ namespace LattesDataExtraction.Domain.Tests.Factories
         }
 
         [Test]
+        public void Return_Others_Bibliographic_Production_Service_When_Type_Is_Others_Bibliographic_Production()
+        {
+            #region Arrange
+
+            var othersBibliographicProductionType = DataInformationType.OthersBibliographicProduction;
+
+            #endregion
+
+            #region Act
+
+            IGetDataInformationService getDataInformationType = getDataInformationFactory.Create(othersBibliographicProductionType);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(getDataInformationType.GetType(), Is.EqualTo(typeof(GetOthersBibliographicProductionInformationService)));
+
+            #endregion
+        }
+
+        [Test]
         public void Throw_Exception_When_Data_Information_Type_Does_Not_Exist()
         {
             #region Arrange
