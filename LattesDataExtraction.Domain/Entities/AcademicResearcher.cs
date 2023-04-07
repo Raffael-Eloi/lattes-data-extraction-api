@@ -35,5 +35,7 @@
         public IEnumerable<Book>? BooksPublishedOrOrganized { get; set; }
 
         public IEnumerable<BookChapter>? BooksChaptersPublished { get; set; }
+
+        public IEnumerable<Event>? WorkAtEvents { get; set; }
     }
 }
