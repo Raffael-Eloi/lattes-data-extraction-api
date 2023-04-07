@@ -1,5 +1,6 @@
 ﻿using LattesDataExtraction.Domain.Contracts;
 using LattesDataExtraction.Domain.Entities;
+using LattesDataExtraction.Domain.Services.DataExtraction;
 using System.Xml;
 
 namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
@@ -45,7 +46,7 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             string expectedTitle = "EducaXML: um ambiente colaborativo para o desenvolvimento de hiperdocumentos educacionais baseados em XML";
             int expectedWorkYear = 2001;
             string expectedCountry = "Brasil";
-            string expectedLanguage = "Brasil";
+            string expectedLanguage = "Português";
             string expectedHomePageLink = "www.ulbra-to.br/encoinfo2001/educaXML.pdf";
             string expectedClassification = "REGIONAL";
             string expectedName = "III Encontro de Estudantes de Informática do Estado do Tocantins";
