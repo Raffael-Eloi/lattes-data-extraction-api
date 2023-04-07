@@ -1,5 +1,6 @@
 ﻿using LattesDataExtraction.Domain.Contracts;
 using LattesDataExtraction.Domain.Entities;
+using LattesDataExtraction.Domain.Services.DataExtraction;
 using System.Xml;
 
 namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
@@ -46,7 +47,7 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             int expectedYear = 2000;
             string expectedCountry = "Brasil";
             string expectedLanguage = "Português";
-            string expectedPurpose = "Educação infantil";
+            string expectedPurpose = "Educação Infantil";
             string expectedPlatform = "Windows";
             string expectedAvailability = "RESTRITA";
             string expectedFinancingInstituition = "Centro Universitário Luterano de Palmas";

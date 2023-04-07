@@ -31,13 +31,13 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
             {
                 if (element is null || element.ChildNodes is null || element.ChildNodes.Count == 0) continue;
 
-                foreach (XmlNode alWorkAtEventElements in element.ChildNodes)
+                foreach (XmlNode allWorkAtEventElements in element.ChildNodes)
                 {
                     _event = new();
 
                     _authors = new();
 
-                    foreach (XmlNode workAtEventElement in alWorkAtEventElements.ChildNodes)
+                    foreach (XmlNode workAtEventElement in allWorkAtEventElements.ChildNodes)
                     {
                         _author = new();
 
