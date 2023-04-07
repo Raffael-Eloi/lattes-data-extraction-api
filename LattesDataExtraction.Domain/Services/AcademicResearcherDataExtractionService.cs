@@ -34,11 +34,14 @@ namespace LattesDataExtraction.Domain.Services
 
             GetAcademicBackgroundInformationIfExists();
 
+            GetWorkAtEventsIfExists();
+
             GetPublishedArticlesInformationIfExists();
 
             GetBooksOrganizedOrPublishedIfExists();
 
             GetBooksChaptersPublishedIfExists();
+
 
             return _academicResearch;
         }
@@ -86,6 +89,13 @@ namespace LattesDataExtraction.Domain.Services
         private void GetAcademicBackgroundInformationIfExists()
         {
             IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.AcademicBackground);
+
+            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument);
+        }
+        
+        private void GetWorkAtEventsIfExists()
+        {
+            IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.WorkAtEvents);
 
             getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument);
         }
