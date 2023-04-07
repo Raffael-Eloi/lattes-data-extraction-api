@@ -159,31 +159,31 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
             }
         }
 
-        private void GetAuthors(XmlNode bookChapterElement)
+        private void GetAuthors(XmlNode workAtEventElement)
         {
-            if (bookChapterElement.Name is not null && bookChapterElement.Name == "AUTORES")
+            if (workAtEventElement.Name is not null && workAtEventElement.Name == "AUTORES")
             {
-                if (bookChapterElement.Attributes is null || bookChapterElement.Attributes.Count == 0) return;
+                if (workAtEventElement.Attributes is null || workAtEventElement.Attributes.Count == 0) return;
 
-                XmlAttributeCollection booksChapters = bookChapterElement.Attributes;
+                XmlAttributeCollection events = workAtEventElement.Attributes;
 
-                foreach (XmlAttribute bookChapter in booksChapters)
+                foreach (XmlAttribute @event in events)
                 {
-                    if (bookChapter is null || string.IsNullOrEmpty(bookChapter.Name) || string.IsNullOrEmpty(bookChapter.Value)) continue;
+                    if (@event is null || string.IsNullOrEmpty(@event.Name) || string.IsNullOrEmpty(@event.Value)) continue;
 
-                    if (bookChapter.Name == "NOME-COMPLETO-DO-AUTOR")
+                    if (@event.Name == "NOME-COMPLETO-DO-AUTOR")
                     {
-                        _author!.FullName = bookChapter.Value;
+                        _author!.FullName = @event.Value;
                     }
 
-                    if (bookChapter.Name == "NOME-PARA-CITACAO")
+                    if (@event.Name == "NOME-PARA-CITACAO")
                     {
-                        _author!.CitationName = bookChapter.Value;
+                        _author!.CitationName = @event.Value;
                     }
 
-                    if (bookChapter.Name == "NRO-ID-CNPQ")
+                    if (@event.Name == "NRO-ID-CNPQ")
                     {
-                        _author!.CNPQId = bookChapter.Value;
+                        _author!.CNPQId = @event.Value;
                     }
                 }
 
