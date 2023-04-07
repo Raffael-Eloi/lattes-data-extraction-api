@@ -292,5 +292,37 @@ namespace LattesDataExtraction.Domain.Tests.Services
 
             #endregion
         }
+
+        [Test]
+        public void Extract_Others_Bibliographic_Production_Information_From_File()
+        {
+            #region Arrange
+
+            var academicResearcherFile = @"C:\useful\researcher.xml";
+
+            #endregion
+
+            #region Act
+
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(academicResearcher, Is.Not.Null);
+
+            Assert.That(academicResearcher.OthersBibliographicProduction, Is.Not.Null);
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(academicResearcher.OthersBibliographicProduction.ToList(), Has.Count.EqualTo(16));
+                Assert.That(academicResearcher.OthersBibliographicProduction.First().Authors, Is.Not.Null);
+            });
+
+            Assert.That(academicResearcher.OthersBibliographicProduction.First().Authors!.ToList(), Has.Count.GreaterThanOrEqualTo(1));
+
+            #endregion
+        }
     }
 }
