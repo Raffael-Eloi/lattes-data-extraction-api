@@ -25,5 +25,7 @@
         OthersBibliographicProduction = 10,
 
         TechnicalProduction = 11,
+
+        CompletedOrientation = 12,
     }
 }

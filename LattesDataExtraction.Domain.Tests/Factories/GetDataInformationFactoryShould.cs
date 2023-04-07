@@ -258,6 +258,28 @@ namespace LattesDataExtraction.Domain.Tests.Factories
         }
 
         [Test]
+        public void Return_Completed_Orientation_Service_When_Type_Is_Completed_Orientation()
+        {
+            #region Arrange
+
+            var completedOrientationType = DataInformationType.CompletedOrientation;
+
+            #endregion
+
+            #region Act
+
+            IGetDataInformationService getDataInformationType = getDataInformationFactory.Create(completedOrientationType);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(getDataInformationType.GetType(), Is.EqualTo(typeof(GetCompletedOrientationInformationService)));
+
+            #endregion
+        }
+
+        [Test]
         public void Throw_Exception_When_Data_Information_Type_Does_Not_Exist()
         {
             #region Arrange
