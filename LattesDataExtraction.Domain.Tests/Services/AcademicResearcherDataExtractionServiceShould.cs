@@ -382,7 +382,7 @@ namespace LattesDataExtraction.Domain.Tests.Services
 
             Assert.Multiple(() =>
             {
-                Assert.That(academicResearcher.CompletedOrientation.ToList(), Has.Count.EqualTo(166));
+                Assert.That(academicResearcher.CompletedOrientation.ToList(), Has.Count.EqualTo(83));
             });
 
             #endregion
