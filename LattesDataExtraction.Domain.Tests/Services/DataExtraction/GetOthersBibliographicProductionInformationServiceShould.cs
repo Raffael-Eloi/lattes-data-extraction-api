@@ -56,9 +56,9 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
                 CNPQId = "7309417394410594"
             };
 
-            Assert.That(academicResearcher.OthersBibliographicProduction, Is.Not.Null);
+            Assert.That(academicResearcher.OthersBibliographicProductions, Is.Not.Null);
 
-            var othersBibliographicProductionVerification = academicResearcher.OthersBibliographicProduction
+            var othersBibliographicProductionVerification = academicResearcher.OthersBibliographicProductions
                 .FirstOrDefault(
                     x =>
                         x.NatureOfWork == expectedNatureOfWork &&

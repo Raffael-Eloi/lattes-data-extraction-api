@@ -294,7 +294,7 @@ namespace LattesDataExtraction.Domain.Tests.Services
         }
 
         [Test]
-        public void Extract_Others_Bibliographic_Production_Information_From_File()
+        public void Extract_Others_Bibliographic_Productions_Information_From_File()
         {
             #region Arrange
 
@@ -312,15 +312,47 @@ namespace LattesDataExtraction.Domain.Tests.Services
 
             Assert.That(academicResearcher, Is.Not.Null);
 
-            Assert.That(academicResearcher.OthersBibliographicProduction, Is.Not.Null);
+            Assert.That(academicResearcher.OthersBibliographicProductions, Is.Not.Null);
 
             Assert.Multiple(() =>
             {
-                Assert.That(academicResearcher.OthersBibliographicProduction.ToList(), Has.Count.EqualTo(16));
-                Assert.That(academicResearcher.OthersBibliographicProduction.First().Authors, Is.Not.Null);
+                Assert.That(academicResearcher.OthersBibliographicProductions.ToList(), Has.Count.EqualTo(16));
+                Assert.That(academicResearcher.OthersBibliographicProductions.First().Authors, Is.Not.Null);
             });
 
-            Assert.That(academicResearcher.OthersBibliographicProduction.First().Authors!.ToList(), Has.Count.GreaterThanOrEqualTo(1));
+            Assert.That(academicResearcher.OthersBibliographicProductions.First().Authors!.ToList(), Has.Count.GreaterThanOrEqualTo(1));
+
+            #endregion
+        }
+
+        [Test]
+        public void Extract_Technical_Productions_Information_From_File()
+        {
+            #region Arrange
+
+            var academicResearcherFile = @"C:\useful\researcher.xml";
+
+            #endregion
+
+            #region Act
+
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(academicResearcher, Is.Not.Null);
+
+            Assert.That(academicResearcher.TechnicalProductions, Is.Not.Null);
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(academicResearcher.TechnicalProductions.ToList(), Has.Count.EqualTo(16));
+                Assert.That(academicResearcher.TechnicalProductions.First().Authors, Is.Not.Null);
+            });
+
+            Assert.That(academicResearcher.TechnicalProductions.First().Authors!.ToList(), Has.Count.GreaterThanOrEqualTo(5));
 
             #endregion
         }

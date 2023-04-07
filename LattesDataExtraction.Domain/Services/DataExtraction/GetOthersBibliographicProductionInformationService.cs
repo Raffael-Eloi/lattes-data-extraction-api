@@ -54,7 +54,7 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
                 }
             }
 
-            academicResearcher.OthersBibliographicProduction = _bibliographicProductionList;
+            academicResearcher.OthersBibliographicProductions = _bibliographicProductionList;
         }
 
         private void GetBasicData(XmlNode bibliographicProductionElement)
