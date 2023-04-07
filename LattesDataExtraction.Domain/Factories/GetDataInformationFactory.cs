@@ -45,6 +45,9 @@ namespace LattesDataExtraction.Domain.Factories
                 case DataInformationType.TechnicalProduction:
                     return new GetTechnicalProductionsInformationService();
 
+                case DataInformationType.CompletedOrientation: 
+                    return new GetCompletedOrientationInformationService();
+
                 default:
                     throw new ArgumentException(message: string.Format(DataInformationTypeNotImplementedMessage, type));
             }
