@@ -46,6 +46,8 @@ namespace LattesDataExtraction.Domain.Services
 
             GetTechnicalProductionIfExists();
 
+            GetCompletedOrientationIfExists();
+
             return _academicResearch;
         }
 
@@ -134,6 +136,13 @@ namespace LattesDataExtraction.Domain.Services
         private void GetTechnicalProductionIfExists()
         {
             IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.TechnicalProduction);
+
+            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument);
+        }
+        
+        private void GetCompletedOrientationIfExists()
+        {
+            IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.CompletedOrientation);
 
             getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument);
         }
