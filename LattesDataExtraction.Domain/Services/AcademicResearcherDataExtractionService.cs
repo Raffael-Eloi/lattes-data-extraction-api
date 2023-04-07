@@ -42,6 +42,7 @@ namespace LattesDataExtraction.Domain.Services
 
             GetBooksChaptersPublishedIfExists();
 
+            GetOthersBibliographicProductionIfExists();
 
             return _academicResearch;
         }
@@ -117,6 +118,13 @@ namespace LattesDataExtraction.Domain.Services
         private void GetBooksChaptersPublishedIfExists()
         {
             IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.BooksChaptersPublished);
+
+            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument);
+        }
+        
+        private void GetOthersBibliographicProductionIfExists()
+        {
+            IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.OthersBibliographicProduction);
 
             getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument);
         }
