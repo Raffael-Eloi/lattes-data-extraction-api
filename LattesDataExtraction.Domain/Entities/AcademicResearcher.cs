@@ -38,6 +38,6 @@
 
         public IEnumerable<Event>? WorkAtEvents { get; set; }
 
-        public IEnumerable<Event>? OthersBibliographicProduction { get; set; }
+        public IEnumerable<BibliographicProduction>? OthersBibliographicProduction { get; set; }
     }
 }
