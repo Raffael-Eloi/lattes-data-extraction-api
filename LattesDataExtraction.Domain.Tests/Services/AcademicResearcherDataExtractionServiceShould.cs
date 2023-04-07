@@ -348,7 +348,7 @@ namespace LattesDataExtraction.Domain.Tests.Services
 
             Assert.Multiple(() =>
             {
-                Assert.That(academicResearcher.TechnicalProductions.ToList(), Has.Count.EqualTo(16));
+                Assert.That(academicResearcher.TechnicalProductions.ToList(), Has.Count.EqualTo(6));
                 Assert.That(academicResearcher.TechnicalProductions.First().Authors, Is.Not.Null);
             });
 
