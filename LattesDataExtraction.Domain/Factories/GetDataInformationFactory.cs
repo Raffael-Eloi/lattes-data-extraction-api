@@ -42,6 +42,9 @@ namespace LattesDataExtraction.Domain.Factories
                 case DataInformationType.OthersBibliographicProduction:
                     return new GetOthersBibliographicProductionInformationService();
 
+                case DataInformationType.TechnicalProduction:
+                    return new GetTechnicalProductionsInformationService();
+
                 default:
                     throw new ArgumentException(message: string.Format(DataInformationTypeNotImplementedMessage, type));
             }
