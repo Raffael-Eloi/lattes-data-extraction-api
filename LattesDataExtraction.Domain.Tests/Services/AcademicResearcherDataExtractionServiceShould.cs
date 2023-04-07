@@ -189,8 +189,10 @@ namespace LattesDataExtraction.Domain.Tests.Services
             Assert.Multiple(() =>
             {
                 Assert.That(academicResearcher.PublishedArticles.ToList(), Has.Count.EqualTo(3));
-                Assert.That(academicResearcher.PublishedArticles.First().Authors.ToList(), Has.Count.GreaterThan(1));
+                Assert.That(academicResearcher.PublishedArticles.First().Authors, Is.Not.Null);
             });
+
+            Assert.That(academicResearcher.PublishedArticles.First().Authors!.ToList(), Has.Count.GreaterThan(1));
 
             #endregion
         }
@@ -353,6 +355,35 @@ namespace LattesDataExtraction.Domain.Tests.Services
             });
 
             Assert.That(academicResearcher.TechnicalProductions.First().Authors!.ToList(), Has.Count.GreaterThanOrEqualTo(5));
+
+            #endregion
+        }
+
+        [Test]
+        public void Extract_Completed_Orientation_Information_From_File()
+        {
+            #region Arrange
+
+            var academicResearcherFile = @"C:\useful\researcher.xml";
+
+            #endregion
+
+            #region Act
+
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(academicResearcher, Is.Not.Null);
+
+            Assert.That(academicResearcher.CompletedOrientation, Is.Not.Null);
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(academicResearcher.CompletedOrientation.ToList(), Has.Count.EqualTo(166));
+            });
 
             #endregion
         }

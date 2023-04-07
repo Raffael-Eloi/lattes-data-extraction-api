@@ -41,5 +41,7 @@
         public IEnumerable<BibliographicProduction>? OthersBibliographicProductions { get; set; }
 
         public IEnumerable<Software>? TechnicalProductions { get; set; }
+
+        public IEnumerable<Orientation>? CompletedOrientation { get; set; }
     }
 }
