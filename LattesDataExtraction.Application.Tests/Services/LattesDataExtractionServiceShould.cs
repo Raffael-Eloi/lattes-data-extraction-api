@@ -1,6 +1,10 @@
+using AutoMapper;
+using LattesDataExtraction.Application.Contracts;
+using LattesDataExtraction.Application.Mappers;
+using LattesDataExtraction.Application.Models;
+using LattesDataExtraction.Application.Services;
 using LattesDataExtraction.Domain.Factories;
 using LattesDataExtraction.Domain.Services;
-using System.Xml;
 
 namespace LattesDataExtraction.Application.Tests.Services
 {
@@ -15,7 +19,14 @@ namespace LattesDataExtraction.Application.Tests.Services
 
             var academicResearcherDataExtractionService = new AcademicResearcherDataExtractionService(factory);
 
-            lattesDataExtractionService = new LattesDataExtractionService(academicResearcherDataExtractionService);
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new ApplicationMappingProfile());
+            });
+
+            IMapper mapper = mapperConfig.CreateMapper();
+
+            lattesDataExtractionService = new LattesDataExtractionService(academicResearcherDataExtractionService, mapper);
         }
 
         [Test]
@@ -25,12 +36,9 @@ namespace LattesDataExtraction.Application.Tests.Services
 
             var academicResearcherFilePath = @"C:\useful\researcher.xml";
 
-            XmlDocument academicResearcherDocument = new();
-            academicResearcherDocument.Load(academicResearcherFilePath);
-
             AddAcademicResearcherRequest request = new()
             {
-                File = academicResearcherDocument
+                File = academicResearcherFilePath
             };
 
             #endregion

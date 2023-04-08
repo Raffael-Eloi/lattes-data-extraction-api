@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "F/ElKo8b9gZLKZpRld3+0IJSU8HpNxxAWC57s50ZEhpIz6XxWYu7wAd372BLuAZy8wpJqKfIZTbdxtGdPlF0Qw==",
+  "dgSpecHash": "9unHege9nd1+0sNkjYOnOOq779sUlgKH7EkRVIAIA9fJAdpTgIWVO3yLv+sfkB92AqBtPB5uSMzEDiI+HMhprg==",
   "success": true,
   "projectFilePath": "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Application.Tests\\LattesDataExtraction.Application.Tests.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\raffa\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\raffa\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\raffa\\.nuget\\packages\\microsoft.codecoverage\\17.3.2\\microsoft.codecoverage.17.3.2.nupkg.sha512",
-    "C:\\Users\\raffa\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
+    "C:\\Users\\raffa\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\raffa\\.nuget\\packages\\microsoft.net.test.sdk\\17.3.2\\microsoft.net.test.sdk.17.3.2.nupkg.sha512",
     "C:\\Users\\raffa\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\raffa\\.nuget\\packages\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",
