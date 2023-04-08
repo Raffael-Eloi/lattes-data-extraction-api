@@ -973,6 +973,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "LattesDataExtraction.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/LattesDataExtraction.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LattesDataExtraction.Domain.dll": {}
+        }
       }
     }
   },
@@ -3946,10 +3956,16 @@
         "system.xml.xdocument.4.0.11.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "LattesDataExtraction.Domain/1.0.0": {
+      "type": "project",
+      "path": "../LattesDataExtraction.Domain/LattesDataExtraction.Domain.csproj",
+      "msbuildProject": "../LattesDataExtraction.Domain/LattesDataExtraction.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "LattesDataExtraction.Domain >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.3.2",
       "NUnit >= 3.13.3",
       "NUnit.Analyzers >= 3.5.0",
@@ -3983,7 +3999,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Domain\\LattesDataExtraction.Domain.csproj": {
+              "projectPath": "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Domain\\LattesDataExtraction.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

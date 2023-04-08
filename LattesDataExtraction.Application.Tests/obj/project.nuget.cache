@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "L83kagVOuJFcBE+srEm4nZyP7APSEZ6U8KDjhWabPIalqBz371tUBiXAZEBDLuBm8c1IEkxHKuEk5rKKIwX4vg==",
+  "dgSpecHash": "F/ElKo8b9gZLKZpRld3+0IJSU8HpNxxAWC57s50ZEhpIz6XxWYu7wAd372BLuAZy8wpJqKfIZTbdxtGdPlF0Qw==",
   "success": true,
   "projectFilePath": "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Application.Tests\\LattesDataExtraction.Application.Tests.csproj",
   "expectedPackageFiles": [

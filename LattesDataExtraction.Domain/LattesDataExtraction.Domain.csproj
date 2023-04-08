@@ -9,6 +9,7 @@
 
 	<ItemGroup>
 		<InternalsVisibleTo Include="LattesDataExtraction.Domain.Tests" />
+		<InternalsVisibleTo Include="LattesDataExtraction.Application.Tests" />
 	</ItemGroup>
 
 </Project>

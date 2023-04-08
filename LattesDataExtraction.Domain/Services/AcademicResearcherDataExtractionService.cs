@@ -5,7 +5,7 @@ using System.Xml;
 
 namespace LattesDataExtraction.Domain.Services
 {
-    internal class AcademicResearcherDataExtractionService : IAcademicResearcherDataExtractionService
+    public class AcademicResearcherDataExtractionService : IAcademicResearcherDataExtractionService
     {
         private readonly IGetDataInformationFactory _getDataInformationFactory;
 

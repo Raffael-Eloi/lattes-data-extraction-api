@@ -2,7 +2,7 @@
 
 namespace LattesDataExtraction.Domain.Contracts
 {
-    internal interface IGetDataInformationFactory
+    public interface IGetDataInformationFactory
     {
         IGetDataInformationService Create(DataInformationType type);
     }

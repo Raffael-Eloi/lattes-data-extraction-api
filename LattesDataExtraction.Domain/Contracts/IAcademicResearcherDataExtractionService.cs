@@ -2,7 +2,7 @@
 
 namespace LattesDataExtraction.Domain.Contracts
 {
-    internal interface IAcademicResearcherDataExtractionService
+    public interface IAcademicResearcherDataExtractionService
     {
         AcademicResearcher? GetAcademicInformation(string academicResearcherFile);
     }
