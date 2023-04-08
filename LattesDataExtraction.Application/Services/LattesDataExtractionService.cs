@@ -14,6 +14,8 @@ namespace LattesDataExtraction.Application.Services
 
         private readonly IAcademicResearcherRepository _academicResearcherRepository;
 
+        private const string DataFileInvalidMessage = "The data on the XML file is invalid.";
+
         public LattesDataExtractionService(
                 IAcademicResearcherDataExtractionService academicResearcherDataExtractionService, 
                 IMapper mapper, 
@@ -29,12 +31,29 @@ namespace LattesDataExtraction.Application.Services
         {
             AcademicResearcher? academicResearcher = _academicResearcherDataExtractionService.GetAcademicInformation(request.File);
 
+            if (RequestIsInvalid(academicResearcher, out AddAcademicResearcherResponse invalidResponse))
+            {
+                return invalidResponse;
+            }
+
             if ( academicResearcher != null ) 
             {
                 _academicResearcherRepository.Save(academicResearcher);
             }
 
             return _mapper.Map<AddAcademicResearcherResponse>(academicResearcher);
+        }
+
+        private static bool RequestIsInvalid(AcademicResearcher? academicResearcher, out AddAcademicResearcherResponse invalidResponse)
+        {
+            invalidResponse = new AddAcademicResearcherResponse();
+
+            if ( academicResearcher == null )
+            {
+                invalidResponse.AddNotification("AcademicResearcher", DataFileInvalidMessage);
+            }
+
+            return !invalidResponse.IsValid;
         }
     }
 }

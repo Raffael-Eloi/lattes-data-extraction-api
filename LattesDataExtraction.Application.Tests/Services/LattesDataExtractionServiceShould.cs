@@ -99,12 +99,24 @@ namespace LattesDataExtraction.Application.Tests.Services
         {
             #region Arrange
 
+            var academicResearcherDataExtractionService = new Mock<IAcademicResearcherDataExtractionService>();
+
+            var mapper = new Mock<IMapper>();
+
+            var lattesDataExtractionService = new LattesDataExtractionService(academicResearcherDataExtractionService.Object, mapper.Object, academicResearcherRepositoryMock.Object);
+
             var academicResearcherFilePath = @"C:\useful\researcher.xml";
 
             AddAcademicResearcherRequest request = new()
             {
                 File = academicResearcherFilePath
             };
+
+            AcademicResearcher? invalidAcademicResearcher = null;
+
+            academicResearcherDataExtractionService
+                .Setup(service => service.GetAcademicInformation(It.IsAny<string>()))
+                .Returns(invalidAcademicResearcher);
 
             #endregion
 
