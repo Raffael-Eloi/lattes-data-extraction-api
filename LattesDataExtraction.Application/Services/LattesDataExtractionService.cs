@@ -12,10 +12,17 @@ namespace LattesDataExtraction.Application.Services
 
         private readonly IMapper _mapper;
 
-        public LattesDataExtractionService(IAcademicResearcherDataExtractionService academicResearcherDataExtractionService, IMapper mapper)
+        private readonly IAcademicResearcherRepository _academicResearcherRepository;
+
+        public LattesDataExtractionService(
+                IAcademicResearcherDataExtractionService academicResearcherDataExtractionService, 
+                IMapper mapper, 
+                IAcademicResearcherRepository academicResearcherRepository
+            )
         {
             _academicResearcherDataExtractionService = academicResearcherDataExtractionService;
             _mapper = mapper;
+            _academicResearcherRepository = academicResearcherRepository;
         }
 
         public AddAcademicResearcherResponse Extract(AddAcademicResearcherRequest request)
