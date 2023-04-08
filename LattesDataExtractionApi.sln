@@ -7,7 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LattesDataExtraction.Domain", "LattesDataExtraction.Domain\LattesDataExtraction.Domain.csproj", "{99DF522B-5E38-4440-B419-F5FB01E3AF17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LattesDataExtraction.Domain.Tests", "LattesDataExtraction.Domain.Tests\LattesDataExtraction.Domain.Tests.csproj", "{460666F5-A27F-4427-A954-E01FD2C81375}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LattesDataExtraction.Domain.Tests", "LattesDataExtraction.Domain.Tests\LattesDataExtraction.Domain.Tests.csproj", "{460666F5-A27F-4427-A954-E01FD2C81375}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{268339D0-FD8D-456B-85A9-4C040FE4F43C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LattesDataExtraction.Application.Tests", "LattesDataExtraction.Application.Tests\LattesDataExtraction.Application.Tests.csproj", "{9FD18558-DB7E-4E45-8FB7-255CCCD3D2FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LattesDataExtraction.Application", "LattesDataExtraction.Application\LattesDataExtraction.Application.csproj", "{6226169F-0FB5-4643-9211-E62B6A0879B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +29,14 @@ Global
 		{460666F5-A27F-4427-A954-E01FD2C81375}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{460666F5-A27F-4427-A954-E01FD2C81375}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{460666F5-A27F-4427-A954-E01FD2C81375}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FD18558-DB7E-4E45-8FB7-255CCCD3D2FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FD18558-DB7E-4E45-8FB7-255CCCD3D2FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FD18558-DB7E-4E45-8FB7-255CCCD3D2FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FD18558-DB7E-4E45-8FB7-255CCCD3D2FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6226169F-0FB5-4643-9211-E62B6A0879B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6226169F-0FB5-4643-9211-E62B6A0879B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6226169F-0FB5-4643-9211-E62B6A0879B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6226169F-0FB5-4643-9211-E62B6A0879B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +44,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{99DF522B-5E38-4440-B419-F5FB01E3AF17} = {5DED91B5-BEC6-4BE0-86DC-73525F956CF8}
 		{460666F5-A27F-4427-A954-E01FD2C81375} = {5DED91B5-BEC6-4BE0-86DC-73525F956CF8}
+		{9FD18558-DB7E-4E45-8FB7-255CCCD3D2FE} = {268339D0-FD8D-456B-85A9-4C040FE4F43C}
+		{6226169F-0FB5-4643-9211-E62B6A0879B2} = {268339D0-FD8D-456B-85A9-4C040FE4F43C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AD6D6D5E-4062-441F-AB0E-E10B9ABFB57F}
