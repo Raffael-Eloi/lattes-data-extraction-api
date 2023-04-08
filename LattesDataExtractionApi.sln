@@ -23,6 +23,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Pre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LattesDataExtraction.API.EntryPoint", "LattesDataExtraction.API.EntryPoint\LattesDataExtraction.API.EntryPoint.csproj", "{1AB0661D-1735-4222-B03C-99E2C2A429BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LattesDataExtraction.API", "LattesDataExtraction.API\LattesDataExtraction.API.csproj", "{E170535B-8D5B-4EC1-9389-64FC39135855}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LattesDataExtraction.API.Tests", "LattesDataExtraction.API.Tests\LattesDataExtraction.API.Tests.csproj", "{ECE51766-8363-49D0-9677-3935439326AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +57,14 @@ Global
 		{1AB0661D-1735-4222-B03C-99E2C2A429BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AB0661D-1735-4222-B03C-99E2C2A429BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AB0661D-1735-4222-B03C-99E2C2A429BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E170535B-8D5B-4EC1-9389-64FC39135855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E170535B-8D5B-4EC1-9389-64FC39135855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E170535B-8D5B-4EC1-9389-64FC39135855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E170535B-8D5B-4EC1-9389-64FC39135855}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECE51766-8363-49D0-9677-3935439326AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECE51766-8363-49D0-9677-3935439326AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECE51766-8363-49D0-9677-3935439326AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECE51766-8363-49D0-9677-3935439326AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +76,8 @@ Global
 		{6226169F-0FB5-4643-9211-E62B6A0879B2} = {268339D0-FD8D-456B-85A9-4C040FE4F43C}
 		{880F9FE3-B890-47B6-A4C3-8141E482B195} = {C588477D-FAAC-4A7D-8E41-DD74E5517168}
 		{1AB0661D-1735-4222-B03C-99E2C2A429BA} = {A6A1EC8B-491B-4404-A223-32BF7A8F10C2}
+		{E170535B-8D5B-4EC1-9389-64FC39135855} = {A6A1EC8B-491B-4404-A223-32BF7A8F10C2}
+		{ECE51766-8363-49D0-9677-3935439326AB} = {A6A1EC8B-491B-4404-A223-32BF7A8F10C2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AD6D6D5E-4062-441F-AB0E-E10B9ABFB57F}
