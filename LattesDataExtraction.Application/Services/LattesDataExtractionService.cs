@@ -29,6 +29,11 @@ namespace LattesDataExtraction.Application.Services
         {
             AcademicResearcher? academicResearcher = _academicResearcherDataExtractionService.GetAcademicInformation(request.File);
 
+            if ( academicResearcher != null ) 
+            {
+                _academicResearcherRepository.Save(academicResearcher);
+            }
+
             return _mapper.Map<AddAcademicResearcherResponse>(academicResearcher);
         }
     }
