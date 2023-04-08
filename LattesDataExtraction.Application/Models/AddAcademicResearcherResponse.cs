@@ -1,8 +1,9 @@
-﻿using LattesDataExtraction.Domain.Entities;
+﻿using Flunt.Notifications;
+using LattesDataExtraction.Domain.Entities;
 
 namespace LattesDataExtraction.Application.Models
 {
-    public class AddAcademicResearcherResponse
+    public class AddAcademicResearcherResponse : Notifiable<Notification>
     {
         public Guid Id { get; set; }
 

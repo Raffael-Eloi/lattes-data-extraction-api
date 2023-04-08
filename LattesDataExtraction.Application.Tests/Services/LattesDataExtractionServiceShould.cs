@@ -93,5 +93,40 @@ namespace LattesDataExtraction.Application.Tests.Services
 
             #endregion
         }
+
+        [Test]
+        public void Return_Notifications_When_File_Data_Is_Invalid()
+        {
+            #region Arrange
+
+            var academicResearcherFilePath = @"C:\useful\researcher.xml";
+
+            AddAcademicResearcherRequest request = new()
+            {
+                File = academicResearcherFilePath
+            };
+
+            #endregion
+
+            #region Act
+
+            AddAcademicResearcherResponse response = lattesDataExtractionService.Extract(request);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(response, Is.Not.Null);
+            
+            Assert.Multiple(() =>
+            {
+                Assert.That(response.IsValid, Is.False);
+                Assert.That(response.Notifications, Has.Count.EqualTo(1));
+            });
+            
+            Assert.That(response.Notifications.First().Message, Is.EqualTo("The data on the XML file is invalid."));
+            
+            #endregion
+        }
     }
 }
