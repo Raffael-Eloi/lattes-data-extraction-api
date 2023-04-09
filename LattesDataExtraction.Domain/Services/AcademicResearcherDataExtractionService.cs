@@ -18,9 +18,9 @@ namespace LattesDataExtraction.Domain.Services
             _getDataInformationFactory = getDataInformationFactory;
         }
 
-        public AcademicResearcher? GetAcademicInformation(string academicResearcherFile)
+        public AcademicResearcher GetAcademicInformation(XmlDocument document)
         {
-            LoadXmlFile(academicResearcherFile);
+            _academicResearcherDocument = document;
 
             InitializeAcademicResearcher();
 
@@ -48,14 +48,7 @@ namespace LattesDataExtraction.Domain.Services
 
             GetCompletedOrientationIfExists();
 
-            return _academicResearch;
-        }
-
-        private void LoadXmlFile(string academicResearcherFile)
-        {
-            _academicResearcherDocument = new();
-
-            _academicResearcherDocument.Load(academicResearcherFile);
+            return _academicResearch!;
         }
 
         private void InitializeAcademicResearcher()
@@ -67,84 +60,84 @@ namespace LattesDataExtraction.Domain.Services
         {
             IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.CurriculumVitae);
 
-            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument);
+            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument!);
         }
 
         private void GetGeneralDataInformationIfExists()
         {
             IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.GeneralData);
 
-            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument);
+            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument!);
         }
         
         private void GetProfessionalDescriptionInformationIfExists()
         {
             IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.ProfessionalDescription);
 
-            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument);
+            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument!);
         }
         
         private void GetProfessionalAddressInformationIfExists()
         {
             IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.ProfessionalAddress);
 
-            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument);
+            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument!);
         }
         
         private void GetAcademicBackgroundInformationIfExists()
         {
             IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.AcademicBackground);
 
-            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument);
+            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument!);
         }
         
         private void GetWorkAtEventsIfExists()
         {
             IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.WorkAtEvents);
 
-            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument);
+            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument!);
         }
         
         private void GetPublishedArticlesInformationIfExists()
         {
             IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.PublishedArticles);
 
-            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument);
+            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument!);
         }
         
         private void GetBooksOrganizedOrPublishedIfExists()
         {
             IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.BooksOrganizedOrPublished);
 
-            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument);
+            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument!);
         }
         
         private void GetBooksChaptersPublishedIfExists()
         {
             IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.BooksChaptersPublished);
 
-            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument);
+            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument!);
         }
         
         private void GetOthersBibliographicProductionIfExists()
         {
             IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.OthersBibliographicProduction);
 
-            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument);
+            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument!);
         }
         
         private void GetTechnicalProductionIfExists()
         {
             IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.TechnicalProduction);
 
-            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument);
+            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument!);
         }
         
         private void GetCompletedOrientationIfExists()
         {
             IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.CompletedOrientation);
 
-            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument);
+            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument!);
         }
     }
 }

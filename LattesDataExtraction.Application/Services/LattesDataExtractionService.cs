@@ -3,6 +3,8 @@ using LattesDataExtraction.Application.Contracts;
 using LattesDataExtraction.Application.Models;
 using LattesDataExtraction.Domain.Contracts;
 using LattesDataExtraction.Domain.Entities;
+using Microsoft.AspNetCore.Http;
+using System.Xml;
 
 namespace LattesDataExtraction.Application.Services
 {
@@ -27,33 +29,40 @@ namespace LattesDataExtraction.Application.Services
             _academicResearcherRepository = academicResearcherRepository;
         }
 
-        public AddAcademicResearcherResponse Extract(AddAcademicResearcherRequest request)
+        public AddAcademicResearcherResponse Extract(XmlDocument document)
         {
-            AcademicResearcher? academicResearcher = _academicResearcherDataExtractionService.GetAcademicInformation(request.File);
+            AcademicResearcher academicResearcher = _academicResearcherDataExtractionService.GetAcademicInformation(document);
 
             if (RequestIsInvalid(academicResearcher, out AddAcademicResearcherResponse invalidResponse))
             {
                 return invalidResponse;
             }
 
-            if ( academicResearcher != null ) 
-            {
-                _academicResearcherRepository.Save(academicResearcher);
-            }
+            _academicResearcherRepository.Save(academicResearcher);
 
             return _mapper.Map<AddAcademicResearcherResponse>(academicResearcher);
         }
 
-        private static bool RequestIsInvalid(AcademicResearcher? academicResearcher, out AddAcademicResearcherResponse invalidResponse)
+        private static bool RequestIsInvalid(AcademicResearcher academicResearcher, out AddAcademicResearcherResponse invalidResponse)
         {
             invalidResponse = new AddAcademicResearcherResponse();
 
-            if ( academicResearcher == null )
+            if (IsAcademicResearcherInvalid(academicResearcher))
             {
                 invalidResponse.AddNotification("AcademicResearcher", DataFileInvalidMessage);
             }
 
             return !invalidResponse.IsValid;
+        }
+
+        private static bool IsAcademicResearcherInvalid(AcademicResearcher academicResearcher)
+        {
+            if (string.IsNullOrEmpty(academicResearcher.IdentifierNumber) || string.IsNullOrEmpty(academicResearcher.LattesId))
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

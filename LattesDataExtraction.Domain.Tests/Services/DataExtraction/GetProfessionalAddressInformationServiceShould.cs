@@ -60,7 +60,7 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
 
             Assert.Multiple(() =>
             {
-                Assert.That(academicResearcher.ProfessionalAddress.CompanyCode, Is.EqualTo(expectedCompanyCode));
+                Assert.That(academicResearcher.ProfessionalAddress!.CompanyCode, Is.EqualTo(expectedCompanyCode));
                 Assert.That(academicResearcher.ProfessionalAddress.CompanyName, Is.EqualTo(expectedCompanyName));
                 Assert.That(academicResearcher.ProfessionalAddress.AddressComplement, Is.EqualTo(expectedAddressComplement));
                 Assert.That(academicResearcher.ProfessionalAddress.Country, Is.EqualTo(expectedCountry));

@@ -63,6 +63,8 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             int expectedComputerScienceEndYear = 1995;
 
 
+            Assert.That(academicResearcher.AcademicBackground, Is.Not.Null);
+
             var psychologyVerification = academicResearcher.AcademicBackground
                 .FirstOrDefault(
                     x => 
@@ -90,8 +92,6 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
                         x.StartYear.Year == expectedComputerScienceStartYear &&
                         x.EndYear.Year == expectedComputerScienceEndYear &&
                         x.AcademicBackgroundType == Enums.AcademicBackgroundType.Graduation);
-
-            Assert.That(academicResearcher, Is.Not.Null);
 
             Assert.Multiple(() =>
             {
@@ -127,6 +127,7 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             string expectedPsychologyCourseCode = "90000014";
             string expectedPsychologyCourseName = "Psicologia positiva, ciência do bem-estar e autorrealização";
 
+            Assert.That(academicResearcher.AcademicBackground, Is.Not.Null);
 
             var techCourseVerification = academicResearcher.AcademicBackground
                 .FirstOrDefault(
@@ -184,6 +185,8 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             string expectedKeyWord3 = "SMIL";
             string expectedKeyWord4 = "HTML+TIME";
 
+            Assert.That(academicResearcher.AcademicBackground, Is.Not.Null);
+
             var mastersVerification = academicResearcher.AcademicBackground
                 .FirstOrDefault(
                     x => 
@@ -234,6 +237,8 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             string expectedDoctorateThesis = "ChatGPT e inteligência artificial na educação: explorando a personalização do aprendizado e novas teorias de ensino e aprendizagem";
             string expectedAdvisorName = "Agostinho Serrano de Andrade Neto";
             string expectedAdvisorCode = "1253401330501170";
+
+            Assert.That(academicResearcher.AcademicBackground, Is.Not.Null);
 
             var mastersVerification = academicResearcher.AcademicBackground
                 .FirstOrDefault(

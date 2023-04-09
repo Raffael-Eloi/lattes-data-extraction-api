@@ -2,6 +2,7 @@ using LattesDataExtraction.Domain.Contracts;
 using LattesDataExtraction.Domain.Entities;
 using LattesDataExtraction.Domain.Factories;
 using LattesDataExtraction.Domain.Services;
+using System.Xml;
 
 namespace LattesDataExtraction.Domain.Tests.Services
 {
@@ -11,12 +12,20 @@ namespace LattesDataExtraction.Domain.Tests.Services
 
         private IGetDataInformationFactory getDataInformationFactory;
 
+        private XmlDocument academicResearcherDocument;
+
         [SetUp]
         public void Setup() 
         {
             getDataInformationFactory = new GetDataInformationFactory();
 
             academicResearcherFileReadService = new AcademicResearcherDataExtractionService(getDataInformationFactory);
+
+            var filePath = @"C:\useful\researcher.xml";
+
+            academicResearcherDocument = new XmlDocument();
+
+            academicResearcherDocument.Load(filePath);
         }
 
         [Test]
@@ -24,13 +33,11 @@ namespace LattesDataExtraction.Domain.Tests.Services
         {
             #region Arrange
 
-            var academicResearcherFile = @"C:\useful\researcher.xml";
-
             #endregion
 
             #region Act
 
-            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherDocument);
 
             #endregion
 
@@ -48,13 +55,11 @@ namespace LattesDataExtraction.Domain.Tests.Services
         {
             #region Arrange
 
-            var academicResearcherFile = @"C:\useful\researcher.xml";
-
             #endregion
 
             #region Act
 
-            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherDocument);
 
             #endregion
 
@@ -80,13 +85,11 @@ namespace LattesDataExtraction.Domain.Tests.Services
         {
             #region Arrange
 
-            var academicResearcherFile = @"C:\useful\researcher.xml";
-
             #endregion
 
             #region Act
 
-            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherDocument);
 
             #endregion
 
@@ -103,13 +106,11 @@ namespace LattesDataExtraction.Domain.Tests.Services
         {
             #region Arrange
 
-            var academicResearcherFile = @"C:\useful\researcher.xml";
-
             #endregion
 
             #region Act
 
-            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherDocument);
 
             #endregion
 
@@ -144,13 +145,11 @@ namespace LattesDataExtraction.Domain.Tests.Services
         {
             #region Arrange
 
-            var academicResearcherFile = @"C:\useful\researcher.xml";
-
             #endregion
 
             #region Act
 
-            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherDocument);
 
             #endregion
 
@@ -170,13 +169,11 @@ namespace LattesDataExtraction.Domain.Tests.Services
         {
             #region Arrange
 
-            var academicResearcherFile = @"C:\useful\researcher.xml";
-
             #endregion
 
             #region Act
 
-            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherDocument);
 
             #endregion
 
@@ -202,13 +199,11 @@ namespace LattesDataExtraction.Domain.Tests.Services
         {
             #region Arrange
 
-            var academicResearcherFile = @"C:\useful\researcher.xml";
-
             #endregion
 
             #region Act
 
-            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherDocument);
 
             #endregion
 
@@ -235,13 +230,11 @@ namespace LattesDataExtraction.Domain.Tests.Services
         {
             #region Arrange
 
-            var academicResearcherFile = @"C:\useful\researcher.xml";
-
             #endregion
 
             #region Act
 
-            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherDocument);
 
             #endregion
 
@@ -268,13 +261,11 @@ namespace LattesDataExtraction.Domain.Tests.Services
         {
             #region Arrange
 
-            var academicResearcherFile = @"C:\useful\researcher.xml";
-
             #endregion
 
             #region Act
 
-            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherDocument);
 
             #endregion
 
@@ -300,13 +291,11 @@ namespace LattesDataExtraction.Domain.Tests.Services
         {
             #region Arrange
 
-            var academicResearcherFile = @"C:\useful\researcher.xml";
-
             #endregion
 
             #region Act
 
-            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherDocument);
 
             #endregion
 
@@ -332,13 +321,11 @@ namespace LattesDataExtraction.Domain.Tests.Services
         {
             #region Arrange
 
-            var academicResearcherFile = @"C:\useful\researcher.xml";
-
             #endregion
 
             #region Act
 
-            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherDocument);
 
             #endregion
 
@@ -364,13 +351,11 @@ namespace LattesDataExtraction.Domain.Tests.Services
         {
             #region Arrange
 
-            var academicResearcherFile = @"C:\useful\researcher.xml";
-
             #endregion
 
             #region Act
 
-            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherFile);
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherDocument);
 
             #endregion
 

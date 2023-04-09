@@ -14,6 +14,6 @@
 
         public DateOnly Year { get; set; }
 
-        public IEnumerable<Author> Authors { get; set; }
+        public IEnumerable<Author> Authors { get; set; } = Enumerable.Empty<Author>();
     }
 }

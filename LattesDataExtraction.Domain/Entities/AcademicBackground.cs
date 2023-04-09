@@ -36,6 +36,6 @@ namespace LattesDataExtraction.Domain.Entities
 
         public string IdOasis { get; set;} = string.Empty;
 
-        public IEnumerable<string> KeyWords { get; set; }
+        public IEnumerable<string> KeyWords { get; set; } = Enumerable.Empty<string>();
     }
 }
