@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LattesDataExtraction.Application\LattesDataExtraction.Application.csproj" />
+    <ProjectReference Include="..\LattesDataExtraction.Infraestructure.Extensions\LattesDataExtraction.Infraestructure.Extensions.csproj" />
     <ProjectReference Include="..\LattesDataExtraction.Infraestructure.Ioc\LattesDataExtraction.Infraestructure.Ioc.csproj" />
   </ItemGroup>
 

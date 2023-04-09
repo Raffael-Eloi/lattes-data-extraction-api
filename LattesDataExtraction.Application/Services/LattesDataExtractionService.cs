@@ -3,7 +3,6 @@ using LattesDataExtraction.Application.Contracts;
 using LattesDataExtraction.Application.Models;
 using LattesDataExtraction.Domain.Contracts;
 using LattesDataExtraction.Domain.Entities;
-using Microsoft.AspNetCore.Http;
 using System.Xml;
 
 namespace LattesDataExtraction.Application.Services
@@ -38,7 +37,7 @@ namespace LattesDataExtraction.Application.Services
                 return invalidResponse;
             }
 
-            _academicResearcherRepository.Save(academicResearcher);
+            //_academicResearcherRepository.Save(academicResearcher);
 
             return _mapper.Map<AddAcademicResearcherResponse>(academicResearcher);
         }

@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LattesDataExtraction.API.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LattesDataExtraction.Infraestructure.Ioc", "LattesDataExtraction.Infraestructure.Ioc\LattesDataExtraction.Infraestructure.Ioc.csproj", "{2ECD7A1D-3FDA-4B99-A933-F0F0981E7705}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LattesDataExtraction.Infraestructure.Extensions", "LattesDataExtraction.Infraestructure.Extensions\LattesDataExtraction.Infraestructure.Extensions.csproj", "{9989E987-05D7-459B-8957-E1C76EA9A50D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{2ECD7A1D-3FDA-4B99-A933-F0F0981E7705}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2ECD7A1D-3FDA-4B99-A933-F0F0981E7705}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2ECD7A1D-3FDA-4B99-A933-F0F0981E7705}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9989E987-05D7-459B-8957-E1C76EA9A50D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9989E987-05D7-459B-8957-E1C76EA9A50D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9989E987-05D7-459B-8957-E1C76EA9A50D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9989E987-05D7-459B-8957-E1C76EA9A50D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +91,7 @@ Global
 		{E170535B-8D5B-4EC1-9389-64FC39135855} = {A6A1EC8B-491B-4404-A223-32BF7A8F10C2}
 		{9A4D4925-F87A-4021-9DCA-5085309ECCA3} = {A6A1EC8B-491B-4404-A223-32BF7A8F10C2}
 		{2ECD7A1D-3FDA-4B99-A933-F0F0981E7705} = {C588477D-FAAC-4A7D-8E41-DD74E5517168}
+		{9989E987-05D7-459B-8957-E1C76EA9A50D} = {C588477D-FAAC-4A7D-8E41-DD74E5517168}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AD6D6D5E-4062-441F-AB0E-E10B9ABFB57F}

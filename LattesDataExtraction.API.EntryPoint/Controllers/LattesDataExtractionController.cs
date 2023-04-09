@@ -1,4 +1,6 @@
 using LattesDataExtraction.Application.Contracts;
+using LattesDataExtraction.Application.Models;
+using LattesDataExtraction.Infraestructure.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using System.Xml;
 
@@ -28,12 +30,14 @@ namespace LattesDataExtraction.API.EntryPoint.Controllers
 
             academicResearcherDocument.Load(file.OpenReadStream());
 
+            AddAcademicResearcherResponse response = _lattesDataExtractionService.Extract(academicResearcherDocument);
 
-            //_lattesDataExtractionService.Extract()
+            if (!response.IsValid)
+            {
+                return ValidationProblem(ModelState.AddErrorsFromNotifications(response.Notifications));
+            }
 
-
-
-            return Ok();
+            return Ok(response);
         }
 
         private static object GetInvalidFormatFileErrorMessage()
