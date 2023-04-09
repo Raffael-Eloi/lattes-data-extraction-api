@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "2iMnd9C3kqvLAPVYEUkaWbxLKIktc8GW3PkDauex8R+HhBtMf7akke+GqHPk6QFI5lsmBQjjGXTgW/omxATAtw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Infraestructure.Ioc\\LattesDataExtraction.Infraestructure.Ioc.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\raffa\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\raffa\\.nuget\\packages\\flunt\\2.0.5\\flunt.2.0.5.nupkg.sha512",
+    "C:\\Users\\raffa\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\raffa\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.2.0\\microsoft.extensions.dependencyinjection.abstractions.2.2.0.nupkg.sha512"
+  ],
+  "logs": []
+}

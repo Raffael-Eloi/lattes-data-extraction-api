@@ -4,7 +4,7 @@ using LattesDataExtraction.Domain.Services.DataExtraction;
 
 namespace LattesDataExtraction.Domain.Factories
 {
-    internal class GetDataInformationFactory : IGetDataInformationFactory
+    public class GetDataInformationFactory : IGetDataInformationFactory
     {
         private const string DataInformationTypeNotImplementedMessage = "The Data Information Type {0} was not implemented.";
 

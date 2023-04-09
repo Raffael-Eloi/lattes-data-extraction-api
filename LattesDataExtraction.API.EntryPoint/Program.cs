@@ -1,8 +1,21 @@
+using AutoMapper;
+using LattesDataExtraction.Infraestructure.Ioc;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddServicesDependency();
+
+var mapperConfiguration = new MapperConfiguration(mc =>
+{
+    mc.AddMappersProfiles();
+});
+
+IMapper mapper = mapperConfiguration.CreateMapper();
+builder.Services.AddSingleton(mapper);
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
