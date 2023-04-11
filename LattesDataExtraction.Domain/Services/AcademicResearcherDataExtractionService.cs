@@ -53,7 +53,10 @@ namespace LattesDataExtraction.Domain.Services
 
         private void InitializeAcademicResearcher()
         {
-            _academicResearch = new();
+            _academicResearch = new()
+            {
+                Id = Guid.NewGuid(),
+            };
         }
 
         private void GetCurriculumInformationIfExists()
