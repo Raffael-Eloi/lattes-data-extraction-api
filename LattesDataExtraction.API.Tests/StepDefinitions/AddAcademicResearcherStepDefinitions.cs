@@ -1,6 +1,5 @@
-using System;
 using System.Net.Http.Headers;
-using TechTalk.SpecFlow;
+using System.Text.Json;
 
 namespace LattesDataExtraction.API.Tests.StepDefinitions
 {
@@ -18,37 +17,47 @@ namespace LattesDataExtraction.API.Tests.StepDefinitions
         }
 
         [Given(@"I have a XML File of an Academic Researcher")]
-        public async Task GivenIHaveAXMLFileOfAnAcademicResearcher()
+        public void GivenIHaveAXMLFileOfAnAcademicResearcher()
         {
-            var filePath = @"C:\useful\researcher.xml";
-
-            using (var multipartFormContent = new MultipartFormDataContent())
-            {
-                // Load the file and set the file's Content-Type header
-                var fileStreamContent = new StreamContent(File.OpenRead(filePath));
-                fileStreamContent.Headers.ContentType = new MediaTypeHeaderValue("xml");
-
-                // Add the file
-                multipartFormContent.Add(fileStreamContent, name: "file", fileName: "researcher");
-
-                // Sent it            
-                var response = await _httpClient.PostAsync("https://localhost:32768/WeatherForecast", multipartFormContent);
-                response.EnsureSuccessStatusCode();
-
-                var test = await response.Content.ReadAsStringAsync();
-            }
+            _scenarioContext["filePath"] = @"C:\useful\researcher.xml";
         }
 
         [When(@"I request to Add a new one")]
-        public void WhenIRequestToAddANewOne()
+        public async Task WhenIRequestToAddANewOne()
         {
-            throw new PendingStepException();
+            var filePath = _scenarioContext.Get<string>("filePath");
+
+            using (MultipartFormDataContent multipartFormContent = new())
+            {
+                StreamContent fileStreamContent = new(File.OpenRead(filePath));
+                fileStreamContent.Headers.ContentType = new MediaTypeHeaderValue("text/xml");
+
+                multipartFormContent.Add(fileStreamContent, name: "file", fileName: "researcher");
+
+                var httpResponse = await _httpClient.PostAsync("https://localhost:32768/LattesDataExtraction", multipartFormContent);
+
+                httpResponse.IsSuccessStatusCode.Should().BeTrue();
+
+                var response = JsonSerializer.Deserialize<JsonElement>(httpResponse.Content.ReadAsStream());
+
+                _scenarioContext["response"] = response;
+            };
         }
 
         [Then(@"I should see the data extracted")]
         public void ThenIShouldSeeTheDataExtracted()
         {
-            throw new PendingStepException();
+            JsonElement response = _scenarioContext.Get<JsonElement>("response");
+            
+            response.Should().NotBeNull();
+
+            Guid id = response.GetProperty("id").GetGuid();
+            string? identifierNumber = response.GetProperty("identifierNumber").GetString();
+            string? lattesId = response.GetProperty("lattesId").GetString();
+
+            id.Should().NotBeEmpty();
+            identifierNumber.Should().NotBeNullOrEmpty();
+            lattesId.Should().NotBeNullOrEmpty();
         }
     }
 }

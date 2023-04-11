@@ -20,4 +20,7 @@
     <ProjectReference Include="..\LattesDataExtraction.Infraestructure.Ioc\LattesDataExtraction.Infraestructure.Ioc.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="LattesDataExtraction.API.Tests" />
+  </ItemGroup>
 </Project>
