@@ -54,7 +54,7 @@
             },
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[5.0.17, )"
             }
           },
           "imports": [
@@ -177,7 +177,7 @@
           "dependencies": {
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[7.0.0, )"
             }
           },
           "imports": [

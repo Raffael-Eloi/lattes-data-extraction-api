@@ -1,16 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "ZLs2+qolLi4qjWZH+qZAAe06SNW0/oiBsHiK6/Fb0gKzzgX15dFEbCIMIA6z0BjxWaohMw5sUDl/Rwf96KcGUQ==",
+  "dgSpecHash": "FcrQjIjREz8CWL9a54EKsn4rz+TpBBUViTniMT3tErmY43gB6c3HnArMbMIoQ8BxrUDCuOD/Vzpki2jajHFfFA==",
   "success": true,
   "projectFilePath": "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Application\\LattesDataExtraction.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\raffa\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\raffa\\.nuget\\packages\\flunt\\2.0.5\\flunt.2.0.5.nupkg.sha512",
-    "C:\\Users\\raffa\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+    "C:\\Users\\raffa\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
     "C:\\Users\\raffa\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
-    "C:\\Users\\raffa\\.nuget\\packages\\microsoft.extensions.primitives\\2.2.0\\microsoft.extensions.primitives.2.2.0.nupkg.sha512",
-    "C:\\Users\\raffa\\.nuget\\packages\\system.memory\\4.5.1\\system.memory.4.5.1.nupkg.sha512",
-    "C:\\Users\\raffa\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.1\\system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512"
+    "C:\\Users\\raffa\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\raffa\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
   ],
   "logs": []
 }
