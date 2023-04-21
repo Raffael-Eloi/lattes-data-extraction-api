@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zn/vfS4URdpkKFnnpZKNB49N57+b8EHCfpzyrBhPLpb6BKTQRvijCqXUurPwo8erOQEFS69gPnBrxt6W4pYz0g==",
+  "dgSpecHash": "aTt06UbA54en9wwt968vZ0c/8fSX85sFFeLAjOZXkzdNE0eQO6Gpuwrx3wd0ItZk/Z7QZtLhwRM8RYTZn4eonA==",
   "success": true,
   "projectFilePath": "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Infraestructure.Ioc\\LattesDataExtraction.Infraestructure.Ioc.csproj",
   "expectedPackageFiles": [
