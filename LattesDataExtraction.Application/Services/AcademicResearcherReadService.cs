@@ -8,6 +8,8 @@ namespace LattesDataExtraction.Application.Services
 {
     public class AcademicResearcherReadService : IAcademicResearcherReadService
     {
+        private const string AcademicResearcherDoesNotExistMessage = "Academic Researcher does not exist.";
+
         private readonly IAcademicResearcherRepository _academicResearcherRepository;
 
         private readonly IMapper _mapper;
@@ -22,7 +24,26 @@ namespace LattesDataExtraction.Application.Services
         {
             AcademicResearcher? academicResearcher = await _academicResearcherRepository.GetById(academicReseracherId);
 
+            if (RequestIsInvalid(academicResearcher, out AcademicResearcherModelResponse invalidResponse))
+            {
+                return invalidResponse;
+            }
+
             return CreateAcademicResearcherModelResponse(academicResearcher);
+        }
+
+        private static bool RequestIsInvalid(AcademicResearcher? academicResearcher, out AcademicResearcherModelResponse invalidResponse)
+        {
+            invalidResponse = new AcademicResearcherModelResponse();
+
+            if (academicResearcher == null)
+            {
+                invalidResponse.AddNotification("AcademicReseracherId", AcademicResearcherDoesNotExistMessage);
+
+                return true;
+            }
+
+            return false;
         }
 
         public async Task<IEnumerable<AcademicResearcherModelResponse>> GetAll()
