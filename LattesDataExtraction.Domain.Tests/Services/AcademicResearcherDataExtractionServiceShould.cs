@@ -396,7 +396,7 @@ namespace LattesDataExtraction.Domain.Tests.Services
 
             Assert.Multiple(() =>
             {
-                Assert.That(academicResearcher.ComplementaryCourses.ToList(), Has.Count.GreaterThanOrEqualTo(1));
+                Assert.That(academicResearcher.ComplementaryCourses.ToList(), Has.Count.GreaterThanOrEqualTo(25));
             });
 
             #endregion
