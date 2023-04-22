@@ -50,7 +50,7 @@ namespace LattesDataExtraction.Application.Tests.Services
 
             #region Act
 
-            AcademicResearcherModel academicResearcher = await academicResearcherReadService.GetById(academicReseracherId);
+            AcademicResearcherModelResponse academicResearcher = await academicResearcherReadService.GetById(academicReseracherId);
 
             #endregion
 
@@ -82,7 +82,7 @@ namespace LattesDataExtraction.Application.Tests.Services
 
             #region Act
 
-            IEnumerable<AcademicResearcherModel> academicResearchers = await academicResearcherReadService.GetAll();
+            IEnumerable<AcademicResearcherModelResponse> academicResearchers = await academicResearcherReadService.GetAll();
 
             #endregion
 

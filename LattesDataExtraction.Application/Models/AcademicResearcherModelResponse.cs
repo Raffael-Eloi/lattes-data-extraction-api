@@ -3,7 +3,7 @@ using LattesDataExtraction.Domain.Entities;
 
 namespace LattesDataExtraction.Application.Models
 {
-    public class AcademicResearcherModel : Notifiable<Notification>
+    public class AcademicResearcherModelResponse : Notifiable<Notification>
     {
         public Guid Id { get; set; }
 

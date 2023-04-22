@@ -18,23 +18,28 @@ namespace LattesDataExtraction.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<AcademicResearcherModel> GetById(Guid academicReseracherId)
+        public async Task<AcademicResearcherModelResponse> GetById(Guid academicReseracherId)
         {
             AcademicResearcher? academicResearcher = await _academicResearcherRepository.GetById(academicReseracherId);
 
-            return _mapper.Map<AcademicResearcherModel>(academicResearcher);
+            return CreateAcademicResearcherModelResponse(academicResearcher);
         }
 
-        public async Task<IEnumerable<AcademicResearcherModel>> GetAll()
+        public async Task<IEnumerable<AcademicResearcherModelResponse>> GetAll()
         {
             IEnumerable<AcademicResearcher> academicResearchers = await _academicResearcherRepository.GetAll();
             
             return AcademicResearchModelResponse(academicResearchers);
         }
 
-        private IEnumerable<AcademicResearcherModel> AcademicResearchModelResponse(IEnumerable<AcademicResearcher> academicResearchers)
+        private IEnumerable<AcademicResearcherModelResponse> AcademicResearchModelResponse(IEnumerable<AcademicResearcher> academicResearchers)
         {
-            return academicResearchers.Select(academicResearcher => _mapper.Map<AcademicResearcherModel>(academicResearcher));
+            return academicResearchers.Select(academicResearcher => CreateAcademicResearcherModelResponse(academicResearcher));
+        }
+
+        private AcademicResearcherModelResponse CreateAcademicResearcherModelResponse(AcademicResearcher? academicResearcher)
+        {
+            return _mapper.Map<AcademicResearcherModelResponse>(academicResearcher);
         }
     }
 }
