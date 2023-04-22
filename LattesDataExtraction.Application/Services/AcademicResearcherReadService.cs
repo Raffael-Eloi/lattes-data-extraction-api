@@ -21,7 +21,12 @@ namespace LattesDataExtraction.Application.Services
         public async Task<IEnumerable<AcademicResearcherModel>> GetAll()
         {
             IEnumerable<AcademicResearcher> academicResearchers = await _academicResearcherRepository.GetAll();
+            
+            return AcademicResearchModelResponse(academicResearchers);
+        }
 
+        private IEnumerable<AcademicResearcherModel> AcademicResearchModelResponse(IEnumerable<AcademicResearcher> academicResearchers)
+        {
             return academicResearchers.Select(academicResearcher => _mapper.Map<AcademicResearcherModel>(academicResearcher));
         }
     }
