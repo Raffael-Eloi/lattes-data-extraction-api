@@ -31,5 +31,7 @@
         ComplementaryCourses,
         
         ParticipationInFinalPaperPanel,
+
+        OrientationInProgress,
     }
 }

@@ -322,6 +322,28 @@ namespace LattesDataExtraction.Domain.Tests.Factories
 
             #endregion
         }
+        
+        [Test]
+        public void Return_Orientation_In_Progress_Service_When_Type_Is_Orientation_In_Progress()
+        {
+            #region Arrange
+
+            var orientationInProgressType = DataInformationType.OrientationInProgress;
+
+            #endregion
+
+            #region Act
+
+            IGetDataInformationService getDataInformationType = getDataInformationFactory.Create(orientationInProgressType);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(getDataInformationType.GetType(), Is.EqualTo(typeof(GetOrientationInProgressInformationService)));
+
+            #endregion
+        }
 
         [Test]
         public void Throw_Exception_When_Data_Information_Type_Does_Not_Exist()
