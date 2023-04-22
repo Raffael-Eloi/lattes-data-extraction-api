@@ -45,5 +45,7 @@
         public IEnumerable<Orientation>? CompletedOrientation { get; set; }
 
         public IEnumerable<ComplementaryCourse>? ComplementaryCourses { get; set; }
+
+        public IEnumerable<FinalPaperPanel>? ParticipationOnFinalPaperPanel { get; set; }
     }
 }

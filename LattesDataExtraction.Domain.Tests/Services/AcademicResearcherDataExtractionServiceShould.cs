@@ -394,10 +394,31 @@ namespace LattesDataExtraction.Domain.Tests.Services
 
             Assert.That(academicResearcher.ComplementaryCourses, Is.Not.Null);
 
-            Assert.Multiple(() =>
-            {
-                Assert.That(academicResearcher.ComplementaryCourses.ToList(), Has.Count.GreaterThanOrEqualTo(25));
-            });
+            Assert.That(academicResearcher.ComplementaryCourses.ToList(), Has.Count.GreaterThanOrEqualTo(25));
+
+            #endregion
+        }
+        
+        [Test]
+        public void Extract_Participation_In_Final_Paper_Panel_Information_From_File()
+        {
+            #region Arrange
+
+            #endregion
+
+            #region Act
+
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherDocument);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(academicResearcher, Is.Not.Null);
+
+            Assert.That(academicResearcher.ParticipationOnFinalPaperPanel, Is.Not.Null);
+
+            Assert.That(academicResearcher.ParticipationOnFinalPaperPanel.ToList(), Has.Count.GreaterThanOrEqualTo(1));
 
             #endregion
         }
