@@ -50,6 +50,8 @@ namespace LattesDataExtraction.Domain.Services
 
             GetComplementaryCoursesIfExists();
 
+            GetParticipationInFinalPaperPanelIfExists();
+
             return _academicResearch!;
         }
 
@@ -148,6 +150,13 @@ namespace LattesDataExtraction.Domain.Services
         private void GetComplementaryCoursesIfExists()
         {
             IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.ComplementaryCourses);
+
+            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument!);
+        }
+        
+        private void GetParticipationInFinalPaperPanelIfExists()
+        {
+            IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.ParticipationInFinalPaperPanel);
 
             getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument!);
         }
