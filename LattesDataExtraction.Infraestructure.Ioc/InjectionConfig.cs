@@ -5,7 +5,9 @@ using LattesDataExtraction.Application.Services;
 using LattesDataExtraction.Domain.Contracts;
 using LattesDataExtraction.Domain.Factories;
 using LattesDataExtraction.Domain.Services;
+using LattesDataExtraction.Infraestructure.Context;
 using LattesDataExtraction.Infraestructure.Reporitories;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LattesDataExtraction.Infraestructure.Ioc
@@ -14,6 +16,12 @@ namespace LattesDataExtraction.Infraestructure.Ioc
     {
         public static void AddServicesDependency(this IServiceCollection services)
         {
+            #region DatabaseContext
+
+            services.AddDbContext<AcademicResearcherContext>(i => i.UseInMemoryDatabase("AcademicResearches"));
+
+            #endregion
+
             #region Services
 
             services.AddScoped<ILattesDataExtractionService, LattesDataExtractionService>();

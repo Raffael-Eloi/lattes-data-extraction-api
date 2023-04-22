@@ -2,6 +2,8 @@
 {
     public class ScientificArticle
     {
+        public Guid Id { get; set; } = Guid.NewGuid();
+
         public string Title { get; set; } = string.Empty;
         
         public DateOnly ArticleYear { get; set; }
@@ -20,6 +22,6 @@
 
         public int InitialPage { get; set; }
 
-        public IEnumerable<Author>? Authors { get; set; }
+        public IEnumerable<Author> Authors { get; set; } = Enumerable.Empty<Author>();
     }
 }

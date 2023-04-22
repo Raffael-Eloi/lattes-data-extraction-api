@@ -2,6 +2,8 @@
 {
     public class BookChapter
     {
+        public Guid Id { get; set; } = Guid.NewGuid();
+
         public string BookTitle { get; set; } = string.Empty;
 
         public string ChapterTitle { get; set; } = string.Empty;
@@ -30,6 +32,6 @@
 
         public string PublisherName { get; set; } = string.Empty;
 
-        public IEnumerable<Author>? Authors { get; set; }
+        public IEnumerable<Author> Authors { get; set; } = Enumerable.Empty<Author>();
     }
 }

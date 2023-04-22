@@ -368,7 +368,7 @@ namespace LattesDataExtraction.Domain.Tests.Services
             Assert.Multiple(() =>
             {
                 Assert.That(academicResearcher.CompletedOrientation.ToList(), Has.Count.EqualTo(83));
-                Assert.That(academicResearcher.CompletedOrientation.First().KeyWorkds.ToList(), Has.Count.GreaterThanOrEqualTo(3));
+                Assert.That(academicResearcher.CompletedOrientation.First().KeyWords.ToList(), Has.Count.GreaterThanOrEqualTo(3));
                 Assert.That(academicResearcher.CompletedOrientation.First().KnowledgeAreas.ToList(), Has.Count.GreaterThanOrEqualTo(1));
             });
 

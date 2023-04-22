@@ -5,6 +5,6 @@ namespace LattesDataExtraction.Application.Contracts
 {
     public interface ILattesDataExtractionService
     {
-        AddAcademicResearcherResponse Extract(XmlDocument document);
+        Task<AddAcademicResearcherResponse> Extract(XmlDocument document);
     }
 }

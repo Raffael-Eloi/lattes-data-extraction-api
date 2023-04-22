@@ -197,17 +197,15 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
                         x.AdvisorName == expectedAdvisorName && 
                         x.AdvisorCode == expectedAdvisorCode &&
                         x.MasterThesis == expectedMasterThesis &&
-                        x.KeyWords.Contains(expectedKeyWord1) &&
-                        x.KeyWords.Contains(expectedKeyWord2) &&
-                        x.KeyWords.Contains(expectedKeyWord3) &&
-                        x.KeyWords.Contains(expectedKeyWord4) &&
                         x.KeyWords.Count() == 4 &&
                         x.AcademicBackgroundType == Enums.AcademicBackgroundType.Master);
 
-            Assert.Multiple(() =>
-            {
-                Assert.That(mastersVerification, Is.Not.Null);
-            });
+            Assert.That(mastersVerification, Is.Not.Null);
+
+            Assert.That(mastersVerification.KeyWords, Has.Some.Matches<KeyWord>(KeyWord => KeyWord.Name == expectedKeyWord1));
+            Assert.That(mastersVerification.KeyWords, Has.Some.Matches<KeyWord>(KeyWord => KeyWord.Name == expectedKeyWord2));
+            Assert.That(mastersVerification.KeyWords, Has.Some.Matches<KeyWord>(KeyWord => KeyWord.Name == expectedKeyWord3));
+            Assert.That(mastersVerification.KeyWords, Has.Some.Matches<KeyWord>(KeyWord => KeyWord.Name == expectedKeyWord4));
 
             #endregion
         }

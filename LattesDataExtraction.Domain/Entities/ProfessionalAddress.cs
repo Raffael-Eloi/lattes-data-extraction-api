@@ -2,6 +2,8 @@
 {
     public class ProfessionalAddress
     {
+        public Guid Id { get; set; } = Guid.NewGuid();
+
         public string CompanyCode { get; set; } = string.Empty;
 
         public string CompanyName { get; set; } = string.Empty;

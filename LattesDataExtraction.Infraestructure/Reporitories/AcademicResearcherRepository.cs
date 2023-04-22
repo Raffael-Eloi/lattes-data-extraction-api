@@ -1,13 +1,21 @@
 ﻿using LattesDataExtraction.Domain.Contracts;
 using LattesDataExtraction.Domain.Entities;
+using LattesDataExtraction.Infraestructure.Context;
 
 namespace LattesDataExtraction.Infraestructure.Reporitories
 {
-    public class AcademicResearcherRepository : IAcademicResearcherRepository
+    internal class AcademicResearcherRepository : IAcademicResearcherRepository
     {
-        public void Save(AcademicResearcher academicResearcher)
+        private readonly AcademicResearcherContext _academicResearcherContext;
+
+        public AcademicResearcherRepository(AcademicResearcherContext academicResearcherContext)
         {
-            throw new NotImplementedException();
+            _academicResearcherContext = academicResearcherContext;
+        }
+
+        public async Task AddAsync(AcademicResearcher academicResearcher)
+        {
+            await _academicResearcherContext.AcademicResearchers.AddAsync(academicResearcher);
         }
     }
 }

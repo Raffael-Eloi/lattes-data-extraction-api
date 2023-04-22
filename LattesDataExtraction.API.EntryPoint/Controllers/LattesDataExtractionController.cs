@@ -30,7 +30,7 @@ namespace LattesDataExtraction.API.EntryPoint.Controllers
 
             academicResearcherDocument.Load(file.OpenReadStream());
 
-            AddAcademicResearcherResponse response = _lattesDataExtractionService.Extract(academicResearcherDocument);
+            AddAcademicResearcherResponse response = await _lattesDataExtractionService.Extract(academicResearcherDocument);
 
             if (!response.IsValid)
             {

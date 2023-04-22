@@ -83,13 +83,13 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
 
             Assert.That(completedOrientationVerification, Is.Not.Null);
 
-            Assert.That(completedOrientationVerification.KeyWorkds, Is.Not.Null);
+            Assert.That(completedOrientationVerification.KeyWords, Is.Not.Null);
             
             Assert.Multiple(() =>
             {
-                Assert.That(completedOrientationVerification.KeyWorkds, Does.Contain(expectedFirstKeyWord));
-                Assert.That(completedOrientationVerification.KeyWorkds, Does.Contain(expectedSecondKeyWord));
-                Assert.That(completedOrientationVerification.KeyWorkds, Does.Contain(expectedThirdKeyWord));
+                Assert.That(completedOrientationVerification.KeyWords, Has.Some.Matches<KeyWord>(keyword => keyword.Name == expectedFirstKeyWord));
+                Assert.That(completedOrientationVerification.KeyWords, Has.Some.Matches<KeyWord>(keyword => keyword.Name == expectedSecondKeyWord));
+                Assert.That(completedOrientationVerification.KeyWords, Has.Some.Matches<KeyWord>(keyword => keyword.Name == expectedThirdKeyWord));
             });
 
             var isFirstKnowledgeAreaInListOfKnowledgeAreas = completedOrientationVerification.KnowledgeAreas

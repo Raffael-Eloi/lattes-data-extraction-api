@@ -28,7 +28,7 @@ namespace LattesDataExtraction.Application.Services
             _academicResearcherRepository = academicResearcherRepository;
         }
 
-        public AddAcademicResearcherResponse Extract(XmlDocument document)
+        public async Task<AddAcademicResearcherResponse> Extract(XmlDocument document)
         {
             AcademicResearcher academicResearcher = _academicResearcherDataExtractionService.GetAcademicInformation(document);
 
@@ -37,7 +37,7 @@ namespace LattesDataExtraction.Application.Services
                 return invalidResponse;
             }
 
-            //_academicResearcherRepository.Save(academicResearcher);
+            await _academicResearcherRepository.AddAsync(academicResearcher);
 
             return _mapper.Map<AddAcademicResearcherResponse>(academicResearcher);
         }

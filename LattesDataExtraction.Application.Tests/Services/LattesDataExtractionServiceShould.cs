@@ -46,7 +46,7 @@ namespace LattesDataExtraction.Application.Tests.Services
         }
 
         [Test]
-        public void Read_And_Get_Information_From_Xml_File()
+        public async Task Read_And_Get_Information_From_Xml_File()
         {
             #region Arrange
 
@@ -54,7 +54,7 @@ namespace LattesDataExtraction.Application.Tests.Services
 
             #region Act
 
-            AddAcademicResearcherResponse response = lattesDataExtractionService.Extract(academicResearcherDocument);
+            AddAcademicResearcherResponse response = await lattesDataExtractionService.Extract(academicResearcherDocument);
 
             #endregion
 
@@ -66,7 +66,7 @@ namespace LattesDataExtraction.Application.Tests.Services
         }
 
         [Test]
-        public void Persist_Information()
+        public async Task Persist_Information()
         {
             #region Arrange
 
@@ -74,7 +74,7 @@ namespace LattesDataExtraction.Application.Tests.Services
 
             #region Act
 
-            AddAcademicResearcherResponse response = lattesDataExtractionService.Extract(academicResearcherDocument);
+            AddAcademicResearcherResponse response = await lattesDataExtractionService.Extract(academicResearcherDocument);
 
             #endregion
 
@@ -83,14 +83,14 @@ namespace LattesDataExtraction.Application.Tests.Services
             academicResearcherRepositoryMock
                 .Verify(
                     repository =>
-                        repository.Save(It.IsAny<AcademicResearcher>())
+                        repository.AddAsync(It.IsAny<AcademicResearcher>())
                 , Times.Once);
 
             #endregion
         }
 
         [Test]
-        public void Return_Notifications_When_File_Data_Is_Invalid()
+        public async Task Return_Notifications_When_File_Data_Is_Invalid()
         {
             #region Arrange
 
@@ -110,7 +110,7 @@ namespace LattesDataExtraction.Application.Tests.Services
 
             #region Act
 
-            AddAcademicResearcherResponse response = lattesDataExtractionService.Extract(academicResearcherDocument);
+            AddAcademicResearcherResponse response = await lattesDataExtractionService.Extract(academicResearcherDocument);
 
             #endregion
 

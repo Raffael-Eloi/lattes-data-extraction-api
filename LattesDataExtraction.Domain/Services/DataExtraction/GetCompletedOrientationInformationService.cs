@@ -10,7 +10,7 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
 
         private Orientation? _orientation;
 
-        private List<string>? _keyWords;
+        private List<KeyWord>? _keyWords;
 
         private List<KnowledgeArea>? _knowledgeAreasList;
 
@@ -49,12 +49,12 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
 
                         GetDetails(orientationElement);
 
-                        GetKeyWorkds(orientationElement);
+                        GetKeyWords(orientationElement);
 
                         GetKnowledgeAreas(orientationElement);
                     }
 
-                    _orientation.KeyWorkds= _keyWords;
+                    _orientation.KeyWords= _keyWords;
 
                     _orientation.KnowledgeAreas= _knowledgeAreasList;
 
@@ -150,7 +150,7 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
             }
         }
 
-        private void GetKeyWorkds(XmlNode orientationElement)
+        private void GetKeyWords(XmlNode orientationElement)
         {
             if (orientationElement.Name is not null && orientationElement.Name == "PALAVRAS-CHAVE")
             {
@@ -162,7 +162,12 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
                 {
                     if (keyWord is null || string.IsNullOrEmpty(keyWord.Name) || string.IsNullOrEmpty(keyWord.Value)) continue;
 
-                    _keyWords!.Add(keyWord.Value);
+                    KeyWord _keyword = new()
+                    {
+                        Name = keyWord.Value
+                    };
+
+                    _keyWords!.Add(_keyword);
                 }
             }
         }

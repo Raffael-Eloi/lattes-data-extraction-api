@@ -4,6 +4,8 @@ namespace LattesDataExtraction.Domain.Entities
 {
     public class AcademicBackground
     {
+        public Guid Id { get; set; } = Guid.NewGuid();
+
         public AcademicBackgroundType AcademicBackgroundType { get; set; }
         
         public string CourseName { get; set; } = string.Empty;
@@ -36,6 +38,6 @@ namespace LattesDataExtraction.Domain.Entities
 
         public string IdOasis { get; set;} = string.Empty;
 
-        public IEnumerable<string> KeyWords { get; set; } = Enumerable.Empty<string>();
+        public IEnumerable<KeyWord> KeyWords { get; set; } = Enumerable.Empty<KeyWord>();
     }
 }

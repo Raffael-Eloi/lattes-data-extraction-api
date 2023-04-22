@@ -209,7 +209,7 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
         {
             XmlNodeList academicBackgroundInformation = _academicResearcherDocument!.GetElementsByTagName("MESTRADO");
 
-            List<string> keyWordsMapped = new();
+            List<KeyWord> keyWordsMapped = new();
 
             if (academicBackgroundInformation.Count < 0) return;
 
@@ -329,9 +329,15 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
                         for (int i = 0; i < keyWordsNodeAttributes.Count; i++)
                         {
                             XmlAttribute? keyWordValue = keyWordsNodeAttributes[$"PALAVRA-CHAVE-{i + 1}"];
+
                             if (keyWordValue is not null && !string.IsNullOrEmpty(keyWordValue.Value))
                             {
-                                keyWordsMapped.Add(keyWordValue.Value);
+                                KeyWord keyword = new()
+                                {
+                                    Name = keyWordValue.Value,
+                                };
+
+                                keyWordsMapped.Add(keyword);
                             }
                         }
                     }

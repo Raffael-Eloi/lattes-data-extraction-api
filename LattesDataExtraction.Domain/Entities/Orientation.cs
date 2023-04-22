@@ -2,6 +2,8 @@
 {
     public class Orientation
     {
+        public Guid Id { get; set; } = Guid.NewGuid();
+
         public string Title { get; set; } = string.Empty;
 
         public string NatureOfWork { get; set; } = string.Empty;
@@ -24,7 +26,7 @@
 
         public string Type { get; set; } = string.Empty;
 
-        public IEnumerable<string> KeyWorkds { get; set; } = Enumerable.Empty<string>();
+        public IEnumerable<KeyWord> KeyWords { get; set; } = Enumerable.Empty<KeyWord>();
         
         public IEnumerable<KnowledgeArea> KnowledgeAreas { get; set; } = Enumerable.Empty<KnowledgeArea>();
     }

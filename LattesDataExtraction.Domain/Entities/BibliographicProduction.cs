@@ -2,6 +2,8 @@
 {
     public class BibliographicProduction
     {
+        public Guid Id { get; set; } = Guid.NewGuid();
+
         public string Title { get; set; } = string.Empty;
 
         public string NatureOfWork { get; set; } = string.Empty;
