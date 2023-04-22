@@ -8,7 +8,7 @@ namespace LattesDataExtraction.Application.Mappers
     {
         public ApplicationMappingProfile()
         {
-            CreateMap<AcademicResearcher, AddAcademicResearcherResponse>();
+            CreateMap<AcademicResearcher, AcademicResearcherModel>();
         }
     }
 }

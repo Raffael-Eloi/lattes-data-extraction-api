@@ -1,4 +1,8 @@
-﻿using LattesDataExtraction.Application.Models;
+﻿using AutoMapper;
+using LattesDataExtraction.Application.Contracts;
+using LattesDataExtraction.Application.Mappers;
+using LattesDataExtraction.Application.Models;
+using LattesDataExtraction.Application.Services;
 using LattesDataExtraction.Domain.Contracts;
 using LattesDataExtraction.Domain.Entities;
 using Moq;
@@ -14,7 +18,14 @@ namespace LattesDataExtraction.Application.Tests.Services
 
             var academicResearcherRepositoryMock = new Mock<IAcademicResearcherRepository>();
 
-            IAcademicResearcherReadService academicResearcherReadService = new AcademicResearcherReadService(academicResearcherRepositoryMock.Object);
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new ApplicationMappingProfile());
+            });
+
+            IMapper mapper = mapperConfig.CreateMapper();
+
+            IAcademicResearcherReadService academicResearcherReadService = new AcademicResearcherReadService(academicResearcherRepositoryMock.Object, mapper);
 
             var academicResearchersMock = new List<AcademicResearcher>() 
             { 
@@ -23,7 +34,6 @@ namespace LattesDataExtraction.Application.Tests.Services
                     Id = Guid.NewGuid()
                 }
             };
-
 
             academicResearcherRepositoryMock
                 .Setup(repository => repository.GetAll())

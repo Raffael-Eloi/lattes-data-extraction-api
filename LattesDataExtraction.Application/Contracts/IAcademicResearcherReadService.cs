@@ -1,8 +1,8 @@
 ﻿using LattesDataExtraction.Application.Models;
 
-namespace LattesDataExtraction.Application.Tests.Services
+namespace LattesDataExtraction.Application.Contracts
 {
-    internal interface IAcademicResearcherReadService
+    public interface IAcademicResearcherReadService
     {
         Task<IEnumerable<AcademicResearcherModel>> GetAll();
     }
