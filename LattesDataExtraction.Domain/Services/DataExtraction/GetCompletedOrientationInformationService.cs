@@ -65,13 +65,13 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
             academicResearcher.CompletedOrientation = _completedOrientation;
         }
 
-        private void GetBasicData(XmlNode orientationElementElement)
+        private void GetBasicData(XmlNode orientationElement)
         {
-            if (orientationElementElement.Name is not null && orientationElementElement.Name == "DADOS-BASICOS-DE-OUTRAS-ORIENTACOES-CONCLUIDAS")
+            if (orientationElement.Name is not null && orientationElement.Name == "DADOS-BASICOS-DE-OUTRAS-ORIENTACOES-CONCLUIDAS")
             {
-                if (orientationElementElement.Attributes is null || orientationElementElement.Attributes.Count == 0) return;
+                if (orientationElement.Attributes is null || orientationElement.Attributes.Count == 0) return;
 
-                XmlAttributeCollection allOrientation = orientationElementElement.Attributes;
+                XmlAttributeCollection allOrientation = orientationElement.Attributes;
 
                 foreach (XmlAttribute orientation in allOrientation)
                 {
@@ -105,13 +105,13 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
             }
         }
 
-        private void GetDetails(XmlNode orientationElementElement)
+        private void GetDetails(XmlNode orientationElement)
         {
-            if (orientationElementElement.Name is not null && orientationElementElement.Name == "DETALHAMENTO-DE-OUTRAS-ORIENTACOES-CONCLUIDAS")
+            if (orientationElement.Name is not null && orientationElement.Name == "DETALHAMENTO-DE-OUTRAS-ORIENTACOES-CONCLUIDAS")
             {
-                if (orientationElementElement.Attributes is null || orientationElementElement.Attributes.Count == 0) return;
+                if (orientationElement.Attributes is null || orientationElement.Attributes.Count == 0) return;
 
-                XmlAttributeCollection allOrientation = orientationElementElement.Attributes;
+                XmlAttributeCollection allOrientation = orientationElement.Attributes;
 
                 foreach (XmlAttribute orientation in allOrientation)
                 {
@@ -150,13 +150,13 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
             }
         }
 
-        private void GetKeyWorkds(XmlNode orientationElementElement)
+        private void GetKeyWorkds(XmlNode orientationElement)
         {
-            if (orientationElementElement.Name is not null && orientationElementElement.Name == "PALAVRAS-CHAVE")
+            if (orientationElement.Name is not null && orientationElement.Name == "PALAVRAS-CHAVE")
             {
-                if (orientationElementElement.Attributes is null || orientationElementElement.Attributes.Count == 0) return;
+                if (orientationElement.Attributes is null || orientationElement.Attributes.Count == 0) return;
 
-                XmlAttributeCollection KeyWorkds = orientationElementElement.Attributes;
+                XmlAttributeCollection KeyWorkds = orientationElement.Attributes;
 
                 foreach (XmlAttribute keyWord in KeyWorkds)
                 {
@@ -167,13 +167,13 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
             }
         }
         
-        private void GetKnowledgeAreas(XmlNode orientationElementElement)
+        private void GetKnowledgeAreas(XmlNode orientationElement)
         {
-            if (orientationElementElement.Name is not null && orientationElementElement.Name == "AREAS-DO-CONHECIMENTO")
+            if (orientationElement.Name is not null && orientationElement.Name == "AREAS-DO-CONHECIMENTO")
             {
-                if (orientationElementElement.ChildNodes is null || orientationElementElement.ChildNodes.Count == 0) return;
+                if (orientationElement.ChildNodes is null || orientationElement.ChildNodes.Count == 0) return;
 
-                XmlNodeList allCompletedOrientation = orientationElementElement.ChildNodes;
+                XmlNodeList allCompletedOrientation = orientationElement.ChildNodes;
 
                 foreach (XmlNode allOrientation in allCompletedOrientation)
                 {
