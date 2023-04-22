@@ -54,6 +54,9 @@ namespace LattesDataExtraction.Domain.Factories
                 case DataInformationType.ParticipationInFinalPaperPanel:
                     return new GetParticipationInFinalPaperPanelInformationService();
 
+                case DataInformationType.OrientationInProgress: 
+                    return new GetOrientationInProgressInformationService();
+
                 default:
                     throw new ArgumentException(message: string.Format(DataInformationTypeNotImplementedMessage, type));
             }
