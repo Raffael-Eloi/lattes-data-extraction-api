@@ -43,5 +43,7 @@
         public IEnumerable<Software>? TechnicalProductions { get; set; }
 
         public IEnumerable<Orientation>? CompletedOrientation { get; set; }
+
+        public IEnumerable<Training>? ComplementaryTraining { get; set; }
     }
 }
