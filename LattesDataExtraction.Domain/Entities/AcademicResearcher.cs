@@ -44,6 +44,6 @@
 
         public IEnumerable<Orientation>? CompletedOrientation { get; set; }
 
-        public IEnumerable<Training>? ComplementaryTraining { get; set; }
+        public IEnumerable<ComplementaryCourse>? ComplementaryCourses { get; set; }
     }
 }

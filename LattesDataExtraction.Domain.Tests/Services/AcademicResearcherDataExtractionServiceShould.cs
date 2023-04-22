@@ -376,7 +376,7 @@ namespace LattesDataExtraction.Domain.Tests.Services
         }
 
         [Test]
-        public void Extract_Complementary_Training_Information_From_File()
+        public void Extract_Complementary_Courses_Information_From_File()
         {
             #region Arrange
 
@@ -392,11 +392,11 @@ namespace LattesDataExtraction.Domain.Tests.Services
 
             Assert.That(academicResearcher, Is.Not.Null);
 
-            Assert.That(academicResearcher.ComplementaryTraining, Is.Not.Null);
+            Assert.That(academicResearcher.ComplementaryCourses, Is.Not.Null);
 
             Assert.Multiple(() =>
             {
-                Assert.That(academicResearcher.ComplementaryTraining.ToList(), Has.Count.GreaterThanOrEqualTo(1));
+                Assert.That(academicResearcher.ComplementaryCourses.ToList(), Has.Count.GreaterThanOrEqualTo(1));
             });
 
             #endregion
