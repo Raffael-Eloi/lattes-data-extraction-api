@@ -46,6 +46,6 @@
 
         public IEnumerable<ComplementaryCourse>? ComplementaryCourses { get; set; }
 
-        public IEnumerable<FinalPaperPanel>? ParticipationOnFinalPaperPanel { get; set; }
+        public IEnumerable<FinalPaperPanel>? ParticipationInFinalPaperPanel { get; set; }
     }
 }

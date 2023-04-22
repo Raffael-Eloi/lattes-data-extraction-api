@@ -2,31 +2,34 @@
 {
     public enum DataInformationType
     {
-        Unknowwn = 0,
+        Unknowwn,
 
-        CurriculumVitae = 1,
+        CurriculumVitae,
 
-        GeneralData = 2,
+        GeneralData,
 
-        ProfessionalDescription = 3,
+        ProfessionalDescription,
 
-        ProfessionalAddress = 4,
+        ProfessionalAddress,
 
-        AcademicBackground = 5,
+        AcademicBackground,
 
-        PublishedArticles = 6,
+        PublishedArticles,
 
-        BooksOrganizedOrPublished = 7,
+        BooksOrganizedOrPublished,
 
-        BooksChaptersPublished = 8,
+        BooksChaptersPublished,
 
-        WorkAtEvents = 9,
+        WorkAtEvents,
 
-        OthersBibliographicProduction = 10,
+        OthersBibliographicProduction,
 
-        TechnicalProduction = 11,
+        TechnicalProduction,
 
-        CompletedOrientation = 12,
-        ComplementaryCourses = 13,
+        CompletedOrientation,
+
+        ComplementaryCourses,
+        
+        ParticipationInFinalPaperPanel,
     }
 }

@@ -416,9 +416,9 @@ namespace LattesDataExtraction.Domain.Tests.Services
 
             Assert.That(academicResearcher, Is.Not.Null);
 
-            Assert.That(academicResearcher.ParticipationOnFinalPaperPanel, Is.Not.Null);
+            Assert.That(academicResearcher.ParticipationInFinalPaperPanel, Is.Not.Null);
 
-            Assert.That(academicResearcher.ParticipationOnFinalPaperPanel.ToList(), Has.Count.GreaterThanOrEqualTo(62));
+            Assert.That(academicResearcher.ParticipationInFinalPaperPanel.ToList(), Has.Count.GreaterThanOrEqualTo(62));
 
             #endregion
         }

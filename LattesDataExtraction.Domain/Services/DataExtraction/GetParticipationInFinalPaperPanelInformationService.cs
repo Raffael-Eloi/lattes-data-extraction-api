@@ -62,7 +62,7 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
                 }
             }
 
-            academicResearcher.ParticipationOnFinalPaperPanel = _finalPaperPanelList;
+            academicResearcher.ParticipationInFinalPaperPanel = _finalPaperPanelList;
         }
 
         private void GetBasicData(XmlNode finalPaperPanelElement)

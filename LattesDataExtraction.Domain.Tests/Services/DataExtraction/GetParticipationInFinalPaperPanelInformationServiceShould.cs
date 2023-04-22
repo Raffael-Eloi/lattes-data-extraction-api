@@ -65,9 +65,9 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             string expectedFirstSubKnowlodgeAreaName = "Metodologia e Técnicas da Computação";
             string expectedFirstKnowlodgeAreaSpecialty = "Sistemas de Informação";
 
-            Assert.That(academicResearcher.ParticipationOnFinalPaperPanel, Is.Not.Null);
+            Assert.That(academicResearcher.ParticipationInFinalPaperPanel, Is.Not.Null);
 
-            var participationInFinalPaperPanelVerification = academicResearcher.ParticipationOnFinalPaperPanel
+            var participationInFinalPaperPanelVerification = academicResearcher.ParticipationInFinalPaperPanel
                 .FirstOrDefault(
                     x =>
                         x.NatureOfWork == expectedNatureOfWork &&

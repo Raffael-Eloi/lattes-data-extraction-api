@@ -300,6 +300,28 @@ namespace LattesDataExtraction.Domain.Tests.Factories
 
             #endregion
         }
+        
+        [Test]
+        public void Return_Participation_In_Final_Paper_Panel_Service_When_Type_Is_Participation_In_Final_Paper_Panel()
+        {
+            #region Arrange
+
+            var participationInFinalPaperPanelType = DataInformationType.ParticipationInFinalPaperPanel;
+
+            #endregion
+
+            #region Act
+
+            IGetDataInformationService getDataInformationType = getDataInformationFactory.Create(participationInFinalPaperPanelType);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(getDataInformationType.GetType(), Is.EqualTo(typeof(GetParticipationInFinalPaperPanelInformationService)));
+
+            #endregion
+        }
 
         [Test]
         public void Throw_Exception_When_Data_Information_Type_Does_Not_Exist()
