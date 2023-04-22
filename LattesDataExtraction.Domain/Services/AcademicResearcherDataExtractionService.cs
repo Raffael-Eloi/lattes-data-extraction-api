@@ -52,6 +52,8 @@ namespace LattesDataExtraction.Domain.Services
 
             GetParticipationInFinalPaperPanelIfExists();
 
+            GetOrientationInProgressIfExists();
+
             return _academicResearch!;
         }
 
@@ -157,6 +159,13 @@ namespace LattesDataExtraction.Domain.Services
         private void GetParticipationInFinalPaperPanelIfExists()
         {
             IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.ParticipationInFinalPaperPanel);
+
+            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument!);
+        }
+        
+        private void GetOrientationInProgressIfExists()
+        {
+            IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.OrientationInProgress);
 
             getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument!);
         }
