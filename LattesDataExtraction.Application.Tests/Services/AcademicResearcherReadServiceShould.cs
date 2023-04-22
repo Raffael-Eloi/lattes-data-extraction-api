@@ -62,6 +62,40 @@ namespace LattesDataExtraction.Application.Tests.Services
         }
 
         [Test]
+        public async Task Return_Notification_When_Academic_Researcher_Does_Not_Exist()
+        {
+            #region Arrange
+
+            var academicReseracherId = Guid.NewGuid();
+
+            AcademicResearcher? unexistingAcademicResearcher = null;
+
+            academicResearcherRepositoryMock
+                .Setup(repository => repository.GetById(academicReseracherId))
+                .ReturnsAsync(unexistingAcademicResearcher);
+
+            #endregion
+
+            #region Act
+
+            AcademicResearcherModelResponse academicResearcher = await academicResearcherReadService.GetById(academicReseracherId);
+
+            #endregion
+
+            #region Assert
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(academicResearcher.IsValid, Is.False);
+                Assert.That(academicResearcher.Notifications, Has.Count.EqualTo(1));
+                Assert.That(academicResearcher.Notifications.First().Key, Is.EqualTo("AcademicReseracherId"));
+                Assert.That(academicResearcher.Notifications.First().Message, Is.EqualTo("Academic Researcher does not exist."));
+            });
+
+            #endregion
+        }
+
+        [Test]
         public async Task Get_All_Academic_Researchers_Added()
         {
             #region Arrange
