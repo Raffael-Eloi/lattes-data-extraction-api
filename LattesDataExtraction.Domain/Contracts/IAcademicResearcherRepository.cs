@@ -6,7 +6,7 @@ namespace LattesDataExtraction.Domain.Contracts
     {
         Task AddAsync(AcademicResearcher academicResearcher);
 
-        Task<AcademicResearcher> GetById(Guid id);
+        Task<AcademicResearcher?> GetById(Guid id);
 
         Task<IEnumerable<AcademicResearcher>> GetAll();
     }
