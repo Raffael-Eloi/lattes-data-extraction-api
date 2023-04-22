@@ -422,5 +422,32 @@ namespace LattesDataExtraction.Domain.Tests.Services
 
             #endregion
         }
+
+        [Test]
+        public void Extract_Orientation_In_Progress_Information_From_File()
+        {
+            #region Arrange
+
+            #endregion
+
+            #region Act
+
+            AcademicResearcher? academicResearcher = academicResearcherFileReadService.GetAcademicInformation(academicResearcherDocument);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(academicResearcher, Is.Not.Null);
+
+            Assert.That(academicResearcher.OrientationInProgress, Is.Not.Null);
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(academicResearcher.OrientationInProgress.ToList(), Has.Count.EqualTo(2));
+            });
+
+            #endregion
+        }
     }
 }
