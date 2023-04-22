@@ -48,6 +48,8 @@ namespace LattesDataExtraction.Domain.Services
 
             GetCompletedOrientationIfExists();
 
+            GetComplementaryCoursesIfExists();
+
             return _academicResearch!;
         }
 
@@ -139,6 +141,13 @@ namespace LattesDataExtraction.Domain.Services
         private void GetCompletedOrientationIfExists()
         {
             IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.CompletedOrientation);
+
+            getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument!);
+        }
+        
+        private void GetComplementaryCoursesIfExists()
+        {
+            IGetDataInformationService getDataInformationService = _getDataInformationFactory.Create(DataInformationType.ComplementaryCourses);
 
             getDataInformationService.GetInformation(_academicResearch!, _academicResearcherDocument!);
         }
