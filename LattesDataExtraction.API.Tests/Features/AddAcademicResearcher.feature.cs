@@ -97,6 +97,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("I request to Add a new one", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
+ testRunner.And("I request the information of the Academic Researcher added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 9
  testRunner.Then("I should see the data extracted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

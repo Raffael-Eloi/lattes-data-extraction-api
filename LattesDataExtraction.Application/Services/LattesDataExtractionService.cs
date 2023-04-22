@@ -39,7 +39,7 @@ namespace LattesDataExtraction.Application.Services
 
             await _academicResearcherRepository.AddAsync(academicResearcher);
 
-            return _mapper.Map<AddAcademicResearcherResponse>(academicResearcher);
+            return SuccessfulResponse(academicResearcher);
         }
 
         private static bool RequestIsInvalid(AcademicResearcher academicResearcher, out AddAcademicResearcherResponse invalidResponse)
@@ -62,6 +62,14 @@ namespace LattesDataExtraction.Application.Services
             }
 
             return false;
+        }
+
+        private static AddAcademicResearcherResponse SuccessfulResponse(AcademicResearcher academicResearcher)
+        {
+            return new AddAcademicResearcherResponse()
+            {
+                AcademicResearcherId = academicResearcher.Id,
+            };
         }
     }
 }

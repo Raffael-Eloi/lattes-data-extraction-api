@@ -61,6 +61,7 @@ namespace LattesDataExtraction.Application.Tests.Services
             #region Assert
 
             Assert.That(response, Is.Not.Null);
+            Assert.That(response.Success, Is.True);
 
             #endregion
         }
@@ -117,6 +118,7 @@ namespace LattesDataExtraction.Application.Tests.Services
             #region Assert
 
             Assert.That(response, Is.Not.Null);
+            Assert.That(response.Success, Is.False);
 
             Assert.Multiple(() =>
             {

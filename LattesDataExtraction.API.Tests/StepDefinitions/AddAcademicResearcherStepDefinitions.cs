@@ -40,24 +40,25 @@ namespace LattesDataExtraction.API.Tests.StepDefinitions
 
                 var response = JsonSerializer.Deserialize<JsonElement>(httpResponse.Content.ReadAsStream());
 
-                _scenarioContext["response"] = response;
+                response.Should().NotBeNull();
+
+                bool success = response.GetProperty("success").GetBoolean();
+                success.Should().BeTrue();
+
+                Guid id = response.GetProperty("academicResearcherId").GetGuid();
+                id.Should().NotBeEmpty();
             };
         }
+
+        [When(@"I request the information of the Academic Researcher added")]
+        public void WhenIRequestTheInformationOfTheAcademicResearcherAdded()
+        {
+        }
+
 
         [Then(@"I should see the data extracted")]
         public void ThenIShouldSeeTheDataExtracted()
         {
-            JsonElement response = _scenarioContext.Get<JsonElement>("response");
-            
-            response.Should().NotBeNull();
-
-            Guid id = response.GetProperty("id").GetGuid();
-            string? identifierNumber = response.GetProperty("identifierNumber").GetString();
-            string? lattesId = response.GetProperty("lattesId").GetString();
-
-            id.Should().NotBeEmpty();
-            identifierNumber.Should().NotBeNullOrEmpty();
-            lattesId.Should().NotBeNullOrEmpty();
         }
     }
 }
