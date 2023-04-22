@@ -34,7 +34,7 @@
           "build/_._": {}
         }
       },
-      "FluentAssertions/6.10.0": {
+      "FluentAssertions/6.11.0": {
         "type": "package",
         "dependencies": {
           "System.Configuration.ConfigurationManager": "4.4.0"
@@ -2452,15 +2452,15 @@
         "tools/_._"
       ]
     },
-    "FluentAssertions/6.10.0": {
-      "sha512": "Da3YsiRDnOHKBfxutjnupL1rOX0K/jnG6crn5AgwukeqZ/yi+HNCOFshic01ke0ztZFWzpfQMXH8fO9aAbG0Gw==",
+    "FluentAssertions/6.11.0": {
+      "sha512": "aBaagwdNtVKkug1F3imGXUlmoBd8ZUZX8oQ5niThaJhF79SpESe1Gzq7OFuZkQdKD5Pa4Mone+jrbas873AT4g==",
       "type": "package",
-      "path": "fluentassertions/6.10.0",
+      "path": "fluentassertions/6.11.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "FluentAssertions.png",
-        "fluentassertions.6.10.0.nupkg.sha512",
+        "fluentassertions.6.11.0.nupkg.sha512",
         "fluentassertions.nuspec",
         "lib/net47/FluentAssertions.dll",
         "lib/net47/FluentAssertions.pdb",
@@ -7208,7 +7208,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "FluentAssertions >= 6.10.0",
+      "FluentAssertions >= 6.11.0",
       "LattesDataExtraction.API.EntryPoint >= 1.0.0",
       "Microsoft.AspNetCore.Mvc.Testing >= 7.0.5",
       "Microsoft.NET.Test.Sdk >= 17.5.0",
@@ -7263,7 +7263,7 @@
         "dependencies": {
           "FluentAssertions": {
             "target": "Package",
-            "version": "[6.10.0, )"
+            "version": "[6.11.0, )"
           },
           "Microsoft.AspNetCore.Mvc.Testing": {
             "target": "Package",
