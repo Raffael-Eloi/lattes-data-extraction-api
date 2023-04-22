@@ -278,6 +278,28 @@ namespace LattesDataExtraction.Domain.Tests.Factories
 
             #endregion
         }
+        
+        [Test]
+        public void Return_Complementary_Courses_Service_When_Type_Is_Complementary_Courses()
+        {
+            #region Arrange
+
+            var ComplementaryCoursesType = DataInformationType.ComplementaryCourses;
+
+            #endregion
+
+            #region Act
+
+            IGetDataInformationService getDataInformationType = getDataInformationFactory.Create(ComplementaryCoursesType);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(getDataInformationType.GetType(), Is.EqualTo(typeof(GetComplementaryCoursesInformationService)));
+
+            #endregion
+        }
 
         [Test]
         public void Throw_Exception_When_Data_Information_Type_Does_Not_Exist()

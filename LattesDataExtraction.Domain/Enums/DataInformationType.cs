@@ -27,5 +27,6 @@
         TechnicalProduction = 11,
 
         CompletedOrientation = 12,
+        ComplementaryCourses = 13,
     }
 }
