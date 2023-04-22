@@ -51,6 +51,9 @@ namespace LattesDataExtraction.Domain.Factories
                 case DataInformationType.ComplementaryCourses:
                     return new GetComplementaryCoursesInformationService();
 
+                case DataInformationType.ParticipationInFinalPaperPanel:
+                    return new GetParticipationInFinalPaperPanelInformationService();
+
                 default:
                     throw new ArgumentException(message: string.Format(DataInformationTypeNotImplementedMessage, type));
             }
