@@ -11,12 +11,14 @@ namespace LattesDataExtraction.Application.Tests.Services
 {
     internal class AcademicResearcherReadServiceShould
     {
-        [Test]
-        public async Task Get_All_Academic_Researchers_Added()
-        {
-            #region Arrange
+        private Mock<IAcademicResearcherRepository> academicResearcherRepositoryMock;
 
-            var academicResearcherRepositoryMock = new Mock<IAcademicResearcherRepository>();
+        private IAcademicResearcherReadService academicResearcherReadService;
+
+        [SetUp] 
+        public void Setup() 
+        {
+            academicResearcherRepositoryMock = new Mock<IAcademicResearcherRepository>();
 
             var mapperConfig = new MapperConfiguration(mc =>
             {
@@ -25,7 +27,44 @@ namespace LattesDataExtraction.Application.Tests.Services
 
             IMapper mapper = mapperConfig.CreateMapper();
 
-            IAcademicResearcherReadService academicResearcherReadService = new AcademicResearcherReadService(academicResearcherRepositoryMock.Object, mapper);
+            academicResearcherReadService = new AcademicResearcherReadService(academicResearcherRepositoryMock.Object, mapper);
+        }
+
+        [Test]
+        public async Task Get_Academic_Researchers_By_Id()
+        {
+            #region Arrange
+
+            var academicReseracherId = Guid.NewGuid();
+
+            var academicResearcherMock = new AcademicResearcher()
+            {
+                Id = academicReseracherId
+            };
+
+            academicResearcherRepositoryMock
+                .Setup(repository => repository.GetById(academicReseracherId))
+                .ReturnsAsync(academicResearcherMock);
+
+            #endregion
+
+            #region Act
+
+            AcademicResearcherModel academicResearcher = await academicResearcherReadService.GetById(academicReseracherId);
+
+            #endregion
+
+            #region Assert
+
+            Assert.That(academicResearcher.Id, Is.Not.Empty);
+
+            #endregion
+        }
+
+        [Test]
+        public async Task Get_All_Academic_Researchers_Added()
+        {
+            #region Arrange
 
             var academicResearchersMock = new List<AcademicResearcher>() 
             { 

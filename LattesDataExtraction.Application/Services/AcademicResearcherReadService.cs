@@ -18,6 +18,11 @@ namespace LattesDataExtraction.Application.Services
             _mapper = mapper;
         }
 
+        public Task<AcademicResearcherModel> GetById(Guid academicReseracherId)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<AcademicResearcherModel>> GetAll()
         {
             IEnumerable<AcademicResearcher> academicResearchers = await _academicResearcherRepository.GetAll();
