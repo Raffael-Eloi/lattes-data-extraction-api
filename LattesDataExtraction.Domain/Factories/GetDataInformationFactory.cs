@@ -48,6 +48,9 @@ namespace LattesDataExtraction.Domain.Factories
                 case DataInformationType.CompletedOrientation: 
                     return new GetCompletedOrientationInformationService();
 
+                case DataInformationType.ComplementaryCourses:
+                    return new GetComplementaryCoursesInformationService();
+
                 default:
                     throw new ArgumentException(message: string.Format(DataInformationTypeNotImplementedMessage, type));
             }
