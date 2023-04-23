@@ -4,7 +4,9 @@ namespace LattesDataExtraction.Domain.Entities
 {
     public class AcademicBackground
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public Guid Id { get; set; }
+
+        public Guid AcademicResearcherId { get; set; }
 
         public AcademicBackgroundType AcademicBackgroundType { get; set; }
         

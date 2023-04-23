@@ -2,6 +2,7 @@ using LattesDataExtraction.Application.Contracts;
 using LattesDataExtraction.Application.Models;
 using LattesDataExtraction.Infraestructure.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using System.Xml;
 
 namespace LattesDataExtraction.API.EntryPoint.Controllers
@@ -11,12 +12,16 @@ namespace LattesDataExtraction.API.EntryPoint.Controllers
     public class LattesDataExtractionController : ControllerBase
     {
         private readonly ILattesDataExtractionService _lattesDataExtractionService;
-        public LattesDataExtractionController(ILattesDataExtractionService lattesDataExtractionService)
+
+        private readonly IAcademicResearcherReadService _academicResearcherReadService;
+        public LattesDataExtractionController(ILattesDataExtractionService lattesDataExtractionService, 
+            IAcademicResearcherReadService academicResearcherReadService)
         {
             _lattesDataExtractionService = lattesDataExtractionService;
+            _academicResearcherReadService = academicResearcherReadService;
         }
 
-        [HttpPost(Name = "AcademicResearcher")]
+        [HttpPost(Name = "PostAcademicResearcher")]
         public async Task<IActionResult> Post(IFormFile file)
         {
             if (file.ContentType != "text/xml") 
@@ -46,6 +51,27 @@ namespace LattesDataExtraction.API.EntryPoint.Controllers
             object errorMapper = new { file = errorsMessages };
             var messages = new { status = 400, errors = errorMapper };
             return messages;
+        }
+
+        [HttpGet("{academicResearcherId:Guid}", Name = "GetAcademicResearcherById")]
+        public async Task<IActionResult> Get([Required] Guid academicResearcherId)
+        {
+            AcademicResearcherModelResponse response = await _academicResearcherReadService.GetById(academicResearcherId);
+
+            if (!response.IsValid)
+            {
+                return ValidationProblem(ModelState.AddErrorsFromNotifications(response.Notifications));
+            }
+
+            return Ok(response);
+        }
+
+        [HttpGet(Name = "GetAllAcademicResearchers")]
+        public async Task<IActionResult> GetAll()
+        {
+            IEnumerable<AcademicResearcherModelResponse> response = await _academicResearcherReadService.GetAll();
+
+            return Ok(response);
         }
     }
 }

@@ -47,18 +47,42 @@ namespace LattesDataExtraction.API.Tests.StepDefinitions
 
                 Guid id = response.GetProperty("academicResearcherId").GetGuid();
                 id.Should().NotBeEmpty();
+
+                _scenarioContext["academicResearcherId"] = id;
             };
         }
 
         [When(@"I request the information of the Academic Researcher added")]
-        public void WhenIRequestTheInformationOfTheAcademicResearcherAdded()
+        public async Task WhenIRequestTheInformationOfTheAcademicResearcherAdded()
         {
+            Guid academicResearcherId = _scenarioContext.Get<Guid>("academicResearcherId");
+
+            var httpResponse = await _httpClient.GetAsync($"https://localhost:32768/LattesDataExtraction?academicResearcherId={academicResearcherId}");
+
+            httpResponse.IsSuccessStatusCode.Should().BeTrue();
+
+            var response = JsonSerializer.Deserialize<JsonElement>(httpResponse.Content.ReadAsStream());
+
+            _scenarioContext["response"] = response[0];
         }
 
 
         [Then(@"I should see the data extracted")]
         public void ThenIShouldSeeTheDataExtracted()
         {
+            var response = _scenarioContext.Get<JsonElement>("response");
+
+            bool isValid = response.GetProperty("isValid").GetBoolean();
+            isValid.Should().BeTrue();
+            
+            Guid id = response.GetProperty("id").GetGuid();
+            id.Should().NotBeEmpty();
+
+            string? identifierNumber = response.GetProperty("identifierNumber").GetString();
+            identifierNumber.Should().NotBeNullOrEmpty();
+            
+            string? lattesId = response.GetProperty("lattesId").GetString();
+            lattesId.Should().NotBeNullOrEmpty();
         }
     }
 }

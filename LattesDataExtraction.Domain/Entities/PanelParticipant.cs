@@ -2,7 +2,7 @@
 {
     public class PanelParticipant
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public Guid Id { get; set; }
 
         public string FullName { get; set; } = string.Empty;
 

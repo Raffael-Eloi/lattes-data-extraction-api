@@ -18,7 +18,7 @@ namespace LattesDataExtraction.Infraestructure.Ioc
         {
             #region DatabaseContext
 
-            services.AddDbContext<AcademicResearcherContext>(i => i.UseInMemoryDatabase("AcademicResearches"));
+            services.AddDbContext<AcademicResearcherEFContext>(i => i.UseInMemoryDatabase("AcademicResearchers"));
 
             #endregion
 
@@ -32,6 +32,7 @@ namespace LattesDataExtraction.Infraestructure.Ioc
             #region Factories
 
             services.AddScoped<IGetDataInformationFactory, GetDataInformationFactory>();
+            services.AddScoped<IAcademicResearcherReadService, AcademicResearcherReadService>();
 
             #endregion
             

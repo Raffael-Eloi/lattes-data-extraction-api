@@ -2,7 +2,7 @@
 {
     public class ProfessionalAddress
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public Guid Id { get; set; }
 
         public string CompanyCode { get; set; } = string.Empty;
 

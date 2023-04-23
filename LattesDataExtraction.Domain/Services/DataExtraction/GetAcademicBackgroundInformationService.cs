@@ -44,6 +44,7 @@ namespace LattesDataExtraction.Domain.Services.DataExtraction
                 {
                     AcademicBackground academicBackground = new()
                     {
+                        AcademicResearcherId = _academicResearcher.Id!,
                         AcademicBackgroundType = AcademicBackgroundType.Graduation
                     };
 
