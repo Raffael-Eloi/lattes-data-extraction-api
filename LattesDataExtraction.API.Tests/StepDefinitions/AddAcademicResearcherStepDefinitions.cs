@@ -72,15 +72,51 @@ namespace LattesDataExtraction.API.Tests.StepDefinitions
         {
             var response = _scenarioContext.Get<JsonElement>("response");
 
-            bool isValid = response.GetProperty("isValid").GetBoolean();
-            isValid.Should().BeTrue();
-            
+            VerifyIfAcademicResearcherIsValid(response);
+        }
+
+        [Given(@"I add three Academic Researchers")]
+        public async Task GivenIAddThreeAcademicResearchers()
+        {
+            GivenIHaveAXMLFileOfAnAcademicResearcher();
+
+            for (int i=0; i<3; i++)
+            {
+                await WhenIRequestToAddANewOne();
+            }
+        }
+
+        [When(@"I request all Academic Researchers")]
+        public async Task WhenIRequestAllAcademicResearchers()
+        {
+            var httpResponse = await _httpClient.GetAsync($"https://localhost:32768/LattesDataExtraction");
+
+            httpResponse.IsSuccessStatusCode.Should().BeTrue();
+
+            var response = JsonSerializer.Deserialize<JsonElement>(httpResponse.Content.ReadAsStream());
+
+            _scenarioContext["getAllResponse"] = response;
+        }
+
+        [Then(@"I should see all Academic Researchers added")]
+        public void ThenIShouldSeeAllAcademicResearchersAdded()
+        {
+            var response = _scenarioContext.Get<JsonElement>("getAllResponse");
+
+            for (int i = 0; i < 3; i++)
+            {
+                VerifyIfAcademicResearcherIsValid(response[i]);
+            }
+        }
+
+        private static void VerifyIfAcademicResearcherIsValid(JsonElement response)
+        {
             Guid id = response.GetProperty("id").GetGuid();
             id.Should().NotBeEmpty();
 
             string? identifierNumber = response.GetProperty("identifierNumber").GetString();
             identifierNumber.Should().NotBeNullOrEmpty();
-            
+
             string? lattesId = response.GetProperty("lattesId").GetString();
             lattesId.Should().NotBeNullOrEmpty();
         }

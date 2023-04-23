@@ -7,3 +7,8 @@ Scenario: Add Academic Researcher
 	When I request to Add a new one
 	And I request the information of the Academic Researcher added
 	Then I should see the data extracted
+
+Scenario: Get all Academic Researchers added
+	Given I add three Academic Researchers
+	When I request all Academic Researchers
+	Then I should see all Academic Researchers added
