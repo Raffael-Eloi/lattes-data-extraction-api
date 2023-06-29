@@ -47,7 +47,7 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
             string expectedCountryOfBirth = "Brasil";
             string expectedStateOfBirth = "SC";
             string expectedCityOfBirth = "Florianópolis";
-            string expectedCountryCode = "BRA"; ;
+            string expectedCountryCode = "BRA";
             string expectedNationalityCountry = "Brasil";
             string expectedOrcidId = "https://orcid.org/0000-0001-9006-6238";
 

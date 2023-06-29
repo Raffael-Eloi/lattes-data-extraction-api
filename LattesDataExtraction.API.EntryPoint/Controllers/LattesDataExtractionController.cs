@@ -24,25 +24,37 @@ namespace LattesDataExtraction.API.EntryPoint.Controllers
         [HttpPost(Name = "PostAcademicResearcher")]
         public async Task<IActionResult> Post(IFormFile file)
         {
-            if (file.ContentType != "text/xml") 
+            if (FileIsNotInXMLFormat(file))
             {
                 var errorsMessages = GetInvalidFormatFileErrorMessage();
 
                 return StatusCode(StatusCodes.Status400BadRequest, errorsMessages);
             }
 
-            XmlDocument academicResearcherDocument = new();
-
-            academicResearcherDocument.Load(file.OpenReadStream());
+            XmlDocument academicResearcherDocument = LoadXMLFile(file);
 
             AddAcademicResearcherResponse response = await _lattesDataExtractionService.Extract(academicResearcherDocument);
 
-            if (!response.IsValid)
+            if (response.IsValid)
             {
-                return ValidationProblem(ModelState.AddErrorsFromNotifications(response.Notifications));
+                return Ok(response);
             }
 
-            return Ok(response);
+            return ValidationProblem(ModelState.AddErrorsFromNotifications(response.Notifications));
+        }
+
+
+        private static bool FileIsNotInXMLFormat(IFormFile file)
+        {
+            return file.ContentType != "text/xml";
+        }
+
+        private static XmlDocument LoadXMLFile(IFormFile file)
+        {
+            XmlDocument academicResearcherDocument = new();
+
+            academicResearcherDocument.Load(file.OpenReadStream());
+            return academicResearcherDocument;
         }
 
         private static object GetInvalidFormatFileErrorMessage()

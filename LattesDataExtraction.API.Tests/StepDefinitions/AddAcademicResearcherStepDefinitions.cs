@@ -75,6 +75,19 @@ namespace LattesDataExtraction.API.Tests.StepDefinitions
             VerifyIfAcademicResearcherIsValid(response);
         }
 
+        private static void VerifyIfAcademicResearcherIsValid(JsonElement response)
+        {
+            Guid id = response.GetProperty("id").GetGuid();
+            id.Should().NotBeEmpty();
+
+            string? identifierNumber = response.GetProperty("identifierNumber").GetString();
+            identifierNumber.Should().NotBeNullOrEmpty();
+
+            string? lattesId = response.GetProperty("lattesId").GetString();
+            lattesId.Should().NotBeNullOrEmpty();
+        }
+
+
         [Given(@"I add three Academic Researchers")]
         public async Task GivenIAddThreeAcademicResearchers()
         {
@@ -107,18 +120,6 @@ namespace LattesDataExtraction.API.Tests.StepDefinitions
             {
                 VerifyIfAcademicResearcherIsValid(response[i]);
             }
-        }
-
-        private static void VerifyIfAcademicResearcherIsValid(JsonElement response)
-        {
-            Guid id = response.GetProperty("id").GetGuid();
-            id.Should().NotBeEmpty();
-
-            string? identifierNumber = response.GetProperty("identifierNumber").GetString();
-            identifierNumber.Should().NotBeNullOrEmpty();
-
-            string? lattesId = response.GetProperty("lattesId").GetString();
-            lattesId.Should().NotBeNullOrEmpty();
         }
     }
 }

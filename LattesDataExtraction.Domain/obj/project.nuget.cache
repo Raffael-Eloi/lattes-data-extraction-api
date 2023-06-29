@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1g/+HN3W3cE80C+5fOQ3OxjtyoqWJ5FA7D4F1ERtYB3FPo0STdcaiQ651kurR/B+mftNX6CatHWAvnuQcUp2tQ==",
+  "dgSpecHash": "mkYKE0RpSPNgkvtmlMUI8NQHlWncheyBUG7zNO7hsImBSckjP/llRXdjF6611l+kDeE7Sn80VnaSGFqUnB5tMg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Domain\\LattesDataExtraction.Domain.csproj",
+  "projectFilePath": "C:\\Users\\RaffaelEloidaSilva\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.Domain\\LattesDataExtraction.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Application.Tests\\LattesDataExtraction.Application.Tests.csproj": {}
+    "C:\\Users\\RaffaelEloidaSilva\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.Application.Tests\\LattesDataExtraction.Application.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Application.Tests\\LattesDataExtraction.Application.Tests.csproj": {
+    "C:\\Users\\RaffaelEloidaSilva\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.Application.Tests\\LattesDataExtraction.Application.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Application.Tests\\LattesDataExtraction.Application.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\RaffaelEloidaSilva\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.Application.Tests\\LattesDataExtraction.Application.Tests.csproj",
         "projectName": "LattesDataExtraction.Application.Tests",
-        "projectPath": "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Application.Tests\\LattesDataExtraction.Application.Tests.csproj",
-        "packagesPath": "C:\\Users\\raffa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Application.Tests\\obj\\",
+        "projectPath": "C:\\Users\\RaffaelEloidaSilva\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.Application.Tests\\LattesDataExtraction.Application.Tests.csproj",
+        "packagesPath": "C:\\Users\\RaffaelEloidaSilva\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\RaffaelEloidaSilva\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.Application.Tests\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\raffa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\RaffaelEloidaSilva\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,17 +25,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/stratws/_packaging/Stratws/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Application\\LattesDataExtraction.Application.csproj": {
-                "projectPath": "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Application\\LattesDataExtraction.Application.csproj"
+              "C:\\Users\\RaffaelEloidaSilva\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.Application\\LattesDataExtraction.Application.csproj": {
+                "projectPath": "C:\\Users\\RaffaelEloidaSilva\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.Application\\LattesDataExtraction.Application.csproj"
               },
-              "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Domain\\LattesDataExtraction.Domain.csproj": {
-                "projectPath": "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Domain\\LattesDataExtraction.Domain.csproj"
+              "C:\\Users\\RaffaelEloidaSilva\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.Domain\\LattesDataExtraction.Domain.csproj": {
+                "projectPath": "C:\\Users\\RaffaelEloidaSilva\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.Domain\\LattesDataExtraction.Domain.csproj"
               }
             }
           }
@@ -92,21 +96,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Application\\LattesDataExtraction.Application.csproj": {
+    "C:\\Users\\RaffaelEloidaSilva\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.Application\\LattesDataExtraction.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Application\\LattesDataExtraction.Application.csproj",
+        "projectUniqueName": "C:\\Users\\RaffaelEloidaSilva\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.Application\\LattesDataExtraction.Application.csproj",
         "projectName": "LattesDataExtraction.Application",
-        "projectPath": "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Application\\LattesDataExtraction.Application.csproj",
-        "packagesPath": "C:\\Users\\raffa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Application\\obj\\",
+        "projectPath": "C:\\Users\\RaffaelEloidaSilva\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.Application\\LattesDataExtraction.Application.csproj",
+        "packagesPath": "C:\\Users\\RaffaelEloidaSilva\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\RaffaelEloidaSilva\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\raffa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\RaffaelEloidaSilva\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -114,14 +121,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/stratws/_packaging/Stratws/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Domain\\LattesDataExtraction.Domain.csproj": {
-                "projectPath": "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Domain\\LattesDataExtraction.Domain.csproj"
+              "C:\\Users\\RaffaelEloidaSilva\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.Domain\\LattesDataExtraction.Domain.csproj": {
+                "projectPath": "C:\\Users\\RaffaelEloidaSilva\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.Domain\\LattesDataExtraction.Domain.csproj"
               }
             }
           }
@@ -165,21 +173,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Domain\\LattesDataExtraction.Domain.csproj": {
+    "C:\\Users\\RaffaelEloidaSilva\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.Domain\\LattesDataExtraction.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Domain\\LattesDataExtraction.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\RaffaelEloidaSilva\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.Domain\\LattesDataExtraction.Domain.csproj",
         "projectName": "LattesDataExtraction.Domain",
-        "projectPath": "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Domain\\LattesDataExtraction.Domain.csproj",
-        "packagesPath": "C:\\Users\\raffa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\raffa\\source\\repos\\LattesDataExtractionApi\\LattesDataExtraction.Domain\\obj\\",
+        "projectPath": "C:\\Users\\RaffaelEloidaSilva\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.Domain\\LattesDataExtraction.Domain.csproj",
+        "packagesPath": "C:\\Users\\RaffaelEloidaSilva\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\RaffaelEloidaSilva\\source\\repos\\lattes-data-extraction-api\\LattesDataExtraction.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\raffa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\RaffaelEloidaSilva\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -187,7 +198,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/stratws/_packaging/Stratws/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
@@ -220,7 +232,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }
