@@ -6,6 +6,7 @@ public static class GetAcademicResearcherFilePath
     {
         string currentDirectory = Directory.GetCurrentDirectory();
         string fullFilePath = Path.Combine(currentDirectory, "Data", "lattes-resume-example.xml");
-        return fullFilePath.Replace("bin\\Debug\\net7.0", "");
+        fullFilePath = fullFilePath.Replace("bin\\Debug\\net7.0", "");
+        return fullFilePath.Replace("bin/Debug/net7.0", "");
     }
 }
