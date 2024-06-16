@@ -50,6 +50,7 @@ The primary goal of this project is to address the challenges of managing and an
 
 4. **Run the API:**
    ```sh
+   cd LattesDataExtraction.API.EntryPoint
    dotnet run
    ```
 
