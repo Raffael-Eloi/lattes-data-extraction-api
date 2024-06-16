@@ -15,7 +15,7 @@ The primary goal of this project is to address the challenges of managing and an
 - **SOLID Principles:** Ensures a well-structured and maintainable codebase by adhering to SOLID design principles.
 
 ## Technologies and Concepts 💻
-- **.NET 6 API:** Modern and efficient API development.
+- **.NET 7 API:** Modern and efficient API development.
 - **ETL (Extract, Transform, Load):** Processes data from raw XML files to a structured database format.
 - **Test-Driven Development (TDD):** Ensures code reliability through comprehensive unit tests.
 - **Behavior-Driven Development (BDD):** Facilitates integration testing with SpecFlow.
@@ -39,7 +39,7 @@ The `IGetDataInformationFactory` gets the TAG and returns a service specified in
 ## Getting Started
 
 ### Prerequisites 🗹
-- .NET 6 SDK
+- .NET 7 SDK
 
 ### Running the Project 💻
 1. **Clone the Repository:**
