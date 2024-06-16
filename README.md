@@ -6,6 +6,9 @@ The Lattes Data Extraction API is a .NET 6 application developed as part of a fi
 ## Purpose 🎯
 The primary goal of this project is to address the challenges of managing and analyzing large volumes of academic data extracted from the Lattes platform. By developing an API that processes XML files, performs ETL operations, and stores the data in a structured database, we aim to facilitate easy access and comprehensive analysis of academic researchers' information.
 
+## Application's Execution Flow ![workflow_6751798](https://github.com/Raffael-Eloi/lattes-data-extraction-api/assets/51720161/032a356b-e39a-433c-80a1-707f27734975)
+![Estudo](https://github.com/Raffael-Eloi/lattes-data-extraction-api/assets/51720161/cb80d108-a13f-4a5a-8c62-6b033b4db473)
+
 ## Key Features 🔑
 - **Automated ETL Process:** Seamlessly extracts, transforms, and loads data from XML files.
 - **TDD and BDD:** Utilizes Test-Driven Development (TDD) for robust unit testing and Behavior-Driven Development (BDD) with SpecFlow for integration tests.
@@ -17,6 +20,9 @@ The primary goal of this project is to address the challenges of managing and an
 - **Test-Driven Development (TDD):** Ensures code reliability through comprehensive unit tests.
 - **Behavior-Driven Development (BDD):** Facilitates integration testing with SpecFlow.
 - **SOLID Principles:** Promotes clean and maintainable code architecture.
+
+## Entity model ![database_3895312](https://github.com/Raffael-Eloi/lattes-data-extraction-api/assets/51720161/ee38aefc-cc4a-41fc-b7c8-12e05178ebe9)
+![image](https://github.com/Raffael-Eloi/lattes-data-extraction-api/assets/51720161/b79f007d-8e1a-4bd2-b68a-7aa8d1ee8179)
 
 ## Project Structure 📁
 
