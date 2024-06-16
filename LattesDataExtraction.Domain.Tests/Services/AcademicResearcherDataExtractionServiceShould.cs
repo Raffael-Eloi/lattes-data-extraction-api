@@ -2,6 +2,7 @@ using LattesDataExtraction.Domain.Contracts;
 using LattesDataExtraction.Domain.Entities;
 using LattesDataExtraction.Domain.Factories;
 using LattesDataExtraction.Domain.Services;
+using LattesDataExtraction.Domain.Tests.Helpers;
 using System.Xml;
 
 namespace LattesDataExtraction.Domain.Tests.Services
@@ -21,7 +22,7 @@ namespace LattesDataExtraction.Domain.Tests.Services
 
             academicResearcherFileReadService = new AcademicResearcherDataExtractionService(getDataInformationFactory);
 
-            var filePath = @"C:\useful\researcher.xml";
+            string filePath = GetAcademicResearcherFilePath.Get();
 
             academicResearcherDocument = new XmlDocument();
 

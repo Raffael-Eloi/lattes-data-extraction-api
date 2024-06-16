@@ -1,6 +1,7 @@
 ﻿using LattesDataExtraction.Domain.Contracts;
 using LattesDataExtraction.Domain.Entities;
 using LattesDataExtraction.Domain.Services.DataExtraction;
+using LattesDataExtraction.Domain.Tests.Helpers;
 using System.Xml;
 
 namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
@@ -16,7 +17,7 @@ namespace LattesDataExtraction.Domain.Tests.Services.DataExtraction
         [SetUp]
         public void SetUp()
         {
-            academicResearcherFilePath = @"C:\useful\researcher.xml";
+            academicResearcherFilePath = GetAcademicResearcherFilePath.Get();
 
             academicResearcherDocument = new XmlDocument();
 
