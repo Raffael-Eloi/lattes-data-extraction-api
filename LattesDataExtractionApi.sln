@@ -25,9 +25,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LattesDataExtraction.API.En
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LattesDataExtraction.API.Tests", "LattesDataExtraction.API.Tests\LattesDataExtraction.API.Tests.csproj", "{9A4D4925-F87A-4021-9DCA-5085309ECCA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LattesDataExtraction.Infraestructure.Ioc", "LattesDataExtraction.Infraestructure.Ioc\LattesDataExtraction.Infraestructure.Ioc.csproj", "{2ECD7A1D-3FDA-4B99-A933-F0F0981E7705}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LattesDataExtraction.Infraestructure.Ioc", "LattesDataExtraction.Infraestructure.Ioc\LattesDataExtraction.Infraestructure.Ioc.csproj", "{2ECD7A1D-3FDA-4B99-A933-F0F0981E7705}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LattesDataExtraction.Infraestructure.Extensions", "LattesDataExtraction.Infraestructure.Extensions\LattesDataExtraction.Infraestructure.Extensions.csproj", "{9989E987-05D7-459B-8957-E1C76EA9A50D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LattesDataExtraction.Infraestructure.Extensions", "LattesDataExtraction.Infraestructure.Extensions\LattesDataExtraction.Infraestructure.Extensions.csproj", "{9989E987-05D7-459B-8957-E1C76EA9A50D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Delivery", "0 - Delivery", "{111A7EF3-6081-4D76-A080-DB0EEEDD26BE}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\pipeline.yml = .github\workflows\pipeline.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
