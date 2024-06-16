@@ -3,6 +3,7 @@ using LattesDataExtraction.Application.Contracts;
 using LattesDataExtraction.Application.Mappers;
 using LattesDataExtraction.Application.Models;
 using LattesDataExtraction.Application.Services;
+using LattesDataExtraction.Application.Tests.Helpers;
 using LattesDataExtraction.Domain.Contracts;
 using LattesDataExtraction.Domain.Entities;
 using LattesDataExtraction.Domain.Factories;
@@ -38,7 +39,7 @@ namespace LattesDataExtraction.Application.Tests.Services
 
             lattesDataExtractionService = new LattesDataExtractionService(academicResearcherDataExtractionService, mapper, academicResearcherRepositoryMock.Object);
 
-            var filePath = @"C:\useful\researcher.xml";
+            string filePath = GetAcademicResearcherFilePath.Get();
 
             academicResearcherDocument = new();
 
