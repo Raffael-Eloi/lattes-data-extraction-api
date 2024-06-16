@@ -36,6 +36,9 @@ The primary goal of this project is to address the challenges of managing and an
 ![Estudo (1)](https://github.com/Raffael-Eloi/lattes-data-extraction-api/assets/51720161/69a5c6e2-e284-4dcf-bee4-8db841c7d644)
 The `IGetDataInformationFactory` gets the TAG and returns a service specified in extract information in that given context.
 
+## How it works ⭐
+![LattesAPIExtractionExample](https://github.com/Raffael-Eloi/lattes-data-extraction-api/assets/51720161/1ebe9a77-74c2-47e0-9147-18f66edb024c)
+
 ## Getting Started
 
 ### Prerequisites 🗹
