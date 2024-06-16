@@ -32,6 +32,10 @@ The primary goal of this project is to address the challenges of managing and an
 
 ![Data Flow](https://github.com/Raffael-Eloi/lattes-data-extraction-api/assets/51720161/d44d92b1-ed49-4471-af17-811759704ed9)
 
+## Application Flow Explained 🌀
+![Estudo (1)](https://github.com/Raffael-Eloi/lattes-data-extraction-api/assets/51720161/69a5c6e2-e284-4dcf-bee4-8db841c7d644)
+The `IGetDataInformationFactory` gets the TAG and returns a service specified in extract information in that given context.
+
 ## Getting Started
 
 ### Prerequisites 🗹
