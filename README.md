@@ -67,5 +67,5 @@ The primary goal of this project is to address the challenges of managing and an
 - **Upload XML File:**
   Use the `/LattesDataExtraction` endpoint to upload an XML file extracted from the Lattes platform.
 
-## Conclusion
+## Conclusion ![concept_11063232](https://github.com/Raffael-Eloi/lattes-data-extraction-api/assets/51720161/d6bcedd1-9eba-4d3d-bdac-4b81b94a9b1c)
 This project successfully achieved its objective by developing an API that automates the ETL process for academic data from the Lattes platform. By enabling easy data extraction, transformation, and persistence, the API provides a valuable tool for researchers to conduct comprehensive analyses and gain insightful information.
