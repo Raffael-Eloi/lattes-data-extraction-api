@@ -1,0 +1,48 @@
+on:
+  push:
+      branches:
+        - main
+
+jobs:
+    build:
+        name: Build
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v4
+        - name: Setup .NET SDK
+          uses: actions/setup-dotnet@v3
+          with:
+            dotnet-version: 7.0.x
+
+        - name: Restore dependencies
+          run: dotnet restore
+  
+        - name: Build
+          run: dotnet build --no-restore
+
+    test:
+        name: Test
+        runs-on: ubuntu-latest
+        needs: build
+        steps:
+        - uses: actions/checkout@v4
+        - name: Setup .NET SDK
+          uses: actions/setup-dotnet@v3
+          with:
+            dotnet-version: 7.0.x
+  
+        - name: Domain Tests
+          run: |
+            cd LattesDataExtraction.Domain.Tests
+            dotnet test
+            
+            
+        - name: Application Tests
+          run: |
+            cd LattesDataExtraction.Application.Tests
+            dotnet test
+            
+        - name: Integration Tests
+          run: |
+            cd LattesDataExtraction.API.Tests
+            dotnet test
