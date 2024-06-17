@@ -1,7 +1,7 @@
 # Lattes Data Extraction API 🚀
 
 ## Overview 💡
-The Lattes Data Extraction API is a .NET 6 application developed as part of a final degree project. This API streamlines the extraction, transformation, and loading (ETL) of academic research data from the [Lattes platform](https://lattes.cnpq.br/). By automating the ETL process, the API enables the organization and persistence of researcher data for future analysis and queries, eliminating the need for manual processing.
+The Lattes Data Extraction API is a .NET 7 application developed as part of a final degree project. This API streamlines the extraction, transformation, and loading (ETL) of academic research data from the [Lattes platform](https://lattes.cnpq.br/). By automating the ETL process, the API enables the organization and persistence of researcher data for future analysis and queries, eliminating the need for manual processing.
 
 ## Purpose 🎯
 The primary goal of this project is to address the challenges of managing and analyzing large volumes of academic data extracted from the Lattes platform. By developing an API that processes XML files, performs ETL operations, and stores the data in a structured database, we aim to facilitate easy access and comprehensive analysis of academic researchers' information.
